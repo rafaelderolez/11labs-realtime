@@ -62,6 +62,8 @@
   --color-surface-faint: var(--surface-faint);
   --color-hairline: var(--hairline);
   --color-pill: var(--pill);
+  --color-surface-raised: var(--surface-raised);
+  --color-control: var(--control);
   --color-secondary-hover: var(--secondary-hover);
   --color-faint-foreground: var(--faint-foreground);
   --color-tertiary-foreground: var(--tertiary-foreground);
@@ -155,6 +157,8 @@
   --hairline: oklch(0 0 0 / 10%);
   --pill: oklch(1 0 0);
   --pill-hover: var(--surface-subtle);
+  --surface-raised: var(--surface-faint);
+  --control: oklch(1 0 0);
   --secondary-hover: color-mix(
     in oklch,
     var(--secondary),
@@ -213,6 +217,8 @@
   /* Raised above the surface, as white is in light mode. */
   --pill: oklch(0.37 0.007 34.298);
   --pill-hover: color-mix(in oklch, var(--pill), var(--foreground) 5%);
+  --surface-raised: var(--pill);
+  --control: var(--pill-hover);
   --control-shadow: 0 0 0 1px var(--hairline), 0 1px 2px rgb(0 0 0 / 0.2);
   --bubble-quiet: oklch(1 0 0 / 3%);
   /* Deepened to read on the light Listen button. */

@@ -248,7 +248,7 @@ export function LiveTranslationDemo({
           transition={CARD_RESIZE}
           // Inline radius lets motion correct it while the card scales.
           style={{ borderRadius: 16 }}
-          className="relative flex w-full max-w-180 flex-col items-start gap-5 border border-hairline bg-surface-faint p-5 shadow-card md:w-fit md:flex-row md:items-center md:gap-3 md:p-6 dark:bg-pill"
+          className="relative flex w-full max-w-180 flex-col items-start gap-5 border border-hairline bg-surface-raised p-5 shadow-card md:w-fit md:flex-row md:items-center md:gap-3 md:p-6"
         >
           <m.div
             layout="position"
@@ -397,7 +397,7 @@ function PlayButton({
           )}
         />
       </svg>
-      <span className="grid size-11 place-items-center rounded-full bg-white shadow-control transition-transform active:scale-95 dark:bg-pill-hover">
+      <span className="grid size-11 place-items-center rounded-full bg-control shadow-control transition-transform active:scale-95">
         <Icon className="size-4 fill-current" strokeWidth={0} />
       </span>
     </button>
