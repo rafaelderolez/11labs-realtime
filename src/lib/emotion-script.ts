@@ -32,6 +32,8 @@ export const EMOTION_CLIPS: EmotionClip[] = [
   {
     emotion: "Hopeful",
     tag: "hopeful",
+    // Mark – Natural Conversations (shared library).
+    voiceId: "UgBBYS2sOqTuMpoF3BR0",
     source: { lang: "en", text: "I really think this could work for us." },
     translation: {
       lang: "it",
@@ -41,6 +43,8 @@ export const EMOTION_CLIPS: EmotionClip[] = [
   {
     emotion: "Tired",
     tag: "tired",
+    // Brian – Deep, Resonant and Comforting.
+    voiceId: "nPczCjzI2devNBz1zQrb",
     source: { lang: "de", text: "Langer Tag. Können wir morgen weitermachen?" },
     translation: {
       lang: "en",
@@ -50,6 +54,8 @@ export const EMOTION_CLIPS: EmotionClip[] = [
   {
     emotion: "Angry",
     tag: "angry",
+    // Laura – Enthusiast, Quirky Attitude.
+    voiceId: "FGY2WhTYpPnrIDTdsKH5",
     source: {
       lang: "en",
       text: "This is the third time my order’s been wrong.",

@@ -29,35 +29,35 @@
     ]
   },
   "/audio/emotions/hopeful-en.mp3": {
-    "duration": 2.48,
+    "duration": 2.24,
     "words": [
       ["I", 0.08],
       ["really", 0.32],
-      ["think", 0.8],
-      ["this", 0.96],
-      ["could", 1.24],
-      ["work", 1.48],
-      ["for", 1.68],
-      ["us.", 1.92]
+      ["think", 0.72],
+      ["this", 0.88],
+      ["could", 1.04],
+      ["work", 1.32],
+      ["for", 1.52],
+      ["us.", 1.68]
     ]
   },
   "/audio/emotions/hopeful-it.mp3": {
-    "duration": 2.96,
+    "duration": 2.64,
     "words": [
       ["Credo", 0.08],
-      ["davvero", 0.44],
-      ["che", 1.04],
-      ["possa", 1.24],
-      ["funzionare", 1.52],
-      ["per", 2.16],
-      ["noi.", 2.32]
+      ["davvero", 0.48],
+      ["che", 0.96],
+      ["possa", 1.12],
+      ["funzionare", 1.44],
+      ["per", 2],
+      ["noi.", 2.16]
     ]
   },
   "/audio/emotions/tired-de.mp3": {
-    "duration": 3.36,
+    "duration": 3.28,
     "words": [
       ["Langer", 0.16],
-      ["Tag.", 0.8],
+      ["Tag.", 0.56],
       ["Können", 1.6],
       ["wir", 1.88],
       ["morgen", 2.04],
@@ -67,28 +67,28 @@
   "/audio/emotions/tired-en.mp3": {
     "duration": 3.28,
     "words": [
-      ["Long", 0.24],
-      ["day.", 0.72],
-      ["Can", 1.6],
-      ["we", 1.84],
-      ["pick", 2],
-      ["this", 2.16],
-      ["up", 2.32],
-      ["tomorrow?", 2.48]
+      ["Long", 0.48],
+      ["day.", 0.8],
+      ["Can", 1.76],
+      ["we", 2],
+      ["pick", 2.16],
+      ["this", 2.32],
+      ["up", 2.48],
+      ["tomorrow?", 2.64]
     ]
   },
   "/audio/emotions/angry-en.mp3": {
-    "duration": 2.8,
+    "duration": 3.04,
     "words": [
       ["This", 0.08],
-      ["is", 0.24],
-      ["the", 0.4],
-      ["third", 0.64],
-      ["time", 1.12],
-      ["my", 1.36],
-      ["order’s", 1.56],
-      ["been", 1.88],
-      ["wrong.", 2.24]
+      ["is", 0.32],
+      ["the", 0.48],
+      ["third", 0.72],
+      ["time", 1.2],
+      ["my", 1.44],
+      ["order’s", 1.6],
+      ["been", 2.04],
+      ["wrong.", 2.44]
     ]
   },
   "/audio/emotions/angry-fr.mp3": {
@@ -101,8 +101,8 @@
       ["que", 1.16],
       ["ma", 1.28],
       ["commande", 1.44],
-      ["est", 1.76],
-      ["fausse.", 1.96]
+      ["est", 1.787],
+      ["fausse.", 1.92]
     ]
   },
   "/audio/emotions/affectionate-es.mp3": {
