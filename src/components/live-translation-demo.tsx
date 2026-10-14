@@ -206,7 +206,7 @@ export function LiveTranslationDemo({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "relative flex flex-col items-center justify-center gap-10 overflow-hidden rounded-2xl border border-hairline bg-surface bg-[url(/gradient-blur.webp)] bg-cover bg-center px-4 py-10",
+        "relative flex flex-col items-center justify-center gap-6 overflow-hidden rounded-2xl border border-hairline bg-surface bg-[url(/gradient-blur.webp)] bg-cover bg-center px-4 py-6 md:gap-10 md:py-10",
         className
       )}
     >
@@ -215,12 +215,12 @@ export function LiveTranslationDemo({ className }: { className?: string }) {
         transition={CARD_RESIZE}
         // Inline radius lets motion correct it while the card scales.
         style={{ borderRadius: 16 }}
-        className="flex w-fit max-w-[min(720px,100%)] items-center gap-3 border border-hairline bg-[#fdfcfc] p-6 shadow-[0_1px_0.5px_rgba(0,0,0,0.04),0_2px_2px_rgba(0,0,0,0.04)]"
+        className="flex w-full max-w-[min(720px,100%)] flex-col items-start gap-5 border border-hairline bg-[#fdfcfc] p-5 shadow-[0_1px_0.5px_rgba(0,0,0,0.04),0_2px_2px_rgba(0,0,0,0.04)] md:w-fit md:flex-row md:items-center md:gap-3 md:p-6"
       >
         <motion.div
           layout="position"
           transition={CARD_RESIZE}
-          className="grid min-w-0 flex-1 grid-cols-[auto_1fr] items-baseline gap-x-2"
+          className="grid w-full min-w-0 flex-1 grid-cols-[auto_1fr] items-baseline gap-x-2 gap-y-2 md:gap-y-0"
         >
           <TranscriptLine
             key={`${clipIndex}-source`}
@@ -247,27 +247,37 @@ export function LiveTranslationDemo({ className }: { className?: string }) {
         </motion.div>
       </motion.div>
 
-      <div
-        className="flex items-center gap-1"
-        role="group"
-        aria-label="Emotion"
-      >
-        {CLIPS.map(({ emotion }, i) => (
-          <button
-            key={emotion}
-            type="button"
-            aria-pressed={i === clipIndex}
-            onClick={() => play(i)}
-            className={cn(
-              "flex h-11 items-center rounded-full px-[18px] text-label tracking-[0.01em] transition-[background-color,color,box-shadow] outline-none focus-visible:ring-2 focus-visible:ring-ring",
-              i === clipIndex
-                ? "bg-pill text-foreground shadow-[0_0_0_0.5px_rgba(0,0,0,0.12),0_1px_1px_rgba(0,0,0,0.04),0_2px_4px_rgba(0,0,0,0.04)]"
-                : "text-white/70 hover:bg-white/10 hover:text-white"
-            )}
-          >
-            {emotion}
-          </button>
-        ))}
+      {/* Bleeds to the card edges so pills scroll under the faded edges. */}
+      <div className="-mx-4 no-scrollbar self-stretch overflow-x-auto mask-x-from-[calc(100%-1rem)] px-4 md:mask-none">
+        <div
+          className="mx-auto flex w-max items-center gap-1"
+          role="group"
+          aria-label="Emotion"
+        >
+          {CLIPS.map(({ emotion }, i) => (
+            <button
+              key={emotion}
+              type="button"
+              aria-pressed={i === clipIndex}
+              onClick={(e) => {
+                e.currentTarget.scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest",
+                  inline: "nearest",
+                })
+                play(i)
+              }}
+              className={cn(
+                "flex h-11 shrink-0 items-center rounded-full px-[18px] text-label tracking-[0.01em] transition-[background-color,color,box-shadow] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
+                i === clipIndex
+                  ? "bg-pill text-foreground shadow-[0_0_0_0.5px_rgba(0,0,0,0.12),0_1px_1px_rgba(0,0,0,0.04),0_2px_4px_rgba(0,0,0,0.04)]"
+                  : "text-white/70 hover:bg-white/10 hover:text-white"
+              )}
+            >
+              {emotion}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   )

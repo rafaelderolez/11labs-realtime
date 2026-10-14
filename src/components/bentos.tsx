@@ -17,20 +17,20 @@ export function Bentos() {
   return (
     <section id="demo" className="page-grid scroll-mt-10 pb-30">
       <div className="col-edge grid grid-cols-subgrid">
-        <LiveTranslationDemo className="col-span-12 h-[480px] md:col-span-8" />
-        <TranslationSettings
-          settings={settings}
-          onSettingsChange={change}
-          className="col-span-12 max-md:mt-gutter md:col-span-4 md:col-start-9 md:row-start-1"
-        />
+        <LiveTranslationDemo className="col-span-12 h-[360px] md:col-span-8 md:row-start-1 md:h-[480px]" />
         <Caption
-          className="col-span-12 md:col-span-6 md:row-start-2"
+          className="col-span-12 max-md:pb-16 md:col-span-6 md:col-start-1 md:row-start-2"
           title="Choose any Voice"
         >
           Pick from our library of expressive, human-like voices, or use your
           own Instant or Professional Voice Clone. The voice stays consistent
           for the whole conversation.
         </Caption>
+        <TranslationSettings
+          settings={settings}
+          onSettingsChange={change}
+          className="col-span-12 md:col-span-4 md:col-start-9 md:row-start-1"
+        />
         <Caption
           className="col-span-12 md:col-span-4 md:col-start-9 md:row-start-2"
           title="Built for your use case"
