@@ -37,7 +37,7 @@ export function TranslationSettings({
     <section
       aria-labelledby={`${id}-title`}
       className={cn(
-        "relative isolate flex items-center justify-center overflow-hidden rounded-2xl border border-hairline p-6",
+        "@container relative isolate flex items-center justify-center overflow-hidden rounded-2xl border border-hairline p-6",
         className
       )}
     >
@@ -53,8 +53,8 @@ export function TranslationSettings({
         Translation settings for this clip
       </h3>
 
-      {/* Built at product size and zoomed down, like the reference screenshot. */}
-      <div className="flex w-100 shrink-0 [zoom:0.7] flex-col gap-4 rounded-xl border border-surface-faint bg-card p-4 shadow-panel">
+      {/* Built at product size and zoomed down, like the reference screenshot; smaller still in narrow containers. */}
+      <div className="flex w-100 shrink-0 [zoom:0.7] flex-col gap-4 rounded-xl border border-surface-faint bg-card p-4 shadow-panel @max-[17.5rem]:[zoom:0.55]">
         <Field label="Input language">
           <Globe className="size-4 shrink-0" strokeWidth={1.75} />
           <span className="flex flex-1 justify-between gap-2">
