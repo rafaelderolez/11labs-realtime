@@ -4,7 +4,12 @@ import { useId } from "react"
 import { LanguageFlag } from "@/components/ui/language-picker"
 import { VoiceSwatch } from "@/components/ui/voice-picker"
 import { EMOTION_CLIPS } from "@/lib/emotion-script"
-import { VOICES, languageName, originalVoiceId } from "@/lib/translate-settings"
+import {
+  VOICES,
+  languageName,
+  originalVoiceId,
+  voiceLabel,
+} from "@/lib/translate-settings"
 import { cn } from "@/lib/utils"
 
 const EAGERNESS = ["Low", "Medium", "High"]
@@ -69,9 +74,7 @@ export function TranslationSettings({
 
         <Field label="Voice">
           <VoiceSwatch id={voiceId} className="size-5" />
-          <span className="truncate">
-            Original voice{voice ? ` · ${voice.name}` : ""}
-          </span>
+          {voice && <span className="truncate">{voiceLabel(voice)}</span>}
         </Field>
 
         <dl className="flex flex-col gap-1.5">

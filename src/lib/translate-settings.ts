@@ -16,3 +16,8 @@ export function languageName(code: string) {
 export function originalVoiceId(clipIndex: number) {
   return EMOTION_CLIPS[clipIndex].voiceId ?? EMOTION_VOICE_ID
 }
+
+/** The voice's library name, e.g. "Brian - Deep, Resonant and Comforting". */
+export function voiceLabel(voice: Voice) {
+  return voice.description ? `${voice.name} - ${voice.description}` : voice.name
+}

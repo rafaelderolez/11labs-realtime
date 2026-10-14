@@ -69,7 +69,7 @@ export const EMOTION_CLIPS: EmotionClip[] = [
     // A Spanish mother-in-law to Thomas, in her own voice both times.
     emotion: "Loving",
     tag: "affectionate",
-    // Rosa – Neutral, Calm and Genuine (peninsular Spanish, shared library).
+    // Rosa – Spanish Calm Old Woman (peninsular Spanish, shared library).
     voiceId: "ypIbR1aohyRSdDv25DPr",
     source: {
       lang: "es",
