@@ -23,7 +23,7 @@
   --grid-outside: 20px;
   --grid-gutter: 8px;
   --grid-content: 8px;
-  --grid-line: oklch(0 0 0 / 5%);
+  --grid-line: color-mix(in srgb, var(--background), black 5%);
 
   @media (width >= 40rem) {
     --grid-outside: 40px;
@@ -38,7 +38,7 @@
 }
 
 .dark {
-  --grid-line: oklch(1 0 0 / 10%);
+  --grid-line: color-mix(in srgb, var(--background), white 10%);
 }
 
 @theme inline {
