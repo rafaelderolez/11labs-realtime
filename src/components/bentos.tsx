@@ -5,7 +5,6 @@ import { TranslationSettings } from "@/components/translation-settings"
 import { cn } from "@/lib/utils"
 
 export function Bentos() {
-  // The settings show whichever clip the demo is playing.
   const [clipIndex, setClipIndex] = useState(0)
 
   return (

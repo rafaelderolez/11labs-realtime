@@ -21,7 +21,6 @@ const LAG = 0.7
 /** Silence between turns, and before the call restarts (s). */
 const GAP = 1.1
 const RESTART = 3
-/** Volume the speaker drops to once their translation comes in. */
 const DUCKED_GAIN = 0.25
 const DUCK_DURATION = 0.4
 /** Each voice sits on its speaker's side of the stereo field. */
@@ -39,7 +38,6 @@ type Line = {
   words: Word[]
   start: number
   duration: number
-  /** The side of the call this line is shown and heard on. */
   side: Side
   /** Whether it's the speaker's own words, or the translation they caused. */
   own: boolean
@@ -96,7 +94,6 @@ function schedule(audio: Audio, from: number) {
       if (offset >= line.duration) continue
 
       const gain = ctx.createGain()
-      // The speaker ducks under their own translation.
       if (line === said) {
         gain.gain.setValueAtTime(1, heardAt)
         gain.gain.linearRampToValueAtTime(DUCKED_GAIN, heardAt + DUCK_DURATION)

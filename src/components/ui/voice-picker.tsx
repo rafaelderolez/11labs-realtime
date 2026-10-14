@@ -14,7 +14,6 @@ function orbColors(id: string): [string, string] {
   return [`hsl(${hue}, 70%, 85%)`, `hsl(${(hue + 60) % 360}, 50%, 72%)`]
 }
 
-/** A soft gradient swatch in the voice's orb colors. */
 function VoiceSwatch({ id, className }: { id: string; className?: string }) {
   const [from, to] = orbColors(id)
   return (

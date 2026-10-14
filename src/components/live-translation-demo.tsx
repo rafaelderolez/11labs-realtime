@@ -35,7 +35,6 @@ const CLIPS: Clip[] = EMOTION_CLIPS.map((clip) => {
 
 /** How long after the source the translation starts (s). */
 const TRANSLATION_DELAY = 1
-/** Volume the source voice ducks to once the translation comes in. */
 const SOURCE_DUCKED_GAIN = 0.25
 const DUCK_DURATION = 0.4
 /** Fade-out when switching clips mid-playback (s). */
@@ -101,7 +100,6 @@ function useLiveTranslation(onClipChange?: (index: number) => void) {
     frameRef.current = requestAnimationFrame(tick)
   }
 
-  /** Stops the current playback, fading it out if it's audible. */
   function stopPlayback(ctx: AudioContext, fade: boolean) {
     const playback = playbackRef.current
     if (!playback) return 0

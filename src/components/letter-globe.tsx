@@ -38,7 +38,6 @@ type Mood = {
   weight: number
 }
 
-/** Where the globe rests while nothing plays. */
 const IDLE: Mood = {
   spin: 0.2,
   tilt: 0.25,
@@ -117,7 +116,6 @@ function burst(t: number, at: number) {
     const p = 1 - (1 - u / BURST_RISE) ** 3
     return -INHALE_DEPTH + (BURST_PEAK + INHALE_DEPTH) * p
   }
-  // Damped wobble back to rest.
   const d = u - BURST_RISE
   return BURST_PEAK * Math.exp(-d * 5) * Math.cos(d * 12)
 }
@@ -205,14 +203,12 @@ const BALLOON_LIFT = 0.36
 /** Distance from the centre to the bottom of the knot (× radius). */
 const BALLOON_KNOT = 1.33
 
-/** Round on top, tapering to a knot at the bottom. */
 const BALLOON: Outline = polarOutline((a) => {
   const down = Math.max(0, Math.sin(a))
   const knot = Math.exp(-(((a - Math.PI / 2) / 0.07) ** 2))
   return 0.95 + 0.28 * down ** 3 + 0.1 * knot
 })
 
-/** Outline radius in the direction of (x, y), interpolated between bins. */
 function outlineRadius(outline: Outline, x: number, y: number) {
   const a = binOf(x, y)
   const i = Math.floor(a) % OUTLINE_BINS
@@ -307,7 +303,6 @@ export function LetterGlobe({
       ctx!.font = `${Math.round(mood.weight / 50) * 50} ${fontSize}px "Inter Variable", sans-serif`
 
       for (const l of letters) {
-        // Spin around Y, then tilt around X.
         const x1 = l.x * cosA + l.z * sinA
         const z1 = -l.x * sinA + l.z * cosA
         const y = l.y * cosT - z1 * sinT
@@ -353,7 +348,6 @@ export function LetterGlobe({
       }
 
       if (mood.balloon > 0.01) {
-        // String hangs from the knot and swings at its loose end.
         const x0 = cx
         const y0 = cy + R * scale * BALLOON_KNOT * BALLOON_SIZE
         const length = R * 0.55

@@ -13,7 +13,6 @@ const loadMotionFeatures = () =>
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
-      {/* Under reduced motion, skips transform and layout animations. */}
       <MotionConfig reducedMotion="user">
         <LazyMotion features={loadMotionFeatures} strict>
           <App />
