@@ -301,7 +301,7 @@ export function LiveTranslationDemo({
                 play(i)
               }}
               className={cn(
-                "flex h-11 shrink-0 items-center rounded-full px-4.5 text-label transition-[background-color,color,box-shadow] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
+                "flex h-11 shrink-0 items-center rounded-full px-4.5 text-label transition-[background-color,color,box-shadow]",
                 i === clipIndex
                   ? "bg-pill text-foreground shadow-pill"
                   : "text-muted-foreground hover:bg-pill-hover hover:text-foreground"
@@ -372,7 +372,7 @@ function PlayButton({
       type="button"
       onClick={onClick}
       aria-label={playing ? "Pause" : "Play"}
-      className="relative grid size-13.5 shrink-0 place-items-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      className="relative grid size-13.5 shrink-0 place-items-center rounded-full"
     >
       <svg
         className="absolute inset-0 -rotate-90"

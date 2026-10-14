@@ -294,7 +294,7 @@ function ListenButton({
         onToggle(buffers)
       }}
       aria-pressed={sound}
-      className="absolute top-4 left-1/2 z-20 flex h-9 -translate-x-1/2 items-center gap-2 rounded-full bg-pill px-3.5 text-label-sm text-foreground shadow-pill-float transition-colors outline-none hover:bg-pill-hover focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      className="absolute top-4 left-1/2 z-20 flex h-9 -translate-x-1/2 items-center gap-2 rounded-full bg-pill px-3.5 text-label-sm text-foreground shadow-pill-float transition-colors hover:bg-pill-hover"
     >
       {pressed ? null : (
         <span
