@@ -16,7 +16,7 @@ export function Bentos() {
           className="col-span-12 h-90 md:col-span-8 md:row-start-1 md:h-120"
         />
         <Caption
-          className="col-span-12 max-md:pb-16 md:col-span-6 md:col-start-1 md:row-start-2"
+          className="col-span-12 text-pretty max-md:pb-16 md:col-span-6 md:col-start-1 md:row-start-2"
           title="Choose any Voice"
         >
           Pick from our library of expressive, human-like voices, or use your
