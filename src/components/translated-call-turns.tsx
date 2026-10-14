@@ -22,6 +22,11 @@ const DUCKED_GAIN = 0.25
 const DUCK_DURATION = 0.4
 /** Each voice sits on its speaker's side of the stereo field. */
 const PAN = 0.6
+/**
+ * How early a turn's card mounts, so the thread has nearly finished moving
+ * up to make room by the time the card pops in with the first word (s).
+ */
+const ROOM = 0.3
 
 type Word = [text: string, start: number]
 
@@ -223,10 +228,11 @@ export function TranslatedCallTurns({ className }: { className?: string }) {
   // Reduced motion shows the finished call.
   const time = reduceMotion ? SCHEDULE.duration - RESTART : call.time
 
-  // How many words of each line are out, or -1 before it starts. The turns
-  // only re-render when this changes, not on every frame of the clock.
+  // How many words of each line are out, or -1 before it starts. A turn's
+  // card mounts ROOM early, empty, to push the thread up. The turns only
+  // re-render when this changes, not on every frame of the clock.
   const spoken = LINES.map((line) =>
-    time < line.start
+    time < line.start - (line.own ? ROOM : 0)
       ? -1
       : line.words.filter(([, at]) => time >= line.start + at).length
   )
@@ -371,9 +377,10 @@ function TurnCard({
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.2, ease: EASE_OUT } }}
+      // Held back until the cards above have moved out of its way.
       transition={{
-        scale: POP,
-        opacity: { duration: 0.2, ease: EASE_OUT },
+        scale: { ...POP, delay: ROOM },
+        opacity: { duration: 0.2, ease: EASE_OUT, delay: ROOM },
         layout: RESIZE,
       }}
       // Inline radius lets motion correct it while the card scales.
