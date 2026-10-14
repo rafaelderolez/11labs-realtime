@@ -96,7 +96,10 @@ const BURSTS: Record<string, number> = {
   Angry: 0.64,
 }
 
-const INHALE = 0.5
+/** Starts drawing breath this long before the burst, i.e. as the clip starts. */
+const INHALE = 0.6
+/** Holds the full breath this long before letting go. */
+const INHALE_HOLD = 0.1
 const INHALE_DEPTH = 0.1
 const BURST_RISE = 0.07
 const BURST_PEAK = 0.22
@@ -106,9 +109,9 @@ function burst(t: number, at: number) {
   const u = t - at
   if (u < -INHALE) return 0
   if (u < 0) {
-    // Eases in, so the squeeze tightens right up to the word.
-    const p = (u + INHALE) / INHALE
-    return -INHALE_DEPTH * p * p
+    // A slow, even draw that settles into a held breath before the word.
+    const p = Math.min((u + INHALE) / (INHALE - INHALE_HOLD), 1)
+    return -INHALE_DEPTH * (0.5 - 0.5 * Math.cos(Math.PI * p))
   }
   if (u < BURST_RISE) {
     const p = 1 - (1 - u / BURST_RISE) ** 3
