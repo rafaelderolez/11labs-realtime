@@ -6,7 +6,7 @@
  * Tailwind's default scale (`text-sm`, `text-xl`, ...) is removed, so these
  * are the only sizes that exist.
  *
- *   display    48 / 52   page headlines
+ *   display    36–48     page headlines, fluid from 320 to 640px wide
  *   heading    28 / 32   section headlines
  *   title      20 / 27   section leads, wordmark
  *   body       15 / 22   running text, card titles
@@ -32,7 +32,7 @@
 @theme {
   --text-*: initial;
 
-  --text-display: 3rem;
+  --text-display: clamp(2.25rem, 1.5rem + 3.75vw, 3rem);
   --text-display--line-height: calc(52 / 48);
   --text-display--letter-spacing: -0.02em;
 
