@@ -517,10 +517,14 @@ void main() {
     color.rgb = 1.0 - (1.0 - color.rgb) * (1.0 - ringColor * totalRingAlpha);
 
     // Define colours to ramp against greyscale (could increase the amount of colours in the ramp)
-    vec3 color1 = vec3(0.0, 0.0, 0.0); // Black
+    // A deep shade of the voice colour rather than black, so the shadows sit
+    // softly on the grey page instead of punching holes in it.
+    vec3 color1 = uColor1 * 0.3;
     vec3 color2 = uColor1; // Darker Color
     vec3 color3 = uColor2; // Lighter Color
-    vec3 color4 = vec3(1.0, 1.0, 1.0); // White
+    // In light mode the highlights get the same treatment: a pale tint of the
+    // voice colour rather than pure white.
+    vec3 color4 = mix(mix(uColor2, vec3(1.0), 0.7), vec3(1.0), uInverted);
 
     // Convert grayscale color to the color ramp
     float luminance = mix(color.r, 1.0 - color.r, uInverted);
