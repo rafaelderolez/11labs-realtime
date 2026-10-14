@@ -214,8 +214,8 @@ export function TranslationSettings({
           id={`${id}-eagerness-hint`}
           className="text-body-sm text-muted-foreground"
         >
-          How soon translation starts while the speaker is still talking. High
-          starts sooner, low waits for the whole sentence.
+          Translation starts while speaking. High means sooner, low waits longer
+          for quality.
         </p>
         <RadioGroup
           value={settings.eagerness}
