@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react"
 import { Pause, Play } from "lucide-react"
-import { motion } from "motion/react"
+import { motion, useReducedMotion } from "motion/react"
 
+import { LetterGlobe } from "@/components/letter-globe"
 import { EMOTION_CLIPS, emotionClipPath } from "@/lib/emotion-script"
 import TIMINGS from "@/lib/emotion-timings.json"
 import { cn } from "@/lib/utils"
@@ -202,53 +203,65 @@ export function LiveTranslationDemo({ className }: { className?: string }) {
     useLiveTranslation()
   const showAll = status === "idle" || status === "ended"
   const progress = duration > 0 ? Math.min(elapsed / duration, 1) : 0
+  const reduceMotion = useReducedMotion()
 
   return (
     <div
       className={cn(
-        "relative flex flex-col items-center justify-center gap-6 overflow-hidden rounded-2xl border border-hairline bg-surface bg-[url(/gradient-blur.webp)] bg-cover bg-center px-4 py-6 md:gap-10 md:py-10",
+        "relative flex flex-col items-center justify-center gap-6 overflow-hidden rounded-2xl border border-hairline bg-surface px-4 py-6 md:gap-10 md:py-10",
         className
       )}
     >
-      <motion.div
-        layout
-        transition={CARD_RESIZE}
-        // Inline radius lets motion correct it while the card scales.
-        style={{ borderRadius: 16 }}
-        className="flex w-full max-w-[min(720px,100%)] flex-col items-start gap-5 border border-hairline bg-[#fdfcfc] p-5 shadow-[0_1px_0.5px_rgba(0,0,0,0.04),0_2px_2px_rgba(0,0,0,0.04)] md:w-fit md:flex-row md:items-center md:gap-3 md:p-6"
-      >
+      <div className="relative flex w-full flex-1 items-center justify-center">
+        {!reduceMotion && (
+          <LetterGlobe
+            emotion={clip.emotion}
+            active={status === "playing"}
+            clipTime={elapsed}
+            className="absolute top-1/2 left-1/2 h-[300px] w-[420px] -translate-1/2 md:h-[400px] md:w-[600px]"
+          />
+        )}
         <motion.div
-          layout="position"
+          layout
           transition={CARD_RESIZE}
-          className="grid w-full min-w-0 flex-1 grid-cols-[auto_1fr] items-baseline gap-x-2 gap-y-2 md:gap-y-0"
+          // Inline radius lets motion correct it while the card scales.
+          style={{ borderRadius: 16 }}
+          className="relative flex w-full max-w-[min(720px,100%)] flex-col items-start gap-5 border border-hairline bg-[#fdfcfc] p-5 shadow-[0_1px_0.5px_rgba(0,0,0,0.04),0_2px_2px_rgba(0,0,0,0.04)] md:w-fit md:flex-row md:items-center md:gap-3 md:p-6 dark:bg-pill"
         >
-          <TranscriptLine
-            key={`${clipIndex}-source`}
-            line={clip.source}
-            offset={0}
-            elapsed={elapsed}
-            showAll={showAll}
-            className="text-[#a59f97]"
-          />
-          <TranscriptLine
-            key={`${clipIndex}-translation`}
-            line={clip.translation}
-            offset={TRANSLATION_DELAY}
-            elapsed={elapsed}
-            showAll={showAll}
-          />
+          <motion.div
+            layout="position"
+            transition={CARD_RESIZE}
+            className="grid w-full min-w-0 flex-1 grid-cols-[auto_1fr] items-baseline gap-x-2 gap-y-2 md:gap-y-0"
+          >
+            <TranscriptLine
+              key={`${clipIndex}-source`}
+              line={clip.source}
+              offset={0}
+              elapsed={elapsed}
+              showAll={showAll}
+              className="text-[#a59f97]"
+            />
+            <TranscriptLine
+              key={`${clipIndex}-translation`}
+              line={clip.translation}
+              offset={TRANSLATION_DELAY}
+              elapsed={elapsed}
+              showAll={showAll}
+            />
+          </motion.div>
+          <motion.div layout="position" transition={CARD_RESIZE}>
+            <PlayButton
+              playing={status === "playing"}
+              progress={progress}
+              onClick={toggle}
+            />
+          </motion.div>
         </motion.div>
-        <motion.div layout="position" transition={CARD_RESIZE}>
-          <PlayButton
-            playing={status === "playing"}
-            progress={progress}
-            onClick={toggle}
-          />
-        </motion.div>
-      </motion.div>
+      </div>
 
-      {/* Bleeds to the card edges so pills scroll under the faded edges. */}
-      <div className="-mx-4 no-scrollbar self-stretch overflow-x-auto mask-x-from-[calc(100%-1rem)] px-4 md:mask-none">
+      {/* Bleeds to the card edges so pills scroll under the faded edges. The
+          vertical padding stops overflow from clipping the pill shadows. */}
+      <div className="relative -mx-4 -my-2 no-scrollbar self-stretch overflow-x-auto mask-x-from-[calc(100%-1rem)] px-4 py-2 md:mask-none">
         <div
           className="mx-auto flex w-max items-center gap-1"
           role="group"
@@ -271,7 +284,7 @@ export function LiveTranslationDemo({ className }: { className?: string }) {
                 "flex h-11 shrink-0 items-center rounded-full px-[18px] text-label tracking-[0.01em] transition-[background-color,color,box-shadow] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
                 i === clipIndex
                   ? "bg-pill text-foreground shadow-[0_0_0_0.5px_rgba(0,0,0,0.12),0_1px_1px_rgba(0,0,0,0.04),0_2px_4px_rgba(0,0,0,0.04)]"
-                  : "text-white/70 hover:bg-white/10 hover:text-white"
+                  : "text-muted-foreground hover:bg-pill-hover hover:text-foreground"
               )}
             >
               {emotion}
@@ -362,7 +375,7 @@ function PlayButton({
           )}
         />
       </svg>
-      <span className="grid size-11 place-items-center rounded-full bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_1px_2px_rgba(0,0,0,0.04),0_2px_4px_rgba(0,0,0,0.04)] transition-transform active:scale-95">
+      <span className="grid size-11 place-items-center rounded-full bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_1px_2px_rgba(0,0,0,0.04),0_2px_4px_rgba(0,0,0,0.04)] transition-transform active:scale-95 dark:bg-pill-hover dark:shadow-[0_0_0_1px_var(--hairline),0_1px_2px_rgba(0,0,0,0.2)]">
         <Icon className="size-4 fill-current" strokeWidth={0} />
       </span>
     </button>
