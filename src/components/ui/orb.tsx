@@ -23,6 +23,8 @@ type OrbProps = {
   outputVolumeRef?: React.RefObject<number>
   getInputVolume?: () => number
   getOutputVolume?: () => number
+  /** Holds a single still frame, for reduced motion. */
+  paused?: boolean
   className?: string
 }
 
@@ -39,12 +41,15 @@ export function Orb({
   outputVolumeRef,
   getInputVolume,
   getOutputVolume,
+  paused = false,
   className,
 }: OrbProps) {
   return (
     <div className={className ?? "relative h-full w-full"}>
       <Canvas
         resize={{ debounce: resizeDebounce }}
+        // Paused, it only draws when something changes.
+        frameloop={paused ? "demand" : "always"}
         gl={{
           alpha: true,
           antialias: true,
@@ -63,6 +68,7 @@ export function Orb({
           outputVolumeRef={outputVolumeRef}
           getInputVolume={getInputVolume}
           getOutputVolume={getOutputVolume}
+          paused={paused}
         />
       </Canvas>
     </div>
@@ -81,6 +87,7 @@ function Scene({
   outputVolumeRef,
   getInputVolume,
   getOutputVolume,
+  paused,
 }: {
   colors: [string, string]
   colorsRef?: React.RefObject<[string, string]>
@@ -93,8 +100,10 @@ function Scene({
   outputVolumeRef?: React.RefObject<number>
   getInputVolume?: () => number
   getOutputVolume?: () => number
+  paused: boolean
 }) {
-  const { gl } = useThree()
+  const { gl, invalidate } = useThree()
+  const pausedRef = useRef(paused)
   const circleRef =
     useRef<THREE.Mesh<THREE.CircleGeometry, THREE.ShaderMaterial>>(null)
   const initialColorsRef = useRef<[string, string]>(colors)
@@ -148,10 +157,16 @@ function Scene({
   }, [colors])
 
   useEffect(() => {
+    pausedRef.current = paused
+    invalidate()
+  }, [paused, colors, invalidate])
+
+  useEffect(() => {
     const apply = () => {
       if (!circleRef.current) return
       const isDark = document.documentElement.classList.contains("dark")
       circleRef.current.material.uniforms.uInverted.value = isDark ? 1 : 0
+      invalidate()
     }
 
     apply()
@@ -162,9 +177,12 @@ function Scene({
       attributeFilter: ["class"],
     })
     return () => observer.disconnect()
-  }, [])
+  }, [invalidate])
 
-  useFrame((_, delta: number) => {
+  useFrame((_, frameDelta: number) => {
+    // Paused, time stands still and everything snaps to where it's heading.
+    const still = pausedRef.current
+    const delta = still ? 0 : frameDelta
     const mat = circleRef.current?.material
     if (!mat) return
     const live = colorsRef?.current
@@ -175,7 +193,9 @@ function Scene({
     const u = mat.uniforms
     u.uTime.value += delta * 0.5
 
-    if (u.uOpacity.value < 1) {
+    if (still) {
+      u.uOpacity.value = 1
+    } else if (u.uOpacity.value < 1) {
       u.uOpacity.value = Math.min(1, u.uOpacity.value + delta * 2)
     }
 
@@ -207,8 +227,8 @@ function Scene({
       }
     }
 
-    curInRef.current += (targetIn - curInRef.current) * 0.2
-    curOutRef.current += (targetOut - curOutRef.current) * 0.2
+    curInRef.current += (targetIn - curInRef.current) * (still ? 1 : 0.2)
+    curOutRef.current += (targetOut - curOutRef.current) * (still ? 1 : 0.2)
 
     const targetSpeed = 0.1 + (1 - Math.pow(curOutRef.current - 1, 2)) * 0.9
     animSpeedRef.current += (targetSpeed - animSpeedRef.current) * 0.12
@@ -216,8 +236,8 @@ function Scene({
     u.uAnimation.value += delta * animSpeedRef.current
     u.uInputVolume.value = curInRef.current
     u.uOutputVolume.value = curOutRef.current
-    u.uColor1.value.lerp(targetColor1Ref.current, 0.08)
-    u.uColor2.value.lerp(targetColor2Ref.current, 0.08)
+    u.uColor1.value.lerp(targetColor1Ref.current, still ? 1 : 0.08)
+    u.uColor2.value.lerp(targetColor2Ref.current, still ? 1 : 0.08)
   })
 
   useEffect(() => {

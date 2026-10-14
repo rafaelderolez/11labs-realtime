@@ -124,9 +124,12 @@ async function loadBuffers() {
  * A looping clock for the call. Silent, it runs on frame time; with sound on,
  * it follows the audio context so the words stay locked to the voices.
  */
-function useCall(running: boolean) {
+function useCall(inView: boolean, reduceMotion: boolean | null) {
   const [time, setTime] = useState(0)
   const [sound, setSound] = useState(false)
+  // Reduced motion holds the visuals still, so the clock only runs to keep
+  // the audio looping.
+  const running = inView && (!reduceMotion || sound)
   const [buffers, setBuffers] = useState<Audio["buffers"] | null>(null)
   const timeRef = useRef(0)
   const audioRef = useRef<Audio | null>(null)
@@ -213,7 +216,7 @@ export function TranslatedCall({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { amount: 0.4 })
   const reduceMotion = useReducedMotion()
-  const call = useCall(inView && !reduceMotion)
+  const call = useCall(inView, reduceMotion)
   // Light sweeps round Listen until it's been pressed once.
   const [pressed, setPressed] = useState(false)
   // Reduced motion shows the finished call.
@@ -245,14 +248,14 @@ export function TranslatedCall({ className }: { className?: string }) {
         className
       )}
     >
-      <Orb active={speaking} voice={voice} />
+      <Orb active={speaking} voice={voice} paused={!!reduceMotion} />
 
       {(["left", "right"] as const).map((side) => (
         <Column key={side} side={side} spoken={spoken} />
       ))}
 
       {/* Only offered once every line has loaded, so Listen always plays. */}
-      {reduceMotion || !call.ready ? null : (
+      {call.ready ? (
         <motion.button
           type="button"
           initial={{ opacity: 0 }}
@@ -269,7 +272,7 @@ export function TranslatedCall({ className }: { className?: string }) {
             <span
               aria-hidden
               // Straddles the edge, so it reads against the page as well.
-              className="border-sweep absolute -inset-px rounded-full"
+              className="border-sweep absolute -inset-px rounded-full motion-reduce:hidden"
             />
           )}
           {call.sound ? (
@@ -279,7 +282,7 @@ export function TranslatedCall({ className }: { className?: string }) {
           )}
           {call.sound ? "Mute" : "Listen"}
         </motion.button>
-      )}
+      ) : null}
 
       <ol className="sr-only">
         {CALL.map((turn) => (
@@ -429,7 +432,15 @@ const VOICE_ACCENT: Record<Side, string> = {
   right: "#6D8FD6",
 }
 
-function Orb({ active, voice }: { active: boolean; voice: Side }) {
+function Orb({
+  active,
+  voice,
+  paused,
+}: {
+  active: boolean
+  voice: Side
+  paused: boolean
+}) {
   return (
     <div
       aria-hidden
@@ -440,6 +451,7 @@ function Orb({ active, voice }: { active: boolean; voice: Side }) {
           agentState={active ? "talking" : null}
           colors={ORB_COLORS[voice]}
           seed={11}
+          paused={paused}
         />
       </Suspense>
     </div>
