@@ -414,7 +414,7 @@ function TurnCard({
         <LanguageFlag code={SPEAKERS[by].lang} className="size-3.5" />
         <div className="grid min-w-0">
           <p className="invisible h-0 truncate">{text(saidLine.words)}</p>
-          <p className="truncate text-label-xs text-foreground/45">
+          <p className="truncate text-label-xs text-tertiary-foreground">
             <Words words={saidLine.words} count={said} />
           </p>
         </div>

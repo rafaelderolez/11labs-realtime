@@ -123,12 +123,12 @@
   --card-foreground: oklch(0.147 0.004 49.25);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.147 0.004 49.25);
-  --primary: oklch(0.216 0.006 56.043);
-  --primary-foreground: oklch(0.985 0.001 106.423);
+  --primary: #000;
+  --primary-foreground: var(--surface-faint);
   --secondary: oklch(0.97 0.001 106.424);
   --secondary-foreground: oklch(0.216 0.006 56.043);
   --muted: oklch(0.97 0.001 106.424);
-  --muted-foreground: oklch(0.553 0.013 58.071);
+  --muted-foreground: #666;
   --accent: oklch(0.97 0.001 106.424);
   --accent-foreground: oklch(0.216 0.006 56.043);
   --destructive: oklch(0.577 0.245 27.325);
@@ -162,7 +162,7 @@
   );
   /* Quieter than muted text: a speaker's original words. */
   --faint-foreground: #a59f97;
-  /* A neutral grey a step below muted: the hero's subline. */
+  /* A neutral grey a step below muted: headline sublines, a speaker's words. */
   --tertiary-foreground: #999;
   --control-shadow:
     0 0 0 1px rgb(0 0 0 / 0.06), 0 1px 2px rgb(0 0 0 / 0.04),
