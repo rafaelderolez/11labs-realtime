@@ -25,7 +25,7 @@ export function Bentos() {
         </Caption>
         <TranslationSettings
           clipIndex={clipIndex}
-          className="col-span-12 md:col-span-4 md:col-start-9 md:row-start-1"
+          className="col-span-12 h-[480px] md:col-span-4 md:col-start-9 md:row-start-1"
         />
         <Caption
           className="col-span-12 md:col-span-4 md:col-start-9 md:row-start-2"

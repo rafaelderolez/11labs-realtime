@@ -32,64 +32,75 @@ export function TranslationSettings({
     <section
       aria-labelledby={`${id}-title`}
       className={cn(
-        "flex flex-col gap-6 rounded-2xl border border-hairline bg-surface p-6",
+        "relative isolate flex items-center justify-center overflow-hidden rounded-2xl border border-hairline p-6",
         className
       )}
     >
+      <img
+        src="/grain-1.jpg"
+        alt=""
+        aria-hidden
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 -z-10 size-full object-cover"
+      />
       <h3 id={`${id}-title`} className="sr-only">
         Translation settings for this clip
       </h3>
 
-      <Field label="Input language">
-        <Globe className="size-4 shrink-0" strokeWidth={1.75} />
-        <span className="flex flex-1 justify-between gap-2">
-          Auto-detect
-          <span className="text-muted-foreground">
-            {languageName(clip.source.lang)}
-          </span>
-        </span>
-      </Field>
-
-      <Field label="Output language">
-        <LanguageFlag code={clip.translation.lang} />
-        {languageName(clip.translation.lang)}
-      </Field>
-
-      <hr className="border-hairline" />
-
-      <Field label="Voice">
-        <VoiceSwatch id={voiceId} className="size-6" />
-        <span className="truncate">
-          Original voice{voice ? ` · ${voice.name}` : ""}
-        </span>
-      </Field>
-
-      <dl className="flex flex-col gap-2">
-        <dt className="text-label-sm text-foreground">Eagerness</dt>
-        <dd className="text-body-sm text-muted-foreground">
-          <span className="sr-only">{DEMO_EAGERNESS}. </span>
-          Translation starts while speaking. High means sooner, low waits longer
-          for quality.
-        </dd>
-        <dd
-          aria-hidden
-          className="mt-2 grid grid-cols-3 gap-1 rounded-xl bg-black/[0.04] p-1 dark:bg-white/[0.04]"
-        >
-          {EAGERNESS.map((level) => (
-            <span
-              key={level}
-              className={cn(
-                "flex h-8 items-center justify-center rounded-lg text-label-sm",
-                level === DEMO_EAGERNESS
-                  ? "bg-pill text-foreground shadow-[0_0_0_0.5px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.06)]"
-                  : "text-muted-foreground"
-              )}
-            >
-              {level}
+      {/* Built at product size and zoomed down, like the reference screenshot. */}
+      <div className="flex w-[400px] shrink-0 [zoom:0.7] flex-col gap-4 rounded-xl border border-hairline bg-surface p-4 shadow-[0_1px_0.5px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.12)]">
+        <Field label="Input language">
+          <Globe className="size-4 shrink-0" strokeWidth={1.75} />
+          <span className="flex flex-1 justify-between gap-2">
+            Auto-detect
+            <span className="text-muted-foreground">
+              {languageName(clip.source.lang)}
             </span>
-          ))}
-        </dd>
-      </dl>
+          </span>
+        </Field>
+
+        <Field label="Output language">
+          <LanguageFlag code={clip.translation.lang} />
+          {languageName(clip.translation.lang)}
+        </Field>
+
+        <hr className="border-hairline" />
+
+        <Field label="Voice">
+          <VoiceSwatch id={voiceId} className="size-5" />
+          <span className="truncate">
+            Original voice{voice ? ` · ${voice.name}` : ""}
+          </span>
+        </Field>
+
+        <dl className="flex flex-col gap-1.5">
+          <dt className="text-label-sm text-foreground">Eagerness</dt>
+          <dd className="text-body-sm text-muted-foreground">
+            <span className="sr-only">{DEMO_EAGERNESS}. </span>
+            Translation starts while speaking. High means sooner, low waits
+            longer for quality.
+          </dd>
+          <dd
+            aria-hidden
+            className="mt-1.5 grid grid-cols-3 gap-1 rounded-lg bg-foreground/[0.04] p-1"
+          >
+            {EAGERNESS.map((level) => (
+              <span
+                key={level}
+                className={cn(
+                  "flex h-7 items-center justify-center rounded-md text-label-sm",
+                  level === DEMO_EAGERNESS
+                    ? "bg-pill text-foreground shadow-[0_0_0_0.5px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.06)]"
+                    : "text-muted-foreground"
+                )}
+              >
+                {level}
+              </span>
+            ))}
+          </dd>
+        </dl>
+      </div>
     </section>
   )
 }
@@ -103,9 +114,9 @@ function Field({
   children: React.ReactNode
 }) {
   return (
-    <dl className="flex flex-col gap-2">
+    <dl className="flex flex-col gap-1.5">
       <dt className="text-label-sm text-foreground">{label}</dt>
-      <dd className="flex h-10 w-full min-w-0 items-center gap-2 rounded-xl border border-hairline bg-pill px-3 text-label-sm shadow-[0_1px_1px_rgba(0,0,0,0.03)]">
+      <dd className="flex h-8 w-full min-w-0 items-center gap-2 rounded-lg border border-hairline bg-pill px-2.5 text-label-sm shadow-[0_1px_1px_rgba(0,0,0,0.03)]">
         {children}
       </dd>
     </dl>
