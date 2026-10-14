@@ -175,9 +175,9 @@
   --surface-subtle: var(--muted);
   --hairline: oklch(1 0 0 / 10%);
   /* Raised above the surface, as white is in light mode. */
-  --pill: oklch(0.335 0.007 34.298);
+  --pill: oklch(0.37 0.007 34.298);
   --pill-hover: color-mix(in oklch, var(--pill), var(--foreground) 5%);
-  --bubble-quiet: oklch(1 0 0 / 4%);
+  --bubble-quiet: oklch(1 0 0 / 3%);
   /* Deepened to read on the light Listen button. */
   --sweep-tail: #4f7be0;
   --sweep-head: #e0558c;
