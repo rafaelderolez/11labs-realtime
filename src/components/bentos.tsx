@@ -2,22 +2,19 @@ import { useState } from "react"
 
 import { LiveTranslationDemo } from "@/components/live-translation-demo"
 import { TranslationSettings } from "@/components/translation-settings"
-import {
-  DEFAULT_SETTINGS,
-  updateSettings,
-  type TranslateSettings,
-} from "@/lib/translate-settings"
 import { cn } from "@/lib/utils"
 
 export function Bentos() {
-  const [settings, setSettings] = useState(DEFAULT_SETTINGS)
-  const change = (update: Partial<TranslateSettings>) =>
-    setSettings((current) => updateSettings(current, update))
+  // The settings show whichever clip the demo is playing.
+  const [clipIndex, setClipIndex] = useState(0)
 
   return (
     <section id="demo" className="page-grid scroll-mt-10 pb-30">
       <div className="col-edge grid grid-cols-subgrid">
-        <LiveTranslationDemo className="col-span-12 h-[360px] md:col-span-8 md:row-start-1 md:h-[480px]" />
+        <LiveTranslationDemo
+          onClipChange={setClipIndex}
+          className="col-span-12 h-[360px] md:col-span-8 md:row-start-1 md:h-[480px]"
+        />
         <Caption
           className="col-span-12 max-md:pb-16 md:col-span-6 md:col-start-1 md:row-start-2"
           title="Choose any Voice"
@@ -27,8 +24,7 @@ export function Bentos() {
           for the whole conversation.
         </Caption>
         <TranslationSettings
-          settings={settings}
-          onSettingsChange={change}
+          clipIndex={clipIndex}
           className="col-span-12 md:col-span-4 md:col-start-9 md:row-start-1"
         />
         <Caption

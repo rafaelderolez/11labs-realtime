@@ -52,7 +52,7 @@ type Playback = {
   duration: number
 }
 
-function useLiveTranslation() {
+function useLiveTranslation(onClipChange?: (index: number) => void) {
   const [clipIndex, setClipIndex] = useState(0)
   const [status, setStatus] = useState<Status>("idle")
   const [elapsed, setElapsed] = useState(0)
@@ -123,6 +123,7 @@ function useLiveTranslation() {
 
     const clip = CLIPS[index]
     setClipIndex(index)
+    onClipChange?.(index)
     setElapsed(0)
     setStatus("playing")
 
@@ -198,9 +199,16 @@ function useLiveTranslation() {
   }
 }
 
-export function LiveTranslationDemo({ className }: { className?: string }) {
+export function LiveTranslationDemo({
+  onClipChange,
+  className,
+}: {
+  /** Called when a different clip starts, so the settings can follow it. */
+  onClipChange?: (index: number) => void
+  className?: string
+}) {
   const { clip, clipIndex, status, elapsed, duration, toggle, play } =
-    useLiveTranslation()
+    useLiveTranslation(onClipChange)
   const showAll = status === "idle" || status === "ended"
   const progress = duration > 0 ? Math.min(elapsed / duration, 1) : 0
   const reduceMotion = useReducedMotion()
