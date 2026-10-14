@@ -1,19 +1,20 @@
 {
   "name": "11labs-realtime",
-  "private": true,
   "version": "0.0.1",
+  "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "oxlint",
-    "format": "oxfmt",
-    "typecheck": "tsc --noEmit",
-    "preview": "vite preview",
     "audio:call": "node --env-file=.env.local scripts/generate-call-audio.ts",
     "audio:emotions": "node --env-file=.env.local scripts/generate-emotion-audio.ts",
+    "build": "tsc -b && vite build",
+    "dev": "vite",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint": "oxlint",
+    "prepare": "simple-git-hooks",
+    "preview": "vite preview",
     "translate:options": "node --env-file=.env.local scripts/generate-translate-options.ts",
-    "format:check": "oxfmt --check"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
@@ -40,9 +41,21 @@
     "@types/react-dom": "^19",
     "@types/three": "^0.186.0",
     "@vitejs/plugin-react": "^6",
+    "lint-staged": "^17.6.0",
     "oxfmt": "^0.73.0",
     "oxlint": "^1.88.0",
+    "simple-git-hooks": "^2.14.0",
     "typescript": "~6.0.2",
     "vite": "^8"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": [
+      "oxlint --fix",
+      "oxfmt --no-error-on-unmatched-pattern"
+    ],
+    "*.{json,jsonc,css,md,html,yaml,yml}": "oxfmt --no-error-on-unmatched-pattern"
   }
 }
