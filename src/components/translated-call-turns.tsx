@@ -1,11 +1,15 @@
 import { Volume2, VolumeX } from "lucide-react"
+import { AnimatePresence, m, useInView, useReducedMotion } from "motion/react"
 import {
-  AnimatePresence,
-  motion,
-  useInView,
-  useReducedMotion,
-} from "motion/react"
-import { Suspense, lazy, memo, useEffect, useRef, useState } from "react"
+  Suspense,
+  lazy,
+  memo,
+  useEffect,
+  useMemo,
+  useRef,
+  use,
+  useState,
+} from "react"
 
 import { LanguageFlag } from "@/components/ui/language-picker"
 import { CALL, SPEAKERS, clipPath, type Side } from "@/lib/call-script"
@@ -110,7 +114,7 @@ function schedule(audio: Audio, from: number) {
 }
 
 /** Fetches and decodes every line up front, so Listen can start at once. */
-async function loadBuffers() {
+async function fetchBuffers() {
   // Decoding needs no sound, so an offline context does it without tripping
   // the autoplay policy. Its buffers play in any context.
   const decoder = new OfflineAudioContext(1, 1, 44100)
@@ -126,6 +130,11 @@ async function loadBuffers() {
   )
 }
 
+// Shared across renders, so the lines are only fetched once. If loading fails,
+// the call just plays on without sound.
+let buffersPromise: Promise<Audio["buffers"] | null> | null = null
+const loadBuffers = () => (buffersPromise ??= fetchBuffers().catch(() => null))
+
 /**
  * A looping clock for the call. Silent, it runs on frame time; with sound on,
  * it follows the audio context so the words stay locked to the voices.
@@ -136,21 +145,8 @@ function useCall(inView: boolean, reduceMotion: boolean | null) {
   // Reduced motion holds the visuals still, so the clock only runs to keep
   // the audio looping.
   const running = inView && (!reduceMotion || sound)
-  const [buffers, setBuffers] = useState<Audio["buffers"] | null>(null)
   const timeRef = useRef(0)
   const audioRef = useRef<Audio | null>(null)
-
-  useEffect(() => {
-    let cancelled = false
-    // If loading fails, the call just plays on without sound.
-    loadBuffers().then(
-      (loaded) => !cancelled && setBuffers(loaded),
-      () => {}
-    )
-    return () => {
-      cancelled = true
-    }
-  }, [])
 
   useEffect(() => {
     const audio = audioRef.current
@@ -187,7 +183,7 @@ function useCall(inView: boolean, reduceMotion: boolean | null) {
 
   useEffect(() => () => void audioRef.current?.ctx.close(), [])
 
-  function toggleSound() {
+  function toggleSound(buffers: Audio["buffers"]) {
     const current = audioRef.current
     if (current) {
       audioRef.current = null
@@ -199,7 +195,6 @@ function useCall(inView: boolean, reduceMotion: boolean | null) {
       return
     }
 
-    if (!buffers) return
     const ctx = new AudioContext()
     const output = ctx.createGain()
     output.connect(ctx.destination)
@@ -215,7 +210,7 @@ function useCall(inView: boolean, reduceMotion: boolean | null) {
     setSound(true)
   }
 
-  return { time, sound, ready: buffers !== null, toggleSound }
+  return { time, sound, toggleSound }
 }
 
 export function TranslatedCallTurns({ className }: { className?: string }) {
@@ -223,18 +218,20 @@ export function TranslatedCallTurns({ className }: { className?: string }) {
   const inView = useInView(ref, { amount: 0.4 })
   const reduceMotion = useReducedMotion()
   const call = useCall(inView, reduceMotion)
-  // Light sweeps round Listen until it's been pressed once.
-  const [pressed, setPressed] = useState(false)
   // Reduced motion shows the finished call.
   const time = reduceMotion ? SCHEDULE.duration - RESTART : call.time
 
   // How many words of each line are out, or -1 before it starts. A turn's
   // card mounts ROOM early, empty, to push the thread up. The turns only
   // re-render when this changes, not on every frame of the clock.
-  const spoken = LINES.map((line) =>
-    time < line.start - (line.own ? ROOM : 0)
-      ? -1
-      : line.words.filter(([, at]) => time >= line.start + at).length
+  const spoken = useMemo(
+    () =>
+      LINES.map((line) =>
+        time < line.start - (line.own ? ROOM : 0)
+          ? -1
+          : line.words.filter(([, at]) => time >= line.start + at).length
+      ),
+    [time]
   )
 
   const speaking = LINES.some(
@@ -244,7 +241,7 @@ export function TranslatedCallTurns({ className }: { className?: string }) {
   // orb only changes colour when the next translation starts.
   const voice = other(
     LINES.findLast((line) => !line.own && time >= line.start)?.side ??
-      LINES.find((line) => !line.own)!.side
+      SCHEDULE.turns[0].heard.side
   )
 
   return (
@@ -260,34 +257,9 @@ export function TranslatedCallTurns({ className }: { className?: string }) {
       <Turns spoken={spoken} />
 
       {/* Only offered once every line has loaded, so Listen always plays. */}
-      {call.ready ? (
-        <motion.button
-          type="button"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3, ease: EASE_OUT }}
-          onClick={() => {
-            setPressed(true)
-            call.toggleSound()
-          }}
-          aria-pressed={call.sound}
-          className="absolute top-4 left-1/2 z-20 flex h-9 -translate-x-1/2 items-center gap-2 rounded-full bg-pill px-3.5 text-label-sm text-foreground shadow-[0_0_0_0.5px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.06),0_4px_12px_rgba(0,0,0,0.08)] transition-colors outline-none hover:bg-pill-hover focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-        >
-          {pressed ? null : (
-            <span
-              aria-hidden
-              // Straddles the edge, so it reads against the page as well.
-              className="border-sweep absolute -inset-px rounded-full motion-reduce:hidden"
-            />
-          )}
-          {call.sound ? (
-            <VolumeX className="size-4" strokeWidth={1.75} />
-          ) : (
-            <Volume2 className="size-4" strokeWidth={1.75} />
-          )}
-          {call.sound ? "Mute" : "Listen"}
-        </motion.button>
-      ) : null}
+      <Suspense>
+        <ListenButton sound={call.sound} onToggle={call.toggleSound} />
+      </Suspense>
 
       <ol className="sr-only">
         {CALL.map((turn) => (
@@ -299,6 +271,48 @@ export function TranslatedCallTurns({ className }: { className?: string }) {
         ))}
       </ol>
     </div>
+  )
+}
+
+function ListenButton({
+  sound,
+  onToggle,
+}: {
+  sound: boolean
+  onToggle: (buffers: Audio["buffers"]) => void
+}) {
+  const buffers = use(loadBuffers())
+  // Light sweeps round Listen until it's been pressed once.
+  const [pressed, setPressed] = useState(false)
+  if (!buffers) return null
+
+  return (
+    <m.button
+      type="button"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3, ease: EASE_OUT }}
+      onClick={() => {
+        setPressed(true)
+        onToggle(buffers)
+      }}
+      aria-pressed={sound}
+      className="absolute top-4 left-1/2 z-20 flex h-9 -translate-x-1/2 items-center gap-2 rounded-full bg-pill px-3.5 text-label-sm text-foreground shadow-[0_0_0_0.5px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.06),0_4px_12px_rgba(0,0,0,0.08)] transition-colors outline-none hover:bg-pill-hover focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+    >
+      {pressed ? null : (
+        <span
+          aria-hidden
+          // Straddles the edge, so it reads against the page as well.
+          className="border-sweep absolute -inset-px rounded-full motion-reduce:hidden"
+        />
+      )}
+      {sound ? (
+        <VolumeX className="size-4" strokeWidth={1.75} />
+      ) : (
+        <Volume2 className="size-4" strokeWidth={1.75} />
+      )}
+      {sound ? "Mute" : "Listen"}
+    </m.button>
   )
 }
 
@@ -342,9 +356,9 @@ const text = (words: Word[]) => words.map(([word]) => word).join(" ")
 /** The first `count` words, each fading in as it arrives. */
 function Words({ words, count }: { words: Word[]; count: number }) {
   if (count <= 0) return "​"
-  return words.slice(0, count).map(([word], i) => (
+  return words.slice(0, count).map(([word, at], i) => (
     <span
-      key={i}
+      key={at}
       className="animate-in duration-200 ease-out-strong fade-in motion-reduce:animate-none"
     >
       {i > 0 ? " " : null}
@@ -371,7 +385,7 @@ function TurnCard({
   const start = by === "left"
 
   return (
-    <motion.div
+    <m.div
       layout
       // Pops out of the corner it's anchored to, like a sent message.
       initial={{ opacity: 0, scale: 0.9 }}
@@ -391,7 +405,7 @@ function TurnCard({
         start ? "self-start" : "self-end"
       )}
     >
-      <motion.div
+      <m.div
         layout="position"
         transition={RESIZE}
         className="flex min-w-0 items-center gap-1.5"
@@ -404,9 +418,9 @@ function TurnCard({
             <Words words={saidLine.words} count={said} />
           </p>
         </div>
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         layout="position"
         transition={RESIZE}
         className="grid text-body text-foreground"
@@ -418,8 +432,8 @@ function TurnCard({
             <Words words={heardLine.words} count={heard} />
           </p>
         )}
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   )
 }
 

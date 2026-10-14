@@ -5,10 +5,10 @@
 
 import { useTexture } from "@react-three/drei"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
-import { useEffect, useMemo, useRef } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import * as THREE from "three"
 
-export type AgentState = null | "thinking" | "listening" | "talking"
+type AgentState = null | "thinking" | "listening" | "talking"
 
 type OrbProps = {
   colors?: [string, string]
@@ -107,12 +107,21 @@ function Scene({
   const circleRef =
     useRef<THREE.Mesh<THREE.CircleGeometry, THREE.ShaderMaterial>>(null)
   const initialColorsRef = useRef<[string, string]>(colors)
-  const targetColor1Ref = useRef(new THREE.Color(colors[0]))
-  const targetColor2Ref = useRef(new THREE.Color(colors[1]))
+  const [targetColor1] = useState(() => new THREE.Color(colors[0]))
+  const [targetColor2] = useState(() => new THREE.Color(colors[1]))
   const animSpeedRef = useRef(0.1)
-  const perlinNoiseTexture = useTexture(
+  const loadedNoiseTexture = useTexture(
     "https://storage.googleapis.com/eleven-public-cdn/images/perlin-noise.png"
   )
+  // A clone, so the wrapping doesn't leak into drei's shared texture cache.
+  const perlinNoiseTexture = useMemo(() => {
+    const texture = loadedNoiseTexture.clone()
+    texture.wrapS = THREE.RepeatWrapping
+    texture.wrapT = THREE.RepeatWrapping
+    texture.needsUpdate = true
+    return texture
+  }, [loadedNoiseTexture])
+  useEffect(() => () => perlinNoiseTexture.dispose(), [perlinNoiseTexture])
 
   const agentRef = useRef<AgentState>(agentState)
   const modeRef = useRef<"auto" | "manual">(volumeMode)
@@ -152,9 +161,9 @@ function Scene({
   )
 
   useEffect(() => {
-    targetColor1Ref.current = new THREE.Color(colors[0])
-    targetColor2Ref.current = new THREE.Color(colors[1])
-  }, [colors])
+    targetColor1.set(colors[0])
+    targetColor2.set(colors[1])
+  }, [colors, targetColor1, targetColor2])
 
   useEffect(() => {
     pausedRef.current = paused
@@ -187,8 +196,8 @@ function Scene({
     if (!mat) return
     const live = colorsRef?.current
     if (live) {
-      if (live[0]) targetColor1Ref.current.set(live[0])
-      if (live[1]) targetColor2Ref.current.set(live[1])
+      if (live[0]) targetColor1.set(live[0])
+      if (live[1]) targetColor2.set(live[1])
     }
     const u = mat.uniforms
     u.uTime.value += delta * 0.5
@@ -236,26 +245,30 @@ function Scene({
     u.uAnimation.value += delta * animSpeedRef.current
     u.uInputVolume.value = curInRef.current
     u.uOutputVolume.value = curOutRef.current
-    u.uColor1.value.lerp(targetColor1Ref.current, still ? 1 : 0.08)
-    u.uColor2.value.lerp(targetColor2Ref.current, still ? 1 : 0.08)
+    u.uColor1.value.lerp(targetColor1, still ? 1 : 0.08)
+    u.uColor2.value.lerp(targetColor2, still ? 1 : 0.08)
   })
 
+  // The timer is cleared in the cleanup; the rule can't see through the
+  // assignment inside the listener.
+  // react-doctor-disable-next-line react-doctor/effect-needs-cleanup
   useEffect(() => {
     const canvas = gl.domElement
+    let restoreTimer: ReturnType<typeof setTimeout> | undefined
     const onContextLost = (event: Event) => {
       event.preventDefault()
-      setTimeout(() => {
+      restoreTimer = setTimeout(() => {
         gl.forceContextRestore()
       }, 1)
     }
     canvas.addEventListener("webglcontextlost", onContextLost, false)
-    return () =>
+    return () => {
+      clearTimeout(restoreTimer)
       canvas.removeEventListener("webglcontextlost", onContextLost, false)
+    }
   }, [gl])
 
   const uniforms = useMemo(() => {
-    perlinNoiseTexture.wrapS = THREE.RepeatWrapping
-    perlinNoiseTexture.wrapT = THREE.RepeatWrapping
     const isDark =
       typeof document !== "undefined" &&
       document.documentElement.classList.contains("dark")

@@ -12,10 +12,9 @@ export function GridOverlay() {
   useHotkey(
     "G",
     () => {
-      setVisible((current) => {
-        localStorage.setItem(STORAGE_KEY, String(!current))
-        return !current
-      })
+      const next = !visible
+      localStorage.setItem(STORAGE_KEY, String(next))
+      setVisible(next)
     },
     {
       requireReset: true,

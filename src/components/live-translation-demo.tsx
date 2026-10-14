@@ -1,5 +1,5 @@
 import { Pause, Play } from "lucide-react"
-import { motion, useReducedMotion } from "motion/react"
+import { m, useReducedMotion } from "motion/react"
 import { useEffect, useRef, useState } from "react"
 
 import { LetterGlobe } from "@/components/letter-globe"
@@ -75,7 +75,10 @@ function useLiveTranslation(onClipChange?: (index: number) => void) {
     let buffer = buffersRef.current.get(src)
     if (!buffer) {
       buffer = fetch(src)
-        .then((response) => response.arrayBuffer())
+        .then((response) => {
+          if (!response.ok) throw new Error(`Couldn't load ${src}`)
+          return response.arrayBuffer()
+        })
         .then((data) => ctx.decodeAudioData(data))
       buffersRef.current.set(src, buffer)
     }
@@ -229,14 +232,14 @@ export function LiveTranslationDemo({
             className="absolute top-1/2 left-1/2 h-[300px] w-[420px] -translate-1/2 md:h-[400px] md:w-[600px]"
           />
         )}
-        <motion.div
+        <m.div
           layout
           transition={CARD_RESIZE}
           // Inline radius lets motion correct it while the card scales.
           style={{ borderRadius: 16 }}
           className="relative flex w-full max-w-[min(720px,100%)] flex-col items-start gap-5 border border-hairline bg-[#fdfcfc] p-5 shadow-[0_1px_0.5px_rgba(0,0,0,0.04),0_2px_2px_rgba(0,0,0,0.04)] md:w-fit md:flex-row md:items-center md:gap-3 md:p-6 dark:bg-pill"
         >
-          <motion.div
+          <m.div
             layout="position"
             transition={CARD_RESIZE}
             className="grid w-full min-w-0 flex-1 grid-cols-[auto_1fr] items-baseline gap-x-2 gap-y-2 md:gap-y-0"
@@ -256,15 +259,15 @@ export function LiveTranslationDemo({
               elapsed={elapsed}
               showAll={showAll}
             />
-          </motion.div>
-          <motion.div layout="position" transition={CARD_RESIZE}>
+          </m.div>
+          <m.div layout="position" transition={CARD_RESIZE}>
             <PlayButton
               playing={status === "playing"}
               progress={progress}
               onClick={toggle}
             />
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
 
       {/* Bleeds to the card edges so pills scroll under the faded edges. The
@@ -325,7 +328,7 @@ function TranscriptLine({
           const visible = showAll || elapsed >= offset + start
           return (
             <span
-              key={i}
+              key={start}
               className={cn(
                 "transition-opacity duration-200 ease-out",
                 visible ? "opacity-100" : "opacity-0"

@@ -123,19 +123,8 @@ export function ThemeProvider({
   useHotkey(
     "D",
     () => {
-      setThemeState((currentTheme) => {
-        const nextTheme =
-          currentTheme === "dark"
-            ? "light"
-            : currentTheme === "light"
-              ? "dark"
-              : getSystemTheme() === "dark"
-                ? "light"
-                : "dark"
-
-        localStorage.setItem(storageKey, nextTheme)
-        return nextTheme
-      })
+      const resolvedTheme = theme === "system" ? getSystemTheme() : theme
+      setTheme(resolvedTheme === "dark" ? "light" : "dark")
     },
     {
       requireReset: true,
