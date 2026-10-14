@@ -48,7 +48,7 @@ function Caption({
   children: React.ReactNode
 }) {
   return (
-    <div className={cn("flex flex-col gap-4 px-content pt-6", className)}>
+    <div className={cn("flex flex-col gap-3 px-content pt-6", className)}>
       <p className="truncate text-body">{title}</p>
       <p className="text-body-sm text-muted-foreground">{children}</p>
     </div>

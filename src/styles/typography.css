@@ -19,6 +19,11 @@
  * Body styles get relaxed leading for paragraphs; label styles get tight
  * leading for single lines inside fixed-height controls. Weight and color
  * stay separate (`font-*`, `text-muted-foreground`).
+ *
+ * `text-trim` cuts the leading above the cap height and below the baseline,
+ * so the gap around a text block is the visible gap. Use it on headlines and
+ * on paragraphs that open or close a stack; leave controls and truncated text
+ * alone. Browsers without `text-box` fall back to the untrimmed line box.
  */
 
 @font-face {
@@ -62,4 +67,8 @@
 
   --text-micro: 0.6875rem;
   --text-micro--line-height: calc(16 / 11);
+}
+
+@utility text-trim {
+  text-box: trim-both cap alphabetic;
 }
