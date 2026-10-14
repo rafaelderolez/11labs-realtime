@@ -229,7 +229,7 @@ export function LiveTranslationDemo({
             emotion={clip.emotion}
             active={status === "playing"}
             clipTime={elapsed}
-            className="absolute top-1/2 left-1/2 h-[300px] w-[420px] -translate-1/2 md:h-[400px] md:w-[600px]"
+            className="absolute top-1/2 left-1/2 h-75 w-105 -translate-1/2 md:h-100 md:w-150"
           />
         )}
         <m.div
@@ -237,7 +237,7 @@ export function LiveTranslationDemo({
           transition={CARD_RESIZE}
           // Inline radius lets motion correct it while the card scales.
           style={{ borderRadius: 16 }}
-          className="relative flex w-full max-w-[min(720px,100%)] flex-col items-start gap-5 border border-hairline bg-[#fdfcfc] p-5 shadow-[0_1px_0.5px_rgba(0,0,0,0.04),0_2px_2px_rgba(0,0,0,0.04)] md:w-fit md:flex-row md:items-center md:gap-3 md:p-6 dark:bg-pill"
+          className="relative flex w-full max-w-180 flex-col items-start gap-5 border border-hairline bg-surface-faint p-5 shadow-card md:w-fit md:flex-row md:items-center md:gap-3 md:p-6 dark:bg-pill"
         >
           <m.div
             layout="position"
@@ -250,7 +250,7 @@ export function LiveTranslationDemo({
               offset={0}
               elapsed={elapsed}
               showAll={showAll}
-              className="text-[#a59f97]"
+              className="text-faint-foreground"
             />
             <TranscriptLine
               key={`${clipIndex}-translation`}
@@ -292,9 +292,9 @@ export function LiveTranslationDemo({
                 play(i)
               }}
               className={cn(
-                "flex h-11 shrink-0 items-center rounded-full px-[18px] text-label tracking-[0.01em] transition-[background-color,color,box-shadow] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
+                "flex h-11 shrink-0 items-center rounded-full px-4.5 text-label transition-[background-color,color,box-shadow] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
                 i === clipIndex
-                  ? "bg-pill text-foreground shadow-[0_0_0_0.5px_rgba(0,0,0,0.12),0_1px_1px_rgba(0,0,0,0.04),0_2px_4px_rgba(0,0,0,0.04)]"
+                  ? "bg-pill text-foreground shadow-pill"
                   : "text-muted-foreground hover:bg-pill-hover hover:text-foreground"
               )}
             >
@@ -323,7 +323,7 @@ function TranscriptLine({
   return (
     <>
       <span className={cn("text-body-sm", className)}>{line.lang}</span>
-      <p className={cn("text-label tracking-[0.01em] text-pretty", className)}>
+      <p className={cn("text-label text-pretty", className)}>
         {line.words.map(([text, start], i) => {
           const visible = showAll || elapsed >= offset + start
           return (
@@ -363,7 +363,7 @@ function PlayButton({
       type="button"
       onClick={onClick}
       aria-label={playing ? "Pause" : "Play"}
-      className="relative grid size-[54px] shrink-0 place-items-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      className="relative grid size-13.5 shrink-0 place-items-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
       <svg
         className="absolute inset-0 -rotate-90"
@@ -386,7 +386,7 @@ function PlayButton({
           )}
         />
       </svg>
-      <span className="grid size-11 place-items-center rounded-full bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_1px_2px_rgba(0,0,0,0.04),0_2px_4px_rgba(0,0,0,0.04)] transition-transform active:scale-95 dark:bg-pill-hover dark:shadow-[0_0_0_1px_var(--hairline),0_1px_2px_rgba(0,0,0,0.2)]">
+      <span className="grid size-11 place-items-center rounded-full bg-white shadow-control transition-transform active:scale-95 dark:bg-pill-hover">
         <Icon className="size-4 fill-current" strokeWidth={0} />
       </span>
     </button>

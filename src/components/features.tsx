@@ -28,7 +28,7 @@ export function Features() {
             key={text}
             className="col-span-12 flex flex-col gap-6 px-content sm:col-span-6 lg:col-span-3"
           >
-            <Icon className="size-[18px]" strokeWidth={1.5} />
+            <Icon className="size-4.5" strokeWidth={1.5} />
             <p className="text-body-sm text-muted-foreground">{text}</p>
           </li>
         ))}

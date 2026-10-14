@@ -13,7 +13,7 @@ export function Bentos() {
       <div className="col-edge grid grid-cols-subgrid">
         <LiveTranslationDemo
           onClipChange={setClipIndex}
-          className="col-span-12 h-[360px] md:col-span-8 md:row-start-1 md:h-[480px]"
+          className="col-span-12 h-90 md:col-span-8 md:row-start-1 md:h-120"
         />
         <Caption
           className="col-span-12 max-md:pb-16 md:col-span-6 md:col-start-1 md:row-start-2"
@@ -25,7 +25,7 @@ export function Bentos() {
         </Caption>
         <TranslationSettings
           clipIndex={clipIndex}
-          className="col-span-12 h-[480px] md:col-span-4 md:col-start-9 md:row-start-1"
+          className="col-span-12 h-120 md:col-span-4 md:col-start-9 md:row-start-1"
         />
         <Caption
           className="col-span-12 md:col-span-4 md:col-start-9 md:row-start-2"

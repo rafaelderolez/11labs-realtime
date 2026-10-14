@@ -52,6 +52,7 @@
 
   --text-label: 1rem;
   --text-label--line-height: calc(24 / 16);
+  --text-label--letter-spacing: 0.01em;
 
   --text-label-sm: 0.875rem;
   --text-label-sm--line-height: calc(20 / 14);

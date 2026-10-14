@@ -5,7 +5,9 @@ export function Hero() {
     <section className="page-grid lines-hidden gap-y-8 pt-20 pb-10">
       <h1 className="px-content font-heading text-display sm:col-span-6 sm:col-from-1 sm:self-end">
         Natural live translation
-        <span className="block text-[#999]">with Eleven Realtime</span>
+        <span className="block text-tertiary-foreground">
+          with Eleven Realtime
+        </span>
       </h1>
       <p className="px-content text-body sm:col-span-6 sm:col-from-7 sm:self-end">
         Eleven Realtime Translate turns live speech into natural, expressive

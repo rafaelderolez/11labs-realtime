@@ -59,8 +59,30 @@
   --color-chart-5: var(--chart-5);
   --color-surface: var(--surface);
   --color-surface-subtle: var(--surface-subtle);
+  --color-surface-faint: var(--surface-faint);
   --color-hairline: var(--hairline);
   --color-pill: var(--pill);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-faint-foreground: var(--faint-foreground);
+  --color-tertiary-foreground: var(--tertiary-foreground);
+  /* A white pill raised off the surface: a hairline ring plus a short lift. */
+  --shadow-pill:
+    0 0 0 0.5px rgb(0 0 0 / 0.12), 0 1px 1px rgb(0 0 0 / 0.04),
+    0 2px 4px rgb(0 0 0 / 0.04);
+  /* The pill lifted further, for pills that float over content. */
+  --shadow-pill-float:
+    0 0 0 0.5px rgb(0 0 0 / 0.12), 0 1px 2px rgb(0 0 0 / 0.06),
+    0 4px 12px rgb(0 0 0 / 0.08);
+  /* A chat bubble: a lighter ring than the pill, so text reads first. */
+  --shadow-bubble:
+    0 0 0 0.5px rgb(0 0 0 / 0.08), 0 1px 2px rgb(0 0 0 / 0.04),
+    0 4px 12px rgb(0 0 0 / 0.04);
+  /* A card resting on the page: barely off the surface. */
+  --shadow-card: 0 1px 0.5px rgb(0 0 0 / 0.04), 0 2px 2px rgb(0 0 0 / 0.04);
+  /* A round control; its ring swaps to the hairline in dark mode. */
+  --shadow-control: var(--control-shadow);
+  /* A floating panel: a contact edge plus a soft lift. */
+  --shadow-panel: 0 1px 0.5px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.12);
   --color-pill-hover: var(--pill-hover);
   --color-bubble-quiet: var(--bubble-quiet);
   --color-chart-4: var(--chart-4);
@@ -129,9 +151,22 @@
   --sidebar-ring: oklch(0.709 0.01 56.259);
   --surface: #f5f3f1;
   --surface-subtle: #faf8f8;
+  --surface-faint: #fdfcfc;
   --hairline: oklch(0 0 0 / 10%);
   --pill: oklch(1 0 0);
   --pill-hover: var(--surface-subtle);
+  --secondary-hover: color-mix(
+    in oklch,
+    var(--secondary),
+    var(--foreground) 5%
+  );
+  /* Quieter than muted text: a speaker's original words. */
+  --faint-foreground: #a59f97;
+  /* A neutral grey a step below muted: the hero's subline. */
+  --tertiary-foreground: #999;
+  --control-shadow:
+    0 0 0 1px rgb(0 0 0 / 0.06), 0 1px 2px rgb(0 0 0 / 0.04),
+    0 2px 4px rgb(0 0 0 / 0.04);
   /* A speaker's own words: a faint step from the surface toward the pill. */
   --bubble-quiet: oklch(1 0 0 / 35%);
   /* The call's voice colours, lifted to read on the dark Listen button. */
@@ -173,10 +208,12 @@
   --sidebar-ring: oklch(0.553 0.013 58.071);
   --surface: var(--muted);
   --surface-subtle: var(--muted);
+  --surface-faint: var(--muted);
   --hairline: oklch(1 0 0 / 10%);
   /* Raised above the surface, as white is in light mode. */
   --pill: oklch(0.37 0.007 34.298);
   --pill-hover: color-mix(in oklch, var(--pill), var(--foreground) 5%);
+  --control-shadow: 0 0 0 1px var(--hairline), 0 1px 2px rgb(0 0 0 / 0.2);
   --bubble-quiet: oklch(1 0 0 / 3%);
   /* Deepened to read on the light Listen button. */
   --sweep-tail: #4f7be0;

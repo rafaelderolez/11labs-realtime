@@ -49,7 +49,7 @@ export function TranslationSettings({
       </h3>
 
       {/* Built at product size and zoomed down, like the reference screenshot. */}
-      <div className="flex w-[400px] shrink-0 [zoom:0.7] flex-col gap-4 rounded-xl border border-[#FDFCFC] bg-white p-4 shadow-[0_1px_0.5px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.12)]">
+      <div className="flex w-100 shrink-0 [zoom:0.7] flex-col gap-4 rounded-xl border border-surface-faint bg-card p-4 shadow-panel">
         <Field label="Input language">
           <Globe className="size-4 shrink-0" strokeWidth={1.75} />
           <span className="flex flex-1 justify-between gap-2">
@@ -83,7 +83,7 @@ export function TranslationSettings({
           </dd>
           <dd
             aria-hidden
-            className="mt-1.5 grid grid-cols-3 gap-1 rounded-lg bg-foreground/[0.04] p-1"
+            className="mt-1.5 grid grid-cols-3 gap-1 rounded-lg bg-foreground/4 p-1"
           >
             {EAGERNESS.map((level) => (
               <span
@@ -91,7 +91,7 @@ export function TranslationSettings({
                 className={cn(
                   "flex h-7 items-center justify-center rounded-md text-label-sm",
                   level === DEMO_EAGERNESS
-                    ? "bg-pill text-foreground shadow-[0_0_0_0.5px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.06)]"
+                    ? "bg-pill text-foreground shadow-pill"
                     : "text-muted-foreground"
                 )}
               >
@@ -116,7 +116,7 @@ function Field({
   return (
     <dl className="flex flex-col gap-1.5">
       <dt className="text-label-sm text-foreground">{label}</dt>
-      <dd className="flex h-8 w-full min-w-0 items-center gap-2 rounded-lg border border-hairline bg-pill px-2.5 text-label-sm shadow-[0_1px_1px_rgba(0,0,0,0.03)]">
+      <dd className="flex h-8 w-full min-w-0 items-center gap-2 rounded-lg border border-hairline bg-pill px-2.5 text-label-sm shadow-2xs">
         {children}
       </dd>
     </dl>

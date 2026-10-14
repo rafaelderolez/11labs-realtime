@@ -248,7 +248,7 @@ export function TranslatedCallTurns({ className }: { className?: string }) {
     <div
       ref={ref}
       className={cn(
-        "relative h-[620px] overflow-hidden rounded-2xl bg-surface md:h-[560px]",
+        "relative h-155 overflow-hidden rounded-2xl bg-surface md:h-140",
         className
       )}
     >
@@ -297,7 +297,7 @@ function ListenButton({
         onToggle(buffers)
       }}
       aria-pressed={sound}
-      className="absolute top-4 left-1/2 z-20 flex h-9 -translate-x-1/2 items-center gap-2 rounded-full bg-pill px-3.5 text-label-sm text-foreground shadow-[0_0_0_0.5px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.06),0_4px_12px_rgba(0,0,0,0.08)] transition-colors outline-none hover:bg-pill-hover focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      className="absolute top-4 left-1/2 z-20 flex h-9 -translate-x-1/2 items-center gap-2 rounded-full bg-pill px-3.5 text-label-sm text-foreground shadow-pill-float transition-colors outline-none hover:bg-pill-hover focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
     >
       {pressed ? null : (
         <span
@@ -325,7 +325,7 @@ const Turns = memo(
     return (
       <div
         aria-hidden
-        className="relative z-10 flex h-full flex-col justify-end gap-2.5 [mask-image:linear-gradient(to_bottom,transparent,black_35%)] px-3 pb-4 md:gap-3 md:px-12 md:pb-10"
+        className="relative z-10 flex h-full flex-col justify-end gap-2.5 mask-t-from-65% px-3 pb-4 md:gap-3 md:px-12 md:pb-10"
       >
         <AnimatePresence initial={false}>
           {SCHEDULE.turns.map((turn, i) =>
@@ -401,7 +401,7 @@ function TurnCard({
       style={{ borderRadius: 16, originX: start ? 0 : 1, originY: 1 }}
       className={cn(
         // Clipped, so the translation is uncovered as the card grows into it.
-        "flex max-w-[min(340px,85%)] flex-col gap-1.5 overflow-hidden bg-pill px-4 pt-3 pb-3.5 shadow-[0_0_0_0.5px_rgba(0,0,0,0.08),0_1px_2px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.04)]",
+        "flex max-w-[min(340px,85%)] flex-col gap-1.5 overflow-hidden bg-pill px-4 pt-3 pb-3.5 shadow-bubble",
         start ? "self-start" : "self-end"
       )}
     >
@@ -461,7 +461,7 @@ function Orb({
     <div
       aria-hidden
       // Above the thread on mobile, behind it in the middle from md up.
-      className="pointer-events-none absolute top-[68px] left-1/2 size-[120px] -translate-x-1/2 md:top-1/2 md:size-[240px] md:-translate-y-1/2"
+      className="pointer-events-none absolute top-17 left-1/2 size-30 -translate-x-1/2 md:top-1/2 md:size-60 md:-translate-y-1/2"
     >
       <Suspense>
         <VoiceOrb
