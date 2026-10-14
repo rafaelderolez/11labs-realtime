@@ -178,16 +178,27 @@ function useLiveTranslation(onClipChange?: (index: number) => void) {
   async function toggle() {
     const ctx = ctxRef.current
 
-    if (status === "playing" && ctx) {
-      await ctx.suspend()
-      cancelAnimationFrame(frameRef.current)
-      setStatus("paused")
-    } else if (status === "paused" && ctx) {
-      await ctx.resume()
-      setStatus("playing")
-      frameRef.current = requestAnimationFrame(tick)
-    } else {
+    // Nothing to pause or resume until the first play makes the context.
+    if (!ctx) {
       await play(clipIndex)
+      return
+    }
+
+    switch (status) {
+      case "playing":
+        await ctx.suspend()
+        cancelAnimationFrame(frameRef.current)
+        setStatus("paused")
+        break
+      case "paused":
+        await ctx.resume()
+        setStatus("playing")
+        frameRef.current = requestAnimationFrame(tick)
+        break
+      case "idle":
+      case "ended":
+        await play(clipIndex)
+        break
     }
   }
 
