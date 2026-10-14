@@ -34,11 +34,7 @@ export function GridOverlay() {
       <div className="page-grid lines-hidden h-full">
         <div className="col-edge row-start-1 grid grid-cols-subgrid">
           {COLUMNS.map((column) => (
-            <div key={column} className="relative bg-rose-500/8">
-              <span className="absolute top-2 left-1 font-mono text-micro text-rose-500/70 tabular-nums">
-                {column}
-              </span>
-            </div>
+            <div key={column} className="bg-rose-500/8" />
           ))}
         </div>
         <div className="col-outer row-start-1 border-x border-rose-500" />
