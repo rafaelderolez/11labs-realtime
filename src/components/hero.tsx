@@ -12,7 +12,7 @@ export function Hero() {
         translated audio as people talk. Each person speaks their own language
         and hears the other in theirs.
       </p>
-      <div className="col-edge flex gap-2 px-content">
+      <div className="col-edge flex flex-wrap gap-2 px-content">
         <PillButton>Contact Sales</PillButton>
         <PillButton variant="secondary">Read documentation</PillButton>
       </div>

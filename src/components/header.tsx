@@ -28,7 +28,11 @@ export function Header() {
           </ul>
         </div>
         <div className="flex items-center gap-2">
-          <PillButton size="sm" variant="secondary">
+          <PillButton
+            size="sm"
+            variant="secondary"
+            className="hidden sm:inline-flex"
+          >
             Contact Sales
           </PillButton>
           <PillButton size="sm">Login</PillButton>
