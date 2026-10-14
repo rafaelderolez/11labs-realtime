@@ -1,0 +1,4043 @@
+{
+  "model": "eleven_v4_turbo",
+  "languages": [
+    {
+      "code": "af",
+      "name": "Afrikaans"
+    },
+    {
+      "code": "am",
+      "name": "Amharic"
+    },
+    {
+      "code": "ar",
+      "name": "Arabic"
+    },
+    {
+      "code": "hy",
+      "name": "Armenian"
+    },
+    {
+      "code": "as",
+      "name": "Assamese"
+    },
+    {
+      "code": "ast",
+      "name": "Asturian"
+    },
+    {
+      "code": "az",
+      "name": "Azerbaijani"
+    },
+    {
+      "code": "be",
+      "name": "Belarusian"
+    },
+    {
+      "code": "bn",
+      "name": "Bengali"
+    },
+    {
+      "code": "bs",
+      "name": "Bosnian"
+    },
+    {
+      "code": "bg",
+      "name": "Bulgarian"
+    },
+    {
+      "code": "my",
+      "name": "Burmese"
+    },
+    {
+      "code": "yue",
+      "name": "Cantonese"
+    },
+    {
+      "code": "ca",
+      "name": "Catalan"
+    },
+    {
+      "code": "ceb",
+      "name": "Cebuano"
+    },
+    {
+      "code": "ny",
+      "name": "Chichewa"
+    },
+    {
+      "code": "hr",
+      "name": "Croatian"
+    },
+    {
+      "code": "cs",
+      "name": "Czech"
+    },
+    {
+      "code": "da",
+      "name": "Danish"
+    },
+    {
+      "code": "nl",
+      "name": "Dutch"
+    },
+    {
+      "code": "en",
+      "name": "English"
+    },
+    {
+      "code": "et",
+      "name": "Estonian"
+    },
+    {
+      "code": "fil",
+      "name": "Filipino"
+    },
+    {
+      "code": "fi",
+      "name": "Finnish"
+    },
+    {
+      "code": "fr",
+      "name": "French"
+    },
+    {
+      "code": "ff",
+      "name": "Fula (Pulaar)"
+    },
+    {
+      "code": "gl",
+      "name": "Galician"
+    },
+    {
+      "code": "ka",
+      "name": "Georgian"
+    },
+    {
+      "code": "de",
+      "name": "German"
+    },
+    {
+      "code": "el",
+      "name": "Greek"
+    },
+    {
+      "code": "gu",
+      "name": "Gujarati"
+    },
+    {
+      "code": "ha",
+      "name": "Hausa"
+    },
+    {
+      "code": "he",
+      "name": "Hebrew"
+    },
+    {
+      "code": "hi",
+      "name": "Hindi"
+    },
+    {
+      "code": "hu",
+      "name": "Hungarian"
+    },
+    {
+      "code": "is",
+      "name": "Icelandic"
+    },
+    {
+      "code": "id",
+      "name": "Indonesian"
+    },
+    {
+      "code": "ga",
+      "name": "Irish"
+    },
+    {
+      "code": "it",
+      "name": "Italian"
+    },
+    {
+      "code": "ja",
+      "name": "Japanese"
+    },
+    {
+      "code": "jv",
+      "name": "Javanese"
+    },
+    {
+      "code": "kam",
+      "name": "Kamba"
+    },
+    {
+      "code": "kn",
+      "name": "Kannada"
+    },
+    {
+      "code": "kk",
+      "name": "Kazakh"
+    },
+    {
+      "code": "ky",
+      "name": "Kirghiz"
+    },
+    {
+      "code": "ko",
+      "name": "Korean"
+    },
+    {
+      "code": "lo",
+      "name": "Lao"
+    },
+    {
+      "code": "lv",
+      "name": "Latvian"
+    },
+    {
+      "code": "ln",
+      "name": "Lingala"
+    },
+    {
+      "code": "lt",
+      "name": "Lithuanian"
+    },
+    {
+      "code": "lg",
+      "name": "Luganda"
+    },
+    {
+      "code": "lb",
+      "name": "Luxembourgish"
+    },
+    {
+      "code": "mk",
+      "name": "Macedonian"
+    },
+    {
+      "code": "ms",
+      "name": "Malay"
+    },
+    {
+      "code": "ml",
+      "name": "Malayalam"
+    },
+    {
+      "code": "mt",
+      "name": "Maltese"
+    },
+    {
+      "code": "zh",
+      "name": "Mandarin Chinese"
+    },
+    {
+      "code": "mi",
+      "name": "Maori"
+    },
+    {
+      "code": "mr",
+      "name": "Marathi"
+    },
+    {
+      "code": "mn",
+      "name": "Mongolian"
+    },
+    {
+      "code": "ne",
+      "name": "Nepali"
+    },
+    {
+      "code": "no",
+      "name": "Norwegian"
+    },
+    {
+      "code": "oc",
+      "name": "Occitan"
+    },
+    {
+      "code": "or",
+      "name": "Odia"
+    },
+    {
+      "code": "ps",
+      "name": "Pashto"
+    },
+    {
+      "code": "fa",
+      "name": "Persian"
+    },
+    {
+      "code": "pl",
+      "name": "Polish"
+    },
+    {
+      "code": "pt",
+      "name": "Portuguese"
+    },
+    {
+      "code": "pa",
+      "name": "Punjabi"
+    },
+    {
+      "code": "ro",
+      "name": "Romanian"
+    },
+    {
+      "code": "ru",
+      "name": "Russian"
+    },
+    {
+      "code": "sr",
+      "name": "Serbian"
+    },
+    {
+      "code": "sn",
+      "name": "Shona"
+    },
+    {
+      "code": "sd",
+      "name": "Sindhi"
+    },
+    {
+      "code": "sk",
+      "name": "Slovak"
+    },
+    {
+      "code": "sl",
+      "name": "Slovenian"
+    },
+    {
+      "code": "so",
+      "name": "Somali"
+    },
+    {
+      "code": "ckb",
+      "name": "Sorani Kurdish"
+    },
+    {
+      "code": "es",
+      "name": "Spanish"
+    },
+    {
+      "code": "sw",
+      "name": "Swahili"
+    },
+    {
+      "code": "sv",
+      "name": "Swedish"
+    },
+    {
+      "code": "tg",
+      "name": "Tajik"
+    },
+    {
+      "code": "ta",
+      "name": "Tamil"
+    },
+    {
+      "code": "te",
+      "name": "Telugu"
+    },
+    {
+      "code": "th",
+      "name": "Thai"
+    },
+    {
+      "code": "tr",
+      "name": "Turkish"
+    },
+    {
+      "code": "uk",
+      "name": "Ukrainian"
+    },
+    {
+      "code": "ur",
+      "name": "Urdu"
+    },
+    {
+      "code": "uz",
+      "name": "Uzbek"
+    },
+    {
+      "code": "vi",
+      "name": "Vietnamese"
+    },
+    {
+      "code": "cy",
+      "name": "Welsh"
+    },
+    {
+      "code": "wo",
+      "name": "Wolof"
+    },
+    {
+      "code": "yo",
+      "name": "Yoruba"
+    },
+    {
+      "code": "zu",
+      "name": "Zulu"
+    }
+  ],
+  "voices": [
+    {
+      "id": "ypIbR1aohyRSdDv25DPr",
+      "name": "Rosa",
+      "description": "Spanish Calm Old Woman",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/ypIbR1aohyRSdDv25DPr/pwTUKYxrmFPl0kglwrfb.mp3",
+      "languages": ["es"]
+    },
+    {
+      "id": "WQKwBV2Uzw1gSGr69N8I",
+      "name": "Mylene",
+      "description": "Spontaneous and Casual",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/30f4e6eea3604aafaabbb81d16a15d49/voices/WQKwBV2Uzw1gSGr69N8I/upCMF5i1XORR58Dcos7j.mp3",
+      "languages": [
+        "fr",
+        "fil",
+        "hu",
+        "tr",
+        "ru",
+        "hr",
+        "ko",
+        "nl",
+        "pl",
+        "sv",
+        "ta",
+        "it",
+        "es",
+        "da"
+      ]
+    },
+    {
+      "id": "eXpIbVcVbLo8ZJQDlDnl",
+      "name": "Siren",
+      "description": "Natural realistic conversational voice",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/cbfaa74d559547979fa92c07eae49b0f/voices/eXpIbVcVbLo8ZJQDlDnl/nvbKCMRoZnwNqgIhVjJE.mp3",
+      "languages": ["en", "no", "cs", "ms", "ro", "ar", "tr", "ko", "es", "de"]
+    },
+    {
+      "id": "DODLEQrClDo8wCz460ld",
+      "name": "Lauren",
+      "description": "Friendly, Comforting and Soft",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/DODLEQrClDo8wCz460ld/MauqrAicWZU5vhA44xSe.mp3",
+      "languages": ["en"]
+    },
+    {
+      "id": "odOFTFZU3DvAZ3EV3KHi",
+      "name": "Lucas",
+      "description": "Premium French Corporate Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/27ed767f766c44b0af61d239d867281d/voices/odOFTFZU3DvAZ3EV3KHi/t1nwOMycInvdG6yuJZHr.mp3",
+      "languages": ["fr"]
+    },
+    {
+      "id": "zVrWtLr70jn6SeaARX0i",
+      "name": "Kevin",
+      "description": "Content creation",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/8e4047ba9c764da88d4ed219af84370f/voices/zVrWtLr70jn6SeaARX0i/7eade424-405d-426d-9c34-ed5a5d0b87ca.mp3",
+      "languages": [
+        "fr",
+        "el",
+        "hu",
+        "id",
+        "no",
+        "ar",
+        "ro",
+        "vi",
+        "tr",
+        "ko",
+        "zh",
+        "nl",
+        "it",
+        "en",
+        "de"
+      ]
+    },
+    {
+      "id": "hpp4J3VqNfWAUOO0d1Us",
+      "name": "Bella",
+      "description": "Professional, Bright, Warm",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/hpp4J3VqNfWAUOO0d1Us/dab0f5ba-3aa4-48a8-9fad-f138fea1126d.mp3",
+      "languages": ["en"]
+    },
+    {
+      "id": "CwhRBWXzGAHq8TQ4Fs17",
+      "name": "Roger",
+      "description": "Laid-Back, Casual, Resonant",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/CwhRBWXzGAHq8TQ4Fs17/58ee3ff5-f6f2-4628-93b8-e38eb31806b0.mp3",
+      "languages": ["en", "fr", "de", "nl", "es"]
+    },
+    {
+      "id": "EXAVITQu4vr4xnSDxMaL",
+      "name": "Sarah",
+      "description": "Mature, Reassuring, Confident",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/EXAVITQu4vr4xnSDxMaL/01a3e33c-6e99-4ee7-8543-ff2216a32186.mp3",
+      "languages": ["en", "fr", "ar", "zh", "es", "hi"]
+    },
+    {
+      "id": "FGY2WhTYpPnrIDTdsKH5",
+      "name": "Laura",
+      "description": "Enthusiast, Quirky Attitude",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/FGY2WhTYpPnrIDTdsKH5/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJwcmVtYWRlIiwiZmlsZW5hbWUiOiI2NzM0MTc1OS1hZDA4LTQxYTUtYmU2ZS1kZTEyZmU0NDg2MTgubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["en", "fr", "ar", "zh", "de"]
+    },
+    {
+      "id": "IKne3meq5aSn9XLyUdCD",
+      "name": "Charlie",
+      "description": "Deep, Confident, Energetic",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/IKne3meq5aSn9XLyUdCD/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJwcmVtYWRlIiwiZmlsZW5hbWUiOiIxMDJkZTZmMi0yMmVkLTQzZTAtYTFmMS0xMTFmYTc1YzU0ODEubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["en", "zh", "pt", "fil", "es"]
+    },
+    {
+      "id": "JBFqnCBsd6RMkjVDRZzb",
+      "name": "George",
+      "description": "Warm, Captivating Storyteller",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/JBFqnCBsd6RMkjVDRZzb/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJwcmVtYWRlIiwiZmlsZW5hbWUiOiJlNjIwNmQxYS0wNzIxLTQ3ODctYWFmYi0wNmE2ZTcwNWNhYzUubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["en", "fr", "ar", "ja", "cs", "fil", "es", "hi"]
+    },
+    {
+      "id": "N2lVS1w4EtoT3dr4eOWO",
+      "name": "Callum",
+      "description": "Husky Trickster",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/N2lVS1w4EtoT3dr4eOWO/ac833bd8-ffda-4938-9ebc-b0f99ca25481.mp3",
+      "languages": ["en", "fr", "hi"]
+    },
+    {
+      "id": "SAz9YHcvj6GT2YYXdXww",
+      "name": "River",
+      "description": "Relaxed, Neutral, Informative",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/SAz9YHcvj6GT2YYXdXww/e6c95f0b-2227-491a-b3d7-2249240decb7.mp3",
+      "languages": ["en", "it", "fr", "pt", "zh"]
+    },
+    {
+      "id": "SOYHLrjzK2X1ezoPC6cr",
+      "name": "Harry",
+      "description": "Fierce Warrior",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/SOYHLrjzK2X1ezoPC6cr/86d178f6-f4b6-4e0e-85be-3de19f490794.mp3",
+      "languages": ["en"]
+    },
+    {
+      "id": "TX3LPaxmHKxFdv7VOQHJ",
+      "name": "Liam",
+      "description": "Energetic, Social Media Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/TX3LPaxmHKxFdv7VOQHJ/63148076-6363-42db-aea8-31424308b92c.mp3",
+      "languages": ["en", "de", "pt", "cs", "pl", "tr", "hi"]
+    },
+    {
+      "id": "Xb7hH8MSUJpSbSDYk0k2",
+      "name": "Alice",
+      "description": "Clear, Engaging Educator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/Xb7hH8MSUJpSbSDYk0k2/d10f7534-11f6-41fe-a012-2de1e482d336.mp3",
+      "languages": ["en", "it", "fr", "ar", "ja", "pl", "hi"]
+    },
+    {
+      "id": "XrExE9yKIg1WjnnlVkGX",
+      "name": "Matilda",
+      "description": "Knowledgable, Professional",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/XrExE9yKIg1WjnnlVkGX/b930e18d-6b4d-466e-bab2-0ae97c6d8535.mp3",
+      "languages": ["en", "it", "fr", "de", "ar", "es"]
+    },
+    {
+      "id": "bIHbv24MWmeRgasZH58o",
+      "name": "Will",
+      "description": "Relaxed Optimist",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/bIHbv24MWmeRgasZH58o/8caf8f3d-ad29-4980-af41-53f20c72d7a4.mp3",
+      "languages": ["en", "fr", "de", "pt", "zh", "cs", "fil", "sk", "es", "sv"]
+    },
+    {
+      "id": "cgSgspJ2msm6clMCkdW9",
+      "name": "Jessica",
+      "description": "Playful, Bright, Warm",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/cgSgspJ2msm6clMCkdW9/56a97bf8-b69b-448f-846c-c3a11683d45a.mp3",
+      "languages": ["en", "fr", "ar", "ja", "zh", "de", "cs", "hi"]
+    },
+    {
+      "id": "cjVigY5qzO86Huf0OWal",
+      "name": "Eric",
+      "description": "Smooth, Trustworthy",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/cjVigY5qzO86Huf0OWal/d098fda0-6456-4030-b3d8-63aa048c9070.mp3",
+      "languages": ["en", "fr", "pt", "de", "sk", "es"]
+    },
+    {
+      "id": "iP95p4xoKVk53GoZ742B",
+      "name": "Chris",
+      "description": "Charming, Down-to-Earth",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/iP95p4xoKVk53GoZ742B/3f4bde72-cc48-40dd-829f-57fbf906f4d7.mp3",
+      "languages": ["en", "fr", "ar", "pt", "sv", "hi"]
+    },
+    {
+      "id": "nPczCjzI2devNBz1zQrb",
+      "name": "Brian",
+      "description": "Deep, Resonant and Comforting",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/nPczCjzI2devNBz1zQrb/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJwcmVtYWRlIiwiZmlsZW5hbWUiOiIyZGQzZTcyYy00ZmQzLTQyZjEtOTNlYS1hYmM1ZDRlNWFhMWQubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["en", "ar", "zh", "pt", "de", "nl", "sk", "ro", "hi"]
+    },
+    {
+      "id": "onwK4e9ZLuTAKqWW03F9",
+      "name": "Daniel",
+      "description": "Steady Broadcaster",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/onwK4e9ZLuTAKqWW03F9/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJwcmVtYWRlIiwiZmlsZW5hbWUiOiI3ZWVlMDIzNi0xYTcyLTRiODYtYjMwMy01ZGNhZGMwMDdiYTkubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["en", "de", "tr"]
+    },
+    {
+      "id": "pFZP5JQG7iQjIQuC4Bku",
+      "name": "Lily",
+      "description": "Velvety Actress",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/pFZP5JQG7iQjIQuC4Bku/89b68b35-b3dd-4348-a84a-a3c13a3c2b30.mp3",
+      "languages": ["en", "it", "de", "zh", "cs", "nl", "pl"]
+    },
+    {
+      "id": "pqHfZKP75CvOlQylNhV4",
+      "name": "Bill",
+      "description": "Wise, Mature, Balanced",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/pqHfZKP75CvOlQylNhV4/d782b3ff-84ba-4029-848c-acf01285524d.mp3",
+      "languages": ["en", "fr", "ar", "zh", "de", "cs"]
+    },
+    {
+      "id": "hJMnxBsNq5y7eV8FIgb9",
+      "name": "Willem",
+      "description": "Upbeat, Confident, Bright",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/hJMnxBsNq5y7eV8FIgb9/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoic1lOV0Vjc01BRmJUYzJia1lqRGMubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["af"]
+    },
+    {
+      "id": "NkMu4hZGe1qTQp3ZuqD5",
+      "name": "Riaan",
+      "description": "Friendly, Direct, Deep",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/NkMu4hZGe1qTQp3ZuqD5/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiNHU3cFh5TkZERUQ5WkluQzNnNWUubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["af"]
+    },
+    {
+      "id": "OfkBFhvt6pBj8jdX4jo0",
+      "name": "Hendrik",
+      "description": "Amused, Friendly, Bright",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/OfkBFhvt6pBj8jdX4jo0/bRx60GIyix2qkVpvf8wT.mp3",
+      "languages": ["af"]
+    },
+    {
+      "id": "A9ATTqUUQ6GHu0coCz8t",
+      "name": "Hamid",
+      "description": "Friendly, Natural and Positive",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/A9ATTqUUQ6GHu0coCz8t/52WpzlQwppmSVSQXa65L.mp3",
+      "languages": [
+        "ar",
+        "cs",
+        "tr",
+        "ro",
+        "ru",
+        "sk",
+        "el",
+        "sv",
+        "hr",
+        "hi",
+        "no",
+        "pl",
+        "ms",
+        "uk",
+        "it",
+        "es",
+        "en",
+        "pt"
+      ]
+    },
+    {
+      "id": "yXEnnEln9armDCyhkXcA",
+      "name": "Jeddawi",
+      "description": "Calm, Confident, and Deep",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/yXEnnEln9armDCyhkXcA/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJmYzZkZGFmMDZlZDM0NDUzOWEyZTg2MDBkY2VhNmQ2ZiIsImZpbGVuYW1lIjoiTnJzbWRGQ1hqZUdrVXA2ckhzbFEubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": [
+        "ar",
+        "el",
+        "hi",
+        "vi",
+        "ms",
+        "id",
+        "no",
+        "ru",
+        "ro",
+        "uk",
+        "it",
+        "tr",
+        "es",
+        "nl",
+        "en",
+        "pt"
+      ]
+    },
+    {
+      "id": "rPNcQ53R703tTmtue1AT",
+      "name": "Mazen Lawand",
+      "description": "Deep & Professional",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/4acdacdfb7724a85a991004c4b2907e3/voices/rPNcQ53R703tTmtue1AT/mcHBML9LE3BlDH6Bc51u.mp3",
+      "languages": [
+        "ar",
+        "no",
+        "hi",
+        "vi",
+        "id",
+        "hu",
+        "fr",
+        "el",
+        "da",
+        "hr",
+        "ro",
+        "it",
+        "ms",
+        "tr",
+        "es",
+        "pt",
+        "ko",
+        "zh",
+        "de"
+      ]
+    },
+    {
+      "id": "XFUBXv35INNgQPlPtzrF",
+      "name": "Tigran",
+      "description": "Upbeat, Amused, Bright",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/XFUBXv35INNgQPlPtzrF/h0tcSbYm9kyMtZ6mlyVN.mp3",
+      "languages": ["hy"]
+    },
+    {
+      "id": "KeEbjyLmmeMfPz2N8Ooe",
+      "name": "Armen",
+      "description": "Serious, Proud",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/KeEbjyLmmeMfPz2N8Ooe/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiOTJpcFc0M285SGNtWkRnYVNzVkUubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["hy"]
+    },
+    {
+      "id": "8IEPWZrC3Ung5Ic39twJ",
+      "name": "Lilit",
+      "description": "Friendly, Sceptical, Bright",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/8IEPWZrC3Ung5Ic39twJ/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiNnJzNjBXMUFsTHVCWVFtNjh2dlkubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["hy"]
+    },
+    {
+      "id": "TukQ1ITzWEkA6YPoCkaw",
+      "name": "Anu",
+      "description": "Warm Assamese Conversational",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/TukQ1ITzWEkA6YPoCkaw/nX9qUTA4MH0oUMm2icUN.mp3",
+      "languages": [
+        "as",
+        "uk",
+        "ar",
+        "it",
+        "es",
+        "de",
+        "tr",
+        "pl",
+        "ko",
+        "el",
+        "hu",
+        "fr",
+        "cs",
+        "no"
+      ]
+    },
+    {
+      "id": "cGAF9qpeevFgGwAzyAg6",
+      "name": "Meher",
+      "description": "Soothing Assamese Friend",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/cGAF9qpeevFgGwAzyAg6/xF7TUoyPDudPZOFcwa3f.mp3",
+      "languages": ["as", "uk", "ar", "de", "tr", "ko", "el", "cs", "no"]
+    },
+    {
+      "id": "RbH7Fj6XtlvUEoFUUKkl",
+      "name": "Pranjal",
+      "description": "Firm, Patient",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/RbH7Fj6XtlvUEoFUUKkl/lz95be3IauForLmrIJ5k.mp3",
+      "languages": ["as"]
+    },
+    {
+      "id": "uLyUCSjvFEUiN1oCug3c",
+      "name": "Xuan",
+      "description": "Warm, Confident, Deep",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/uLyUCSjvFEUiN1oCug3c/VVnvVvP09HoaJUXmEZbI.mp3",
+      "languages": ["ast"]
+    },
+    {
+      "id": "tHcUjCm8garyDnZZNbca",
+      "name": "Tural",
+      "description": "Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/tHcUjCm8garyDnZZNbca/2c22d623-8c12-43c9-b02c-952f919c7e32.mp3",
+      "languages": ["az"]
+    },
+    {
+      "id": "cSclrSCJZsTJfdb4wvQR",
+      "name": "Aysel",
+      "description": "Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/cSclrSCJZsTJfdb4wvQR/7a4bf7c6-3be5-4ca3-8f88-abd88d0ecbba.mp3",
+      "languages": ["az"]
+    },
+    {
+      "id": "ESYnEeXyf1vpFdCm8X0a",
+      "name": "Rashad",
+      "description": "Social Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/ESYnEeXyf1vpFdCm8X0a/6054ffc7-b6dd-4a12-9384-8be4d8078cb3.mp3",
+      "languages": ["az"]
+    },
+    {
+      "id": "F4JLYqkmta16hsFdBy0r",
+      "name": "Aleh",
+      "description": "Calm, Serious, Deep",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/F4JLYqkmta16hsFdBy0r/thtbwFoEEflywxfJ4UoA.mp3",
+      "languages": ["be"]
+    },
+    {
+      "id": "kdPtxjD7etY54EGD8Oen",
+      "name": "Alesya",
+      "description": "Warm, Patient, Deep",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/kdPtxjD7etY54EGD8Oen/f0BIlZpsbwe4wBWvzZtI.mp3",
+      "languages": ["be"]
+    },
+    {
+      "id": "8zF8gq8azmWq2KXdCgpj",
+      "name": "Nasta",
+      "description": "Playful, Cheerful, Bright",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/8zF8gq8azmWq2KXdCgpj/4WG8ozmnk5uMs8woTYLx.mp3",
+      "languages": ["be"]
+    },
+    {
+      "id": "FhOnCtjmaAIRIS1Dg2bk",
+      "name": "Biju S",
+      "description": "Causal Interactive Bengali Gossip Friend",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/FhOnCtjmaAIRIS1Dg2bk/U26hD8kqnacmvTJIzOvJ.mp3",
+      "languages": ["bn"]
+    },
+    {
+      "id": "iuABfyf7pRoBzuPqzUCt",
+      "name": "Binod",
+      "description": "Energetic Bengali Social Media",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/iuABfyf7pRoBzuPqzUCt/gb2e7tMwvalHF0gRO42o.mp3",
+      "languages": [
+        "bn",
+        "fr",
+        "no",
+        "hi",
+        "ms",
+        "vi",
+        "ru",
+        "ar",
+        "ta",
+        "pl",
+        "ro",
+        "uk",
+        "id",
+        "tr",
+        "es",
+        "nl",
+        "pt"
+      ]
+    },
+    {
+      "id": "1JOQMQINvsOLiEu2pZFd",
+      "name": "Ashwat",
+      "description": "Calm, Pleasant Storyteller",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/1JOQMQINvsOLiEu2pZFd/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJlZDliMDVlNjMyNGM0NTc2ODU0OTAzNTJlOWExZWM5MCIsImZpbGVuYW1lIjoiOFRFZUhialMzZzVqbk4yRHNBSmcubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": [
+        "bn",
+        "ms",
+        "pt",
+        "es",
+        "nl",
+        "uk",
+        "ar",
+        "ko",
+        "en",
+        "it",
+        "ro",
+        "tr",
+        "no",
+        "hr",
+        "cs",
+        "hi",
+        "de",
+        "fr",
+        "vi",
+        "pl"
+      ]
+    },
+    {
+      "id": "bGquYfYhTFhd5P9qAccA",
+      "name": "Adnan",
+      "description": "Upbeat, Amused, Bright",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/bGquYfYhTFhd5P9qAccA/rblkTzPpvqVsWlsopFvX.mp3",
+      "languages": ["bs"]
+    },
+    {
+      "id": "uWuA4P0UhkL94Z85GkOz",
+      "name": "Amila",
+      "description": "Warm, Calm, Deep",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/uWuA4P0UhkL94Z85GkOz/qmbjzzSH9igPFOm2gkwu.mp3",
+      "languages": ["bs"]
+    },
+    {
+      "id": "i3Sopi5uaJ7ZbHrMbDdc",
+      "name": "Nermin",
+      "description": "Dry, Direct, Deep",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/i3Sopi5uaJ7ZbHrMbDdc/TJPZE4AsZA3OYSjO2VyA.mp3",
+      "languages": ["bs"]
+    },
+    {
+      "id": "M1ydWt7KnBCiuv4CnEDC",
+      "name": "Milena",
+      "description": "Optimistic, Clear, and Balanced",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/44af03d036fe4e5493dd910f7b1834ae/voices/M1ydWt7KnBCiuv4CnEDC/QmyVKrtie1aX5rjVUxvz.mp3",
+      "languages": [
+        "bg",
+        "hi",
+        "ro",
+        "id",
+        "el",
+        "sk",
+        "sv",
+        "pl",
+        "da",
+        "ms",
+        "uk",
+        "it",
+        "no",
+        "es",
+        "hr",
+        "fr",
+        "hu",
+        "cs",
+        "ta",
+        "tr",
+        "ru",
+        "en",
+        "de"
+      ]
+    },
+    {
+      "id": "406EiNlYvqFqcz3vsnOm",
+      "name": "Peter K",
+      "description": "Warm, Round, and Smooth",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/hgPss3Iyr5U8wTXr6MepRnIRJJL2/voices/406EiNlYvqFqcz3vsnOm/818538f8-865a-46b9-8b0b-44cf97379ac5.mp3",
+      "languages": ["bg"]
+    },
+    {
+      "id": "fSxb5mPM1l5zTVVtM3Vb",
+      "name": "Elena",
+      "description": "Energetic, Friendly, and Clear",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/CkPyanZ3KxZD3IblrdIGnr2gjPG3/voices/fSxb5mPM1l5zTVVtM3Vb/G0Cq15DPyNyoPgc06Tx9.mp3",
+      "languages": ["bg"]
+    },
+    {
+      "id": "Q7VG1YUIZNRR2EWjlodt",
+      "name": "Kaung",
+      "description": "Bright, Curious Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/Q7VG1YUIZNRR2EWjlodt/nKF3SYyPIJvEcIvZTG3V.mp3",
+      "languages": ["my"]
+    },
+    {
+      "id": "D623VvC8Lc4OWsMsyG2A",
+      "name": "Thura",
+      "description": "Playful Yangon Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/D623VvC8Lc4OWsMsyG2A/Xtx8W3VGYE8CMe3kHux8.mp3",
+      "languages": ["my"]
+    },
+    {
+      "id": "PEyJFwiwCKyMokfpa6LJ",
+      "name": "Zin Ko",
+      "description": "Upbeat Ad",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/PEyJFwiwCKyMokfpa6LJ/niwJU8J0XRZxvVrJcGBn.mp3",
+      "languages": ["my"]
+    },
+    {
+      "id": "7rrBp44bogxpbQBDkenR",
+      "name": "Suk Yee",
+      "description": "Direct, Warm Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/7rrBp44bogxpbQBDkenR/FHB7s0lpbsTugFYwG9AG.mp3",
+      "languages": ["yue"]
+    },
+    {
+      "id": "OfLR95P5vEUdQlgc0yWQ",
+      "name": "Chi Keung",
+      "description": "Blunt, Amused Friend",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/OfLR95P5vEUdQlgc0yWQ/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiaHl3ZG91NGZMa0xFa2tqTGQ0cTEubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["yue"]
+    },
+    {
+      "id": "Wtbd8FPC9737xkDKioyD",
+      "name": "Ho Yin",
+      "description": "Punchy Social Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/Wtbd8FPC9737xkDKioyD/OKxxI6bNvZ4vBtgxezWW.mp3",
+      "languages": ["yue"]
+    },
+    {
+      "id": "OCsEi4G5LJzKMSZFmYBD",
+      "name": "Martina",
+      "description": "Customer Support & Call Center",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/50eecbd282c449a79d555a02bdd2402a/voices/OCsEi4G5LJzKMSZFmYBD/rts2Lf4whEJm3pa9UdUV.mp3",
+      "languages": ["ca"]
+    },
+    {
+      "id": "2s13xENeADFYQZE8bg3a",
+      "name": "Jordi",
+      "description": "Patient Barcelona Narrator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/2s13xENeADFYQZE8bg3a/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoidkZ2SnpyZExvYjkyUkVpWjRxUVEubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["ca"]
+    },
+    {
+      "id": "z9aEOddxoYR1mFM84mfJ",
+      "name": "Montserrat",
+      "description": "Calm Central Catalan",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/z9aEOddxoYR1mFM84mfJ/FnTIolXm7SJRJS19R4rQ.mp3",
+      "languages": ["ca"]
+    },
+    {
+      "id": "LR0CUgPwE0CmrIZg4enh",
+      "name": "Corazon",
+      "description": "Curious Cebu Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/LR0CUgPwE0CmrIZg4enh/LKXKZZKMjmwDi6SqWNeE.mp3",
+      "languages": ["ceb"]
+    },
+    {
+      "id": "IKGo7KgoVHe3oCgFNtXj",
+      "name": "Divina",
+      "description": "Cheerful Cebu Creator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/IKGo7KgoVHe3oCgFNtXj/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiOGhGREZBbHRyV2tJekN0Q25VdjIubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["ceb"]
+    },
+    {
+      "id": "vkJxbLtnP0dNqXOMHe1w",
+      "name": "Bonifacio",
+      "description": "Dry, Amused Friend",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/vkJxbLtnP0dNqXOMHe1w/wKdbMoEHFkIol2I2o26g.mp3",
+      "languages": ["ceb"]
+    },
+    {
+      "id": "97Fp6lZP32sgEsva7AyG",
+      "name": "Chikondi",
+      "description": "Serious Lakeshore Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/97Fp6lZP32sgEsva7AyG/VHxEMJlSve23bqrmXi9Z.mp3",
+      "languages": ["ny"]
+    },
+    {
+      "id": "txDbGiZwWYLeVMPOLgtD",
+      "name": "Chisomo",
+      "description": "Warm Salima Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/txDbGiZwWYLeVMPOLgtD/9sf7hNShsPcfc1geCfTW.mp3",
+      "languages": ["ny"]
+    },
+    {
+      "id": "k9pDZIexlDrJPklhpyWU",
+      "name": "Chimwemwe",
+      "description": "Confident Ad",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/k9pDZIexlDrJPklhpyWU/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiSFZaSnlmVGFzNFpvU0xNYWd0WloubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["ny"]
+    },
+    {
+      "id": "0jvpZ98RZwx5FBOSZAc3",
+      "name": "Maja",
+      "description": "Engaging, Narrative",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/rYCSsa1P6SP8cO23wL8zOyAON8C2/voices/0jvpZ98RZwx5FBOSZAc3/f6345350-d393-4e50-b33d-a968e35f5b12.mp3",
+      "languages": [
+        "hr",
+        "tr",
+        "zh",
+        "ar",
+        "es",
+        "it",
+        "uk",
+        "ms",
+        "id",
+        "no",
+        "ko",
+        "cs",
+        "vi",
+        "el",
+        "ru",
+        "ro",
+        "de",
+        "pt",
+        "hi"
+      ]
+    },
+    {
+      "id": "ZLYZToA7aDsMbHwM9AOr",
+      "name": "Luka",
+      "description": "Calm, Narrative",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/ZLYZToA7aDsMbHwM9AOr/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoid3F6UnNaTHpoeUxkWXVxOVVhT0c4RTRobXNUMiIsImZpbGVuYW1lIjoidHBLYTU1QVpTdG85cUxyRFZ2VWoubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": [
+        "hr",
+        "el",
+        "ms",
+        "id",
+        "ta",
+        "hu",
+        "no",
+        "hi",
+        "cs",
+        "ro",
+        "it",
+        "ar",
+        "ko",
+        "tr",
+        "es",
+        "nl",
+        "en",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "adxhr4Ei7ASJ3Cz7fxwX",
+      "name": "Slobodan",
+      "description": "Persuasive, Narrative",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/syjNf9g6SwUCrX6i9O9x6sWdOkJ3/voices/adxhr4Ei7ASJ3Cz7fxwX/02bb0f7c-500b-40cc-a528-5217cf9d2258.mp3",
+      "languages": ["hr"]
+    },
+    {
+      "id": "KIDKfqJyZ6ASuyzsKfh5",
+      "name": "Jan",
+      "description": "Kind Educator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/KIDKfqJyZ6ASuyzsKfh5/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoic2pKV0xSbHFqOFc5QXJKSWJYRlpZRURjeGpRMiIsImZpbGVuYW1lIjoiZGY4NTY4MjYtMjc1NC00OTFhLWI3NjYtMjViNWJmZDNlM2I3Lm1wMyIsInRpbWVzdGFtcCI6MTc5MTk2ODQwMDAwMDAwMH0%3D",
+      "languages": ["cs"]
+    },
+    {
+      "id": "MpbYQvoTmXjHkaxtLiSh",
+      "name": "Anet",
+      "description": "Youthful and Lively",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/Lxslac0DMQfxUxRl8QN7Z94dYON2/voices/MpbYQvoTmXjHkaxtLiSh/hS3NsIINKt5zDt0MdAkF.mp3",
+      "languages": [
+        "cs",
+        "tr",
+        "ro",
+        "no",
+        "ms",
+        "pt",
+        "pl",
+        "da",
+        "es",
+        "nl",
+        "sk",
+        "it",
+        "ar",
+        "vi",
+        "hr",
+        "fr"
+      ]
+    },
+    {
+      "id": "vP4R9CqQI4q0HlVrXJWj",
+      "name": "Zdeněk",
+      "description": "Strong and Deep",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/7cd873f3f6034203861b4134e1fdfff4/voices/vP4R9CqQI4q0HlVrXJWj/8ead5ebc-1d82-4a88-9382-2d29ab93969d.mp3",
+      "languages": [
+        "cs",
+        "es",
+        "uk",
+        "it",
+        "nl",
+        "ko",
+        "el",
+        "ar",
+        "no",
+        "tr",
+        "hu",
+        "en",
+        "ro",
+        "de",
+        "pt",
+        "hi"
+      ]
+    },
+    {
+      "id": "ygiXC2Oa1BiHksD3WkJZ",
+      "name": "Mathias",
+      "description": "Engaging, Natural and Warm",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/ygiXC2Oa1BiHksD3WkJZ/MV8Filx4M2vlCNaIVYQH.mp3",
+      "languages": [
+        "da",
+        "pt",
+        "en",
+        "cs",
+        "hu",
+        "ru",
+        "fi",
+        "uk",
+        "ta",
+        "sv",
+        "hr",
+        "bg",
+        "hi",
+        "fr",
+        "no",
+        "vi",
+        "id",
+        "ms",
+        "ro",
+        "ar",
+        "tr",
+        "it",
+        "es",
+        "ko",
+        "nl",
+        "de"
+      ]
+    },
+    {
+      "id": "4RklGmuxoAskAbGXplXN",
+      "name": "Camilla",
+      "description": "Engaging, Clear and Calm",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/GLHtjme4TaMqpVNVgCCfnTTP9V83/voices/4RklGmuxoAskAbGXplXN/0kCsINU8zBYHxnARRVuj.mp3",
+      "languages": ["da"]
+    },
+    {
+      "id": "qhEux886xDKbOdF7jkFP",
+      "name": "Peter",
+      "description": "Natural, Crisp and Clear",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/SSkZbuwOOuMWwDdLqxaAaVoAaI63/voices/qhEux886xDKbOdF7jkFP/CN2AcSQbdFelH935S6wh.mp3",
+      "languages": ["da"]
+    },
+    {
+      "id": "SXBL9NbvTrjsJQYay2kT",
+      "name": "Melanie",
+      "description": "Engaging, Authentic Narrator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/SXBL9NbvTrjsJQYay2kT/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiV3hjek8wR3BmbmhVbVJacks2ZjlRV1cwaVlLMiIsImZpbGVuYW1lIjoiblp2eUgxYWIzbzhsWUt0ZWlSN08ubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["nl", "es", "tr", "ar", "id", "ko", "no", "cs", "ru", "de"]
+    },
+    {
+      "id": "YUdpWWny7k5yb4QCeweX",
+      "name": "Ruth",
+      "description": "Warm and Dynamic Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/a406896418f84cebba6603a069608149/voices/YUdpWWny7k5yb4QCeweX/aO95JWH4YnKn54sc6BpL.mp3",
+      "languages": [
+        "nl",
+        "hi",
+        "pt",
+        "it",
+        "fr",
+        "da",
+        "fil",
+        "ms",
+        "fi",
+        "id",
+        "en",
+        "ta",
+        "pl",
+        "sv",
+        "hr",
+        "el",
+        "bg",
+        "cs",
+        "no",
+        "vi",
+        "uk",
+        "ar",
+        "tr",
+        "es",
+        "ru",
+        "de"
+      ]
+    },
+    {
+      "id": "6OzrBCQf8cjERkYgzSg8",
+      "name": "Young Jamal",
+      "description": "",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/6OzrBCQf8cjERkYgzSg8/YmWdAA5ju6tNyK5Zl104.mp3",
+      "languages": ["en", "hu", "pt", "cs", "sk", "el"]
+    },
+    {
+      "id": "UgBBYS2sOqTuMpoF3BR0",
+      "name": "Mark",
+      "description": "Natural Conversations",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/f94e260200764678babc807b935bfb0b/voices/UgBBYS2sOqTuMpoF3BR0/0Oc7jiXwWN9kRTXfQsmw.mp3",
+      "languages": [
+        "en",
+        "fil",
+        "it",
+        "fr",
+        "hu",
+        "hi",
+        "hr",
+        "ko",
+        "sk",
+        "uk",
+        "sv",
+        "ta",
+        "ru",
+        "ar",
+        "ms",
+        "zh",
+        "ro",
+        "id",
+        "vi",
+        "pl",
+        "no",
+        "de",
+        "el",
+        "nl",
+        "cs",
+        "es",
+        "pt",
+        "tr",
+        "da"
+      ]
+    },
+    {
+      "id": "kPzsL2i3teMYv0FxEYQ6",
+      "name": "Brittney",
+      "description": "Social Media Voice – Fun, Youthful & Informative",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/kPzsL2i3teMYv0FxEYQ6/4sLh92VdgT3Hppimhb4W.mp3",
+      "languages": [
+        "en",
+        "it",
+        "es",
+        "de",
+        "pl",
+        "hi",
+        "ru",
+        "hu",
+        "ro",
+        "pt",
+        "ko",
+        "cs",
+        "hr",
+        "sv"
+      ]
+    },
+    {
+      "id": "0cuaFlR2we1Gl3woPjeJ",
+      "name": "Kalev",
+      "description": "Calm Tallinn Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/0cuaFlR2we1Gl3woPjeJ/27VfynicYzMhDOWqmiuh.mp3",
+      "languages": ["et"]
+    },
+    {
+      "id": "kWXj353oWuglsljFXgLz",
+      "name": "Piret",
+      "description": "Warm Setomaa Narrator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/kWXj353oWuglsljFXgLz/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiYVZxSTkzcW1OVFRtNmNhaXYyUkkubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["et"]
+    },
+    {
+      "id": "3jMasSOd05IQvSnHSd6B",
+      "name": "Rasmus",
+      "description": "Deadpan Saaremaa Wit",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/3jMasSOd05IQvSnHSd6B/SwDkw8Alb5yngLk5L5IQ.mp3",
+      "languages": ["et"]
+    },
+    {
+      "id": "RnW8EXHv9GqGMgyP0sXG",
+      "name": "Ate Lyn",
+      "description": "Captivating Voiceover Queen",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/RnW8EXHv9GqGMgyP0sXG/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIwMGQzZTQyNmE0ZWM0OGNkYTI0MTNkNzAzODM0NzYwMyIsImZpbGVuYW1lIjoiYW5NOHlnZVlkb2NtZHBLZ21PTWwubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": [
+        "fil",
+        "cs",
+        "es",
+        "pt",
+        "hi",
+        "ru",
+        "tr",
+        "ro",
+        "id",
+        "nl",
+        "el",
+        "sv",
+        "en",
+        "ta",
+        "it",
+        "da"
+      ]
+    },
+    {
+      "id": "mOYuoC0AAGM3erLKflvc",
+      "name": "Nanay Pilar",
+      "description": "Engaging Host and Narrator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/mOYuoC0AAGM3erLKflvc/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI0YzY2Y2NhZmZmMzE0ZjM0YmFhYjExOWYwNDNiNmRhNiIsImZpbGVuYW1lIjoiU1B6c3ZhUWZBblBianYwZmlhb0EubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["fil"]
+    },
+    {
+      "id": "RKj1DIXprh8zdvjllfhJ",
+      "name": "Tiya Maria",
+      "description": "Horror Storyteller",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/00d3e426a4ec48cda2413d7038347603/voices/RKj1DIXprh8zdvjllfhJ/afkr7JsMUQt9HIawKN1h.mp3",
+      "languages": [
+        "fil",
+        "hi",
+        "pt",
+        "ja",
+        "hu",
+        "cs",
+        "sv",
+        "ta",
+        "it",
+        "bg",
+        "nl",
+        "ro",
+        "fr",
+        "vi",
+        "no",
+        "tr",
+        "ar",
+        "hr",
+        "ms",
+        "es",
+        "pl"
+      ]
+    },
+    {
+      "id": "3OArekHEkHv5XvmZirVD",
+      "name": "Christoffer Weiss",
+      "description": "Hopeful and Steady",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/x5oDnHb3gcQVsz98Z9d02YR9nNq2/voices/3OArekHEkHv5XvmZirVD/26b3d232-c1b4-49f9-894d-e58a0b70b78f.mp3",
+      "languages": [
+        "fi",
+        "en",
+        "it",
+        "el",
+        "fil",
+        "ru",
+        "sk",
+        "da",
+        "pt",
+        "nl",
+        "hi",
+        "es",
+        "fr",
+        "pl",
+        "id",
+        "no",
+        "ar",
+        "ms",
+        "tr",
+        "hr",
+        "vi",
+        "ro",
+        "cs",
+        "uk",
+        "de"
+      ]
+    },
+    {
+      "id": "JMfkzZiSsox62UXcXUqM",
+      "name": "Jaakko",
+      "description": "Calm, Reflective and Soft",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/d83501083c7646bba14f9de45fe658a8/voices/JMfkzZiSsox62UXcXUqM/xYL6fnjYv1TNC8DzHGyN.mp3",
+      "languages": [
+        "fi",
+        "uk",
+        "id",
+        "it",
+        "ms",
+        "vi",
+        "no",
+        "ko",
+        "es",
+        "ar",
+        "hi",
+        "nl",
+        "tr",
+        "ru",
+        "de"
+      ]
+    },
+    {
+      "id": "YSabzCJMvEHDduIDMdwV",
+      "name": "Aurora",
+      "description": "Cheerful, Optimistic and Round",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/YnvMFnsOz1gXpFGFWbhHNkyNHho2/voices/YSabzCJMvEHDduIDMdwV/2kWo0RqG5nwi2Mc8dP23.mp3",
+      "languages": [
+        "fi",
+        "hr",
+        "vi",
+        "pt",
+        "ro",
+        "hu",
+        "es",
+        "tr",
+        "uk",
+        "fil",
+        "pl",
+        "ms",
+        "nl",
+        "no",
+        "bg",
+        "id",
+        "ar",
+        "fr",
+        "de"
+      ]
+    },
+    {
+      "id": "aQROLel5sQbj1vuIVi6B",
+      "name": "Nicolas",
+      "description": "Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/7593eab373974d1db7d45255c5986d46/voices/aQROLel5sQbj1vuIVi6B/shwzqRrR51OISZWUl7EN.mp3",
+      "languages": [
+        "fr",
+        "ru",
+        "fil",
+        "hu",
+        "ro",
+        "ms",
+        "fi",
+        "id",
+        "pt",
+        "cs",
+        "ta",
+        "sv",
+        "ja",
+        "hr",
+        "es",
+        "it",
+        "ar",
+        "el",
+        "ko",
+        "uk",
+        "no",
+        "bg",
+        "tr",
+        "vi",
+        "en",
+        "da",
+        "de",
+        "hi",
+        "pl"
+      ]
+    },
+    {
+      "id": "6vTyAgAT8PncODBcLjRf",
+      "name": "Claire",
+      "description": "Warm, Pretty and Charming",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/6vTyAgAT8PncODBcLjRf/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI3MGVjMWRhNGU4NGQ0MjdjODQxNWQzZjJiODk4YzlkOCIsImZpbGVuYW1lIjoiS1Z5dVp5QUFYZlNYcXBsVEVybFgubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["fr"]
+    },
+    {
+      "id": "McVZB9hVxVSk3Equu8EH",
+      "name": "Audrey",
+      "description": "Energetic Commercial",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/McVZB9hVxVSk3Equu8EH/fQOpiFrrNtzg6dglRCvf.mp3",
+      "languages": [
+        "fr",
+        "hi",
+        "pl",
+        "pt",
+        "hu",
+        "ru",
+        "cs",
+        "uk",
+        "sk",
+        "ta",
+        "hr",
+        "da",
+        "el",
+        "ms",
+        "no",
+        "ro",
+        "ar",
+        "it",
+        "tr",
+        "es",
+        "nl",
+        "de"
+      ]
+    },
+    {
+      "id": "Pa7DQYCr4mnUUk2JtSmO",
+      "name": "Xoan",
+      "description": "Curious Vigo Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/Pa7DQYCr4mnUUk2JtSmO/DRkLHxSxgESH261NsHRV.mp3",
+      "languages": ["gl"]
+    },
+    {
+      "id": "LgcwV1jNto1x7j72BmVF",
+      "name": "Iago",
+      "description": "Amused Vigo Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/LgcwV1jNto1x7j72BmVF/S69MUn0ItMTa1ez52Jqh.mp3",
+      "languages": ["gl"]
+    },
+    {
+      "id": "UdhoyewJfRpYJodTJEXL",
+      "name": "Sabela",
+      "description": "Direct Vigo Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/UdhoyewJfRpYJodTJEXL/iC3w1AD0rBrATqStOkgg.mp3",
+      "languages": ["gl"]
+    },
+    {
+      "id": "v3V1d2rk6528UrLKRuy8",
+      "name": "Susi",
+      "description": "Effortless and Confident",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/1KI0h0RJuscE0Ta9tVvydENJ9JF3/voices/v3V1d2rk6528UrLKRuy8/8aab3a1d-2faf-4de4-b229-f3a2ebb21c43.mp3",
+      "languages": [
+        "de",
+        "cs",
+        "es",
+        "it",
+        "hi",
+        "fil",
+        "tr",
+        "hu",
+        "ro",
+        "ru",
+        "nl",
+        "uk",
+        "sv",
+        "no"
+      ]
+    },
+    {
+      "id": "7eVMgwCnXydb3CikjV7a",
+      "name": "Lea",
+      "description": "Clear and Feminine",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/7eVMgwCnXydb3CikjV7a/zMitELWPfkgqNXLr2X9t.mp3",
+      "languages": [
+        "de",
+        "es",
+        "fi",
+        "fil",
+        "hi",
+        "hu",
+        "ko",
+        "uk",
+        "sk",
+        "ta",
+        "sv",
+        "hr",
+        "it",
+        "da",
+        "no",
+        "el",
+        "vi",
+        "cs",
+        "pl",
+        "ru",
+        "id",
+        "ro",
+        "ms",
+        "ar",
+        "tr",
+        "en",
+        "nl",
+        "pt"
+      ]
+    },
+    {
+      "id": "K75lPKuh15SyVhQC1LrE",
+      "name": "Carola",
+      "description": "Sharp and Clear",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/5ei0MqicAANlsSFIQjEs6ffqAsA3/voices/K75lPKuh15SyVhQC1LrE/4148b6cd-757d-4551-992d-2b218a520ef5.mp3",
+      "languages": ["de"]
+    },
+    {
+      "id": "n0vzWypeCK1NlWPVwhOc",
+      "name": "Theos",
+      "description": "Narrational, Assertive and Warm",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/n0vzWypeCK1NlWPVwhOc/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiVGNpRkJxM0JZcGFtdk9iVnlsU0pncTM2RkJMMiIsImZpbGVuYW1lIjoiMnNuZUE3MlZ4TUE1TXU3bjFoWWgubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": [
+        "el",
+        "ru",
+        "ro",
+        "nl",
+        "sk",
+        "ta",
+        "id",
+        "hi",
+        "no",
+        "sv",
+        "hr",
+        "fr",
+        "cs",
+        "vi",
+        "uk",
+        "it",
+        "ko",
+        "es",
+        "ar",
+        "da",
+        "tr",
+        "en",
+        "de",
+        "pl",
+        "pt"
+      ]
+    },
+    {
+      "id": "aTP4J5SJLQl74WTSRXKW",
+      "name": "Eleni",
+      "description": "Soft, Narrational and Calm",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/MKMmGlbVeLfqHnshck3qEZ5t0jq2/voices/aTP4J5SJLQl74WTSRXKW/hyr8Eu2OJQ9xgjKnIet3.mp3",
+      "languages": [
+        "el",
+        "id",
+        "uk",
+        "ms",
+        "it",
+        "no",
+        "vi",
+        "ko",
+        "hu",
+        "fr",
+        "es",
+        "cs",
+        "ar",
+        "nl",
+        "tr",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "5DAtyqt3LGjv9jkjNVFd",
+      "name": "Eugene",
+      "description": "Expressove, Calm and Brisk",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/BWIAlj31dDNny5DwqoZoNP8NyZl1/voices/5DAtyqt3LGjv9jkjNVFd/3ec27ae8-a1de-4f1d-bfdc-03e57437f429.mp3",
+      "languages": [
+        "el",
+        "hi",
+        "es",
+        "pl",
+        "sk",
+        "hu",
+        "ru",
+        "tr",
+        "ko",
+        "pt",
+        "ms",
+        "id",
+        "ro",
+        "sv",
+        "fr",
+        "en",
+        "it",
+        "da"
+      ]
+    },
+    {
+      "id": "1wX3DrX9Q7x2fkeiljyg",
+      "name": "Hetalben",
+      "description": "Young Gujarati Customer Care",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/1wX3DrX9Q7x2fkeiljyg/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJlZDliMDVlNjMyNGM0NTc2ODU0OTAzNTJlOWExZWM5MCIsImZpbGVuYW1lIjoiY0tyUEhGaFM1NVZuYUpMUVRaQlMubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["gu"]
+    },
+    {
+      "id": "v9ZPGDUUXnWEDCiJUQkk",
+      "name": "Jayesh Bhai",
+      "description": "Calm Gujarati Customer Care",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/v9ZPGDUUXnWEDCiJUQkk/5mDQfVXgpx5Dk6FqUJtb.mp3",
+      "languages": [
+        "gu",
+        "no",
+        "hi",
+        "ms",
+        "vi",
+        "ar",
+        "ta",
+        "ro",
+        "tr",
+        "es",
+        "nl",
+        "ko"
+      ]
+    },
+    {
+      "id": "3L29IUUN61xcyvsKscMy",
+      "name": "Chinmay",
+      "description": "Wise Gujarati Friend Voice",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/3L29IUUN61xcyvsKscMy/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJlZDliMDVlNjMyNGM0NTc2ODU0OTAzNTJlOWExZWM5MCIsImZpbGVuYW1lIjoiQ1ZqU3oxR2RaSFNwWHYxY3psRmsubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": [
+        "gu",
+        "no",
+        "hi",
+        "fi",
+        "ar",
+        "ta",
+        "ms",
+        "id",
+        "ro",
+        "tr",
+        "es",
+        "nl",
+        "pt",
+        "ko"
+      ]
+    },
+    {
+      "id": "ywXXWsUzt1cKpTQ44qk1",
+      "name": "Ibrahim",
+      "description": "Curious, Calm Narrator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/ywXXWsUzt1cKpTQ44qk1/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiZ21mbFVueVFUTGlRY0Q3anNHM0QubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["ha"]
+    },
+    {
+      "id": "9FPwdWZHoOFaK39pZAgg",
+      "name": "Amina",
+      "description": "Cheerful Social Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/9FPwdWZHoOFaK39pZAgg/rqObAskkD20Lyr7cTv6z.mp3",
+      "languages": ["ha"]
+    },
+    {
+      "id": "TdFwNNtRd8mKdF7w3Seh",
+      "name": "Abubakar",
+      "description": "Confident Ad Read",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/TdFwNNtRd8mKdF7w3Seh/hQVRPWjFORW7XaPdCJcx.mp3",
+      "languages": ["ha"]
+    },
+    {
+      "id": "uwHajH4FhtzVp6X17pr7",
+      "name": "Amit",
+      "description": "Calm, Curious Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/uwHajH4FhtzVp6X17pr7/uNnAXIfyJz5HoqUKjOEh.mp3",
+      "languages": ["he"]
+    },
+    {
+      "id": "JIxTgeeS5w0UQyBxEnrl",
+      "name": "Itai",
+      "description": "Upbeat Social Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/JIxTgeeS5w0UQyBxEnrl/7za3GB1n0lALVe2bYQkU.mp3",
+      "languages": ["he"]
+    },
+    {
+      "id": "1WOvbtTEb49xcgFUMDu9",
+      "name": "Shira",
+      "description": "Cheerful Social Creator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/1WOvbtTEb49xcgFUMDu9/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiT0xaNGFSOHAxWXNBb1Zma2I3UlUubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["he"]
+    },
+    {
+      "id": "OtEfb2LVzIE45wdYe54M",
+      "name": "Zara",
+      "description": "Soft, Professional and Gentle",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/OtEfb2LVzIE45wdYe54M/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJlZDliMDVlNjMyNGM0NTc2ODU0OTAzNTJlOWExZWM5MCIsImZpbGVuYW1lIjoiNXlocjNUUUdKWHp5VHpmZWExWVIubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": [
+        "hi",
+        "hu",
+        "sv",
+        "id",
+        "ta",
+        "no",
+        "cs",
+        "pl",
+        "vi",
+        "ro",
+        "it",
+        "uk",
+        "tr",
+        "es",
+        "nl",
+        "en",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "KYiVPerWcenyBTIvWbfY",
+      "name": "Sia",
+      "description": "Friendly, Helpful and Reassuring",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/KYiVPerWcenyBTIvWbfY/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJlZDliMDVlNjMyNGM0NTc2ODU0OTAzNTJlOWExZWM5MCIsImZpbGVuYW1lIjoiZ2RTSGI5UlRLTkFRM1FDRmlPOXYubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["hi"]
+    },
+    {
+      "id": "FZkK3TvQ0pjyDmT8fzIW",
+      "name": "Bunty",
+      "description": "Punchy, Crisp and Reel King",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/FZkK3TvQ0pjyDmT8fzIW/k39glMGS9gSdJLHIaJ4K.mp3",
+      "languages": [
+        "hi",
+        "ms",
+        "hr",
+        "nl",
+        "pt",
+        "sk",
+        "fr",
+        "en",
+        "da",
+        "el",
+        "id",
+        "no",
+        "hu",
+        "ta",
+        "sv",
+        "vi",
+        "uk",
+        "it",
+        "ko",
+        "ru",
+        "tr",
+        "es",
+        "de"
+      ]
+    },
+    {
+      "id": "M336tBVZHWWiWb4R54ui",
+      "name": "David",
+      "description": "Deep, Soothing and Sincere",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/6b8a385000d74357bb4d658bfdf301e0/voices/M336tBVZHWWiWb4R54ui/uxc8WAoUc3HLYjbOXuZL.mp3",
+      "languages": [
+        "hu",
+        "en",
+        "cs",
+        "pl",
+        "es",
+        "pt",
+        "de",
+        "it",
+        "hi",
+        "ru",
+        "zh",
+        "fi",
+        "ro",
+        "el",
+        "ta",
+        "ms",
+        "fr",
+        "no",
+        "vi",
+        "ar",
+        "tr"
+      ]
+    },
+    {
+      "id": "TumdjBNWanlT3ysvclWh",
+      "name": "Peter",
+      "description": "Youthful, Casual and Easygoing",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/HOZrfHdrnpe9pZlWrIwZoq4cDsX2/voices/TumdjBNWanlT3ysvclWh/UtdbtjoD1JNS4TtqyzwM.mp3",
+      "languages": [
+        "hu",
+        "pl",
+        "el",
+        "hr",
+        "ro",
+        "pt",
+        "ta",
+        "fr",
+        "sv",
+        "uk",
+        "ar",
+        "it",
+        "es",
+        "tr",
+        "ms",
+        "nl",
+        "id",
+        "ko",
+        "no",
+        "en",
+        "cs",
+        "vi",
+        "ru",
+        "de",
+        "da",
+        "hi"
+      ]
+    },
+    {
+      "id": "FkINb4v84xQZDEO0VPcl",
+      "name": "Dávid",
+      "description": "Deep, Natural and Amiable",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/cAxzz3Wx4Ef9vknxG7R4UFt3x2U2/voices/FkINb4v84xQZDEO0VPcl/693b7f22-81f3-4e64-9ae0-0030110cc850.mp3",
+      "languages": ["hu"]
+    },
+    {
+      "id": "6LR26ZnZ2USBpLHfBBH7",
+      "name": "Bjorn",
+      "description": "Calm, Serious Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/6LR26ZnZ2USBpLHfBBH7/jg2OxUGrhAmUZ0f2h1mf.mp3",
+      "languages": ["is"]
+    },
+    {
+      "id": "D4Tdnb1LrLU3s0LTsOdm",
+      "name": "Aron",
+      "description": "Playful, Upbeat Creator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/D4Tdnb1LrLU3s0LTsOdm/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiWlpwaGx6bmhDMmtFMm1hWGNjdFUubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["is"]
+    },
+    {
+      "id": "Rt9JVuebvMtnquYL4M1E",
+      "name": "Kristjan",
+      "description": "Amused, Upbeat Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/Rt9JVuebvMtnquYL4M1E/luyLUeFSdDM50PRirOKm.mp3",
+      "languages": ["is"]
+    },
+    {
+      "id": "plgKUYgnlZ1DCNh54DwJ",
+      "name": "Dakocan",
+      "description": "Expressive, Cheerful and Clear",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/3eec0209b926438181358e9dff604f79/voices/plgKUYgnlZ1DCNh54DwJ/HejSq6IywpJ4DZNrJGpv.mp3",
+      "languages": [
+        "id",
+        "pt",
+        "hi",
+        "es",
+        "tr",
+        "ru",
+        "ro",
+        "en",
+        "sk",
+        "ta",
+        "it"
+      ]
+    },
+    {
+      "id": "RWiGLY9uXI70QL540WNd",
+      "name": "Putra",
+      "description": "Smooth, Clear and Engaging",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/RWiGLY9uXI70QL540WNd/K9KyX0PpKq51sEVudfou.mp3",
+      "languages": ["id"]
+    },
+    {
+      "id": "q8qwd1jY2jS3AWOBeq25",
+      "name": "Pratama",
+      "description": "Clear, Confident and Warm",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/q8qwd1jY2jS3AWOBeq25/dfUsz6O5uJBm2IUhAmut.mp3",
+      "languages": [
+        "id",
+        "ms",
+        "ko",
+        "uk",
+        "it",
+        "el",
+        "ar",
+        "nl",
+        "cs",
+        "ta",
+        "vi",
+        "tr",
+        "ro",
+        "fi",
+        "de",
+        "hi",
+        "pl"
+      ]
+    },
+    {
+      "id": "RR76ZAZBZVOTHugofwaJ",
+      "name": "Roisin",
+      "description": "Warm, Proud Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/RR76ZAZBZVOTHugofwaJ/1vqwGA6gm2DGFt4f1lkz.mp3",
+      "languages": ["ga"]
+    },
+    {
+      "id": "eH4WmuNnBpUX76yCfPty",
+      "name": "Siobhan",
+      "description": "Cheerful, Friendly Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/eH4WmuNnBpUX76yCfPty/2IPLCkOTl0uRuYDdNbyQ.mp3",
+      "languages": ["ga"]
+    },
+    {
+      "id": "gxfj0srlSMPoreqh8ib4",
+      "name": "Aoife",
+      "description": "Warm, Proud Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/gxfj0srlSMPoreqh8ib4/gDnt7sE1tFktzrdbGQZH.mp3",
+      "languages": ["ga"]
+    },
+    {
+      "id": "W71zT1VwIFFx3mMGH2uZ",
+      "name": "MarcoTrox",
+      "description": "Warm, Balanced and Polished",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/9f5219a8b69545c7a5f2948bc2e9e0ef/voices/W71zT1VwIFFx3mMGH2uZ/gxqkkXfQqy1Og9Sa5fHd.mp3",
+      "languages": [
+        "it",
+        "ja",
+        "fr",
+        "da",
+        "ro",
+        "fil",
+        "id",
+        "ta",
+        "hu",
+        "el",
+        "cs",
+        "ms",
+        "no",
+        "hi",
+        "hr",
+        "sv",
+        "bg",
+        "vi",
+        "pl",
+        "ru",
+        "uk",
+        "ar",
+        "tr",
+        "ko",
+        "es",
+        "nl",
+        "en",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "gfKKsLN1k0oYYN9n2dXX",
+      "name": "Violetta",
+      "description": "Ringing, Bright and Joyful",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/Mxxy1mLEQkeyXX75dokAIWz8bel1/voices/gfKKsLN1k0oYYN9n2dXX/Z2oJ1Jb0O555Pu7XDZv4.mp3",
+      "languages": [
+        "it",
+        "fil",
+        "hu",
+        "hi",
+        "pt",
+        "sk",
+        "ta",
+        "es",
+        "ru",
+        "da",
+        "id",
+        "ms",
+        "no",
+        "hr",
+        "bg",
+        "cs",
+        "fr",
+        "ro",
+        "vi",
+        "pl",
+        "ko",
+        "tr",
+        "nl",
+        "en",
+        "de"
+      ]
+    },
+    {
+      "id": "13Cuh3NuYvWOVQtLbRN8",
+      "name": "Marco",
+      "description": "Deep, Rich and Reflective",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/9f5219a8b69545c7a5f2948bc2e9e0ef/voices/13Cuh3NuYvWOVQtLbRN8/TFuc4Arf9UEQ5mwhe1e9.mp3",
+      "languages": [
+        "it",
+        "bg",
+        "fil",
+        "fr",
+        "ro",
+        "da",
+        "hu",
+        "hr",
+        "id",
+        "sk",
+        "ta",
+        "sv",
+        "tr",
+        "zh",
+        "nl",
+        "uk",
+        "es",
+        "ar",
+        "ms",
+        "ko",
+        "no",
+        "cs",
+        "el",
+        "ru",
+        "de",
+        "pt",
+        "hi",
+        "pl"
+      ]
+    },
+    {
+      "id": "3JDquces8E8bkmvbh6Bc",
+      "name": "Otani",
+      "description": "Inviting, Clear and Measured",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/3JDquces8E8bkmvbh6Bc/PZchZFPBnPlog5kS1miM.mp3",
+      "languages": [
+        "ja",
+        "es",
+        "cs",
+        "it",
+        "hi",
+        "tr",
+        "ro",
+        "ru",
+        "id",
+        "nl",
+        "sk",
+        "sv",
+        "hr"
+      ]
+    },
+    {
+      "id": "8EkOjt4xTPGMclNlh1pk",
+      "name": "Morioki",
+      "description": "Calm, Measured and Muffled",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/MwVnKyOTE3ZRdpgHUo84p20s9zw2/voices/8EkOjt4xTPGMclNlh1pk/09bd3d5e-755b-4046-8ace-c69f0dcc872f.mp3",
+      "languages": ["ja"]
+    },
+    {
+      "id": "j210dv0vWm7fCknyQpbA",
+      "name": "Hinata",
+      "description": "Inviting, Smooth and Measured",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/j210dv0vWm7fCknyQpbA/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI5NmE5ZjY0NWNlYzk0M2ZmOWZkOWFiNTJmMDZjMjM0MSIsImZpbGVuYW1lIjoiN1NkMkNJT2hSTWtRcjJPZ1JkY2EubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": [
+        "ja",
+        "id",
+        "pt",
+        "cs",
+        "uk",
+        "sk",
+        "sv",
+        "it",
+        "ta",
+        "el",
+        "vi",
+        "no",
+        "fr",
+        "hi",
+        "fil",
+        "ro",
+        "ru",
+        "pl",
+        "ar",
+        "ms",
+        "tr",
+        "es",
+        "ko",
+        "en",
+        "nl",
+        "de"
+      ]
+    },
+    {
+      "id": "4wkfJBlQsdfJSs72BpLq",
+      "name": "Bagus",
+      "description": "Calm, Proud Narrator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/4wkfJBlQsdfJSs72BpLq/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiWEp1dWhIUkNidG8wOHQxaUpJc24ubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["jv"]
+    },
+    {
+      "id": "P8ywcR8T8eArSybNAChB",
+      "name": "Danang",
+      "description": "Playful, Upbeat Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/P8ywcR8T8eArSybNAChB/AZdZDe8feppNpGGAwHCR.mp3",
+      "languages": ["jv"]
+    },
+    {
+      "id": "LMKNTBOiPrKaRnI9G5aU",
+      "name": "Wulan",
+      "description": "Cheerful, Confident Ad",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/LMKNTBOiPrKaRnI9G5aU/8ynBRlw1e4OYQQUgoEYN.mp3",
+      "languages": ["jv"]
+    },
+    {
+      "id": "2SDH0owxS12R2YMgMNoG",
+      "name": "Aisiri",
+      "description": "Friendly Kannada Customer Care",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/2SDH0owxS12R2YMgMNoG/9rV4s5op3f12ObiBJ5xs.mp3",
+      "languages": [
+        "kn",
+        "tr",
+        "it",
+        "uk",
+        "es",
+        "no",
+        "el",
+        "id",
+        "ko",
+        "ru",
+        "vi",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "imphBib61OiJ8r9IfSGe",
+      "name": "Varalaxmi",
+      "description": "Natural Kannada Conversation",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/imphBib61OiJ8r9IfSGe/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJlZDliMDVlNjMyNGM0NTc2ODU0OTAzNTJlOWExZWM5MCIsImZpbGVuYW1lIjoiZVI1ZDRicTRteGwwQ1Z3MHlaY3gubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["kn", "tr", "el", "ar", "ru", "no"]
+    },
+    {
+      "id": "wgYipW6i4oMTbU78GXhZ",
+      "name": "Kampana",
+      "description": "Kannada FM Radio Presenter",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/wgYipW6i4oMTbU78GXhZ/yJ5oF8Iux4JVKXIdiHUV.mp3",
+      "languages": ["kn", "es", "it", "id", "tr", "ru", "el", "no"]
+    },
+    {
+      "id": "dQO3cohklRk58SrkwMjq",
+      "name": "Nurlan",
+      "description": "Calm, Confident Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/dQO3cohklRk58SrkwMjq/0wXOrOLJpYTxRcOjpVZG.mp3",
+      "languages": ["kk"]
+    },
+    {
+      "id": "zOpa1hybmCey0nqbmcMW",
+      "name": "Yerlan",
+      "description": "Upbeat, Friendly Ad",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/zOpa1hybmCey0nqbmcMW/Yr5oVGIJyYreMpAqcvwS.mp3",
+      "languages": ["kk"]
+    },
+    {
+      "id": "RojlvMxYbtU94goTCgIP",
+      "name": "Bolat",
+      "description": "Calm, Patient Friend",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/RojlvMxYbtU94goTCgIP/X2IeMLGx2hC5kvLRtGeJ.mp3",
+      "languages": ["kk"]
+    },
+    {
+      "id": "EXrioWz95lYQFbkrU375",
+      "name": "Bakyt",
+      "description": "Resonant, Proud, Deep",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/EXrioWz95lYQFbkrU375/3tRzBlftUehGlA8797A3.mp3",
+      "languages": ["ky"]
+    },
+    {
+      "id": "TbGqiimwSd6UEi5u4LeJ",
+      "name": "Aigerim",
+      "description": "Warm, Calm Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/TbGqiimwSd6UEi5u4LeJ/OOdLjTU5QEzJHpd6WSvN.mp3",
+      "languages": ["ky"]
+    },
+    {
+      "id": "K2NFmoWgu56OXLNKo9nC",
+      "name": "Aiperi",
+      "description": "Bright, Cheerful Creator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/K2NFmoWgu56OXLNKo9nC/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiNVpyMFVJWWtZdzR6Y2xkQlREMTIubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["ky"]
+    },
+    {
+      "id": "ZJCNdZEjYwkOElxugmW2",
+      "name": "Hyuk",
+      "description": "Cold and Clear",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/hSWXaUomcSNh92DBdVimNedwBFB2/voices/ZJCNdZEjYwkOElxugmW2/dOgEto9Z9e1UqrYhRSe0.mp3",
+      "languages": [
+        "ko",
+        "it",
+        "bg",
+        "fr",
+        "nl",
+        "ta",
+        "sv",
+        "hr",
+        "no",
+        "el",
+        "hi",
+        "cs",
+        "id",
+        "ro",
+        "ms",
+        "tr",
+        "ar",
+        "es",
+        "en",
+        "pt"
+      ]
+    },
+    {
+      "id": "uyVNoMrnUku1dZyVEXwD",
+      "name": "Anna Kim",
+      "description": "Tender, Calm and Clear",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/uyVNoMrnUku1dZyVEXwD/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI4ODI1YjIzN2U5MmI0YzBjOWFiZjEyMmI5ZDRhODg5NCIsImZpbGVuYW1lIjoiZEE4eFVhMVRERE10ZU1iZ1ZCODgubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": [
+        "ko",
+        "hi",
+        "pl",
+        "ru",
+        "bg",
+        "fr",
+        "ar",
+        "ro",
+        "zh",
+        "nl",
+        "hr",
+        "pt",
+        "sk",
+        "id",
+        "uk",
+        "ta",
+        "sv",
+        "es",
+        "no",
+        "da"
+      ]
+    },
+    {
+      "id": "PDoCXqBQFGsvfO0hNkEs",
+      "name": "Chris",
+      "description": "Warm and Clear",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/70d7b643ae574688b481ad2842214f21/voices/PDoCXqBQFGsvfO0hNkEs/HBkpkZhm2qtrGEs3SRyg.mp3",
+      "languages": [
+        "ko",
+        "ms",
+        "id",
+        "tr",
+        "en",
+        "nl",
+        "uk",
+        "hi",
+        "ru",
+        "hr",
+        "it",
+        "ar",
+        "zh",
+        "bg",
+        "fr",
+        "ro",
+        "pt",
+        "sk",
+        "es",
+        "no",
+        "pl"
+      ]
+    },
+    {
+      "id": "g5sTwAvmq33DtRr9MKWC",
+      "name": "Kristaps",
+      "description": "Warm, Patient, Round",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/g5sTwAvmq33DtRr9MKWC/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiODMzNjg1NWQtYjk0NC00Mzg2LWJjNDUtNjE4ZjUxZTdiY2I4Lm1wMyIsInRpbWVzdGFtcCI6MTc5MTk2ODQwMDAwMDAwMH0%3D",
+      "languages": ["lv"]
+    },
+    {
+      "id": "4nP0MRk3S5Qj1fGfXf51",
+      "name": "Ilze",
+      "description": "Calm, Warm, Unhurried",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/4nP0MRk3S5Qj1fGfXf51/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiMWMzMTdlMmYtMDUwOC00MTkyLWE1MzYtMzMzZjk3M2VkODhmLm1wMyIsInRpbWVzdGFtcCI6MTc5MTk2ODQwMDAwMDAwMH0%3D",
+      "languages": ["lv"]
+    },
+    {
+      "id": "6H9DAoiqXpVkBN5eOmIS",
+      "name": "Signe",
+      "description": "Playful, Upbeat, Bright",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/6H9DAoiqXpVkBN5eOmIS/63c8f5f8-6b07-42dd-90d3-9f7e7f2463c2.mp3",
+      "languages": ["lv"]
+    },
+    {
+      "id": "W1JdeCmjDc7O1DepmPed",
+      "name": "Boyata",
+      "description": "Dry, Direct Narrator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/W1JdeCmjDc7O1DepmPed/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiZGpXQmFvNDFicjBvVTNUbldiUXAubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["ln"]
+    },
+    {
+      "id": "q8SsHF58CxFP0Gclet5Q",
+      "name": "Bomengo",
+      "description": "Warm, Kind Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/q8SsHF58CxFP0Gclet5Q/UOktCE5lI1Hq9IiGVGJt.mp3",
+      "languages": ["ln"]
+    },
+    {
+      "id": "qFvPDtGwx70XWPzi2gbh",
+      "name": "Mbemba",
+      "description": "Playful, Confident",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/qFvPDtGwx70XWPzi2gbh/5wmQVb5HQSDbeXGMW3oV.mp3",
+      "languages": ["ln"]
+    },
+    {
+      "id": "YzAEMXSQhHOIgNWD4uE9",
+      "name": "Vytautas",
+      "description": "Calm, Deep, Proud",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/YzAEMXSQhHOIgNWD4uE9/0LTU132njggUpz1uhNV7.mp3",
+      "languages": ["lt"]
+    },
+    {
+      "id": "J4hBweML8Zvda0PeTP7t",
+      "name": "Rokas",
+      "description": "Amused, Light, Quick",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/J4hBweML8Zvda0PeTP7t/hVYS5b64FybgjGwIpUbm.mp3",
+      "languages": ["lt"]
+    },
+    {
+      "id": "EnnOVsVNRrPWieNQUZem",
+      "name": "Ugne",
+      "description": "Bright, Cheerful Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/EnnOVsVNRrPWieNQUZem/lTQkPeqEkdMxHolwwdMK.mp3",
+      "languages": ["lt"]
+    },
+    {
+      "id": "iXhjYxmFVTK0JSpyZpi3",
+      "name": "Josiane",
+      "description": "Calm, Firm, Clipped",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/iXhjYxmFVTK0JSpyZpi3/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiYTA2NTk5MDctZjc5ZS00ZGEwLWEzZWUtMTRhYzFiYjMwMTYwLm1wMyIsInRpbWVzdGFtcCI6MTc5MTk2ODQwMDAwMDAwMH0%3D",
+      "languages": ["lb"]
+    },
+    {
+      "id": "z3ukO8IrhoSMgjGG2bKA",
+      "name": "Liz",
+      "description": "Cheerful, Playful, Bright",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/z3ukO8IrhoSMgjGG2bKA/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiNDFmZmI0OWQtOGFmOS00YzUxLWEwZTktNjI2NWFhNjE5YmZmLm1wMyIsInRpbWVzdGFtcCI6MTc5MTk2ODQwMDAwMDAwMH0%3D",
+      "languages": ["lb"]
+    },
+    {
+      "id": "2JauyFf1BTtNBvT3bMKO",
+      "name": "Carole",
+      "description": "Cheerful, Warm, Relaxed",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/2JauyFf1BTtNBvT3bMKO/cb4ab9fd-3f7d-46b7-81fd-24b709c47973.mp3",
+      "languages": ["lb"]
+    },
+    {
+      "id": "cFO2HfxaNjCR0fwraG7l",
+      "name": "Zoran",
+      "description": "Patient, Confident Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/cFO2HfxaNjCR0fwraG7l/QTZWKe2upZj4scM61mcz.mp3",
+      "languages": ["mk"]
+    },
+    {
+      "id": "gy0vQsml8J3EnYb7TrRc",
+      "name": "Filip",
+      "description": "Urgent, Bright Creator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/gy0vQsml8J3EnYb7TrRc/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoid2Z2Z3RYd01tdm0wRTJYcjZwR2QubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["mk"]
+    },
+    {
+      "id": "KusHBkSnnzqtczjJ4QtF",
+      "name": "Elena",
+      "description": "Playful, Bright, Bouncy",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/KusHBkSnnzqtczjJ4QtF/TsikgF4Ulks04jwyObv6.mp3",
+      "languages": ["mk"]
+    },
+    {
+      "id": "NpVSXJvYSdIbjOaMbShj",
+      "name": "Jawid Iqbal Anwar",
+      "description": "News Anchor",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/7dd4bb79f4ae43d6953a5e308e2a29c7/voices/NpVSXJvYSdIbjOaMbShj/xCnae41e9eoVULU1ej1t.mp3",
+      "languages": [
+        "ms",
+        "ru",
+        "fil",
+        "hu",
+        "hr",
+        "el",
+        "fr",
+        "ta",
+        "da",
+        "vi",
+        "hi",
+        "no",
+        "ro",
+        "ar",
+        "it",
+        "zh",
+        "tr",
+        "es",
+        "en"
+      ]
+    },
+    {
+      "id": "BeIxObt4dYBRJLYoe1hU",
+      "name": "Athira",
+      "description": "Personal, Warm and Encouraging",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/BeIxObt4dYBRJLYoe1hU/NQrWask5w514vWhnor4V.mp3",
+      "languages": ["ms", "ru", "hr", "hi", "pt", "uk", "ta", "es"]
+    },
+    {
+      "id": "UcqZLa941Kkt8ZhEEybf",
+      "name": "Afifah",
+      "description": "Friendly, Tender and Calm",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/3rj72HPv6xWvPRBkq5t7adcMlJy1/voices/UcqZLa941Kkt8ZhEEybf/k0blaR8FBgC5kTq5dYBL.mp3",
+      "languages": ["ms", "ru", "hu", "tr", "hr", "sv", "ta", "es"]
+    },
+    {
+      "id": "OVkoEbwxsYHiSRMFV9t3",
+      "name": "Samitha",
+      "description": "Warm Malayalam Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/OVkoEbwxsYHiSRMFV9t3/SMKm03WSCVb1XMjOknac.mp3",
+      "languages": [
+        "ml",
+        "ro",
+        "no",
+        "hu",
+        "ms",
+        "el",
+        "id",
+        "ar",
+        "ta",
+        "uk",
+        "ru",
+        "es",
+        "vi",
+        "tr",
+        "pt",
+        "it",
+        "en"
+      ]
+    },
+    {
+      "id": "Eclv6jJwMbGUhEki9Bro",
+      "name": "Manikandan",
+      "description": "Deep Malayalam Narration",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/Eclv6jJwMbGUhEki9Bro/1Wp2DZUp3fCW9DmMPTC1.mp3",
+      "languages": ["ml", "hi", "ms", "cs", "tr", "en"]
+    },
+    {
+      "id": "F6apuaOciIF8axVr21FB",
+      "name": "Vijayesh",
+      "description": "Gentle Malayalam Storyteller",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/F6apuaOciIF8axVr21FB/rbuyPRT3kQApc7QmYFdd.mp3",
+      "languages": ["ml", "es", "ms", "el", "ar", "no", "hr", "ro", "hi"]
+    },
+    {
+      "id": "X4ejJtkOgKgWYBYZjM2w",
+      "name": "Karm",
+      "description": "Upbeat, Confident Pitch",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/X4ejJtkOgKgWYBYZjM2w/O9z3B6hmpX3PnJgrJuZo.mp3",
+      "languages": ["mt"]
+    },
+    {
+      "id": "B2cHR6ykaWrCSNJdst5y",
+      "name": "Pawlu",
+      "description": "Friendly, Husky Friend",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/B2cHR6ykaWrCSNJdst5y/9hAdTJT94ghzN5PrtdzB.mp3",
+      "languages": ["mt"]
+    },
+    {
+      "id": "FLoBbl07mqyb8txXmOn9",
+      "name": "Marija",
+      "description": "Cheerful, Warm Pitch",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/FLoBbl07mqyb8txXmOn9/UGZS55PlULGBDWKCUXGk.mp3",
+      "languages": ["mt"]
+    },
+    {
+      "id": "9lHjugDhwqoxA5MhX0az",
+      "name": "Anna Su",
+      "description": "Casual, Friendly and Bright",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/iWxuY2XaYrWRf6GQxIUY2M0J0gJ3/voices/9lHjugDhwqoxA5MhX0az/55SoO0ERY953JPIuC271.mp3",
+      "languages": [
+        "zh",
+        "hi",
+        "es",
+        "it",
+        "de",
+        "hu",
+        "tr",
+        "ko",
+        "sk",
+        "ro",
+        "hr",
+        "pt",
+        "sv",
+        "en",
+        "ta",
+        "da"
+      ]
+    },
+    {
+      "id": "ByhETIclHirOlWnWKhHc",
+      "name": "Shan Shan",
+      "description": "Young Energetic Female",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/ByhETIclHirOlWnWKhHc/WueuyXkB5LAjxrfqv4nL.mp3",
+      "languages": [
+        "zh",
+        "hu",
+        "fr",
+        "hr",
+        "ta",
+        "no",
+        "da",
+        "ro",
+        "id",
+        "cs",
+        "ms",
+        "tr",
+        "ar",
+        "pl",
+        "uk",
+        "es",
+        "ko",
+        "nl",
+        "pt",
+        "de"
+      ]
+    },
+    {
+      "id": "4VZIsMPtgggwNg7OXbPY",
+      "name": "James Gao",
+      "description": "Calm, Friendly and Warm",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/qCmCyqVqIbevIuA9FVI25BpgadC2/voices/4VZIsMPtgggwNg7OXbPY/9fLlmDXPhO819IAIRK44.mp3",
+      "languages": [
+        "zh",
+        "it",
+        "el",
+        "hr",
+        "fil",
+        "hu",
+        "cs",
+        "ru",
+        "ko",
+        "en",
+        "fr",
+        "sv",
+        "no",
+        "id",
+        "hi",
+        "ro",
+        "ta",
+        "ms",
+        "pl",
+        "ar",
+        "tr",
+        "uk",
+        "es",
+        "pt",
+        "nl",
+        "de"
+      ]
+    },
+    {
+      "id": "HLsdJ3ZBkHmbTvTCh6HP",
+      "name": "Aroha",
+      "description": "Warm, Proud Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/HLsdJ3ZBkHmbTvTCh6HP/4MxeUcBKHhhDESGYsI1Z.mp3",
+      "languages": ["mi"]
+    },
+    {
+      "id": "1TYrEzaqyQckwe60049t",
+      "name": "Tane",
+      "description": "Dry, Amused Creator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/1TYrEzaqyQckwe60049t/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoibFdIbEpjbW10RmVsZmVJUW50ZUkubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["mi"]
+    },
+    {
+      "id": "3iiW50odiSyWHfqXtXba",
+      "name": "Hine",
+      "description": "Proud, Gentle Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/3iiW50odiSyWHfqXtXba/JoNoeSknOiYX3zthHuHm.mp3",
+      "languages": ["mi"]
+    },
+    {
+      "id": "8fqGzH80bdkm2UseeV9f",
+      "name": "Sharad",
+      "description": "Deep Powerful Marathi Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/8fqGzH80bdkm2UseeV9f/jBEaNFvmV9aJUEka1Yt1.mp3",
+      "languages": [
+        "mr",
+        "fr",
+        "no",
+        "cs",
+        "hi",
+        "ms",
+        "ar",
+        "ru",
+        "ta",
+        "sv",
+        "id",
+        "ro",
+        "el",
+        "uk",
+        "tr",
+        "es",
+        "pt",
+        "nl",
+        "de"
+      ]
+    },
+    {
+      "id": "4QmRQP2RqsuTD7HT9MkW",
+      "name": "Prajakta",
+      "description": "Natural Marathi AI Companion",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/4QmRQP2RqsuTD7HT9MkW/adG4JLiWTw4HrBIpOR71.mp3",
+      "languages": ["mr"]
+    },
+    {
+      "id": "aZaMD7e0iu6aJpSocGIY",
+      "name": "Kalyani",
+      "description": "Warm Marathi Conversational",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/aZaMD7e0iu6aJpSocGIY/xw5E73m6xbRYmM90Vsgv.mp3",
+      "languages": [
+        "mr",
+        "fr",
+        "no",
+        "ms",
+        "ru",
+        "vi",
+        "ar",
+        "ta",
+        "sv",
+        "ro",
+        "it",
+        "el",
+        "pl",
+        "uk",
+        "tr",
+        "es",
+        "pt",
+        "nl",
+        "ko"
+      ]
+    },
+    {
+      "id": "sjPAZPn7M1KgdmdYfsuu",
+      "name": "Bataar",
+      "description": "Calm Khalkha Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/sjPAZPn7M1KgdmdYfsuu/JMAQgayXRy9XBibAjG2x.mp3",
+      "languages": ["mn"]
+    },
+    {
+      "id": "4pSHaU93d1XS027ZFhHB",
+      "name": "Oyuna",
+      "description": "Warm Khalkha Narrator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/4pSHaU93d1XS027ZFhHB/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiNE1JNUJVUUVMa3lEZmNIU3R5dksubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["mn"]
+    },
+    {
+      "id": "DLfKtGm2VGo06slN2VJE",
+      "name": "Munkhbat",
+      "description": "Warm Khentii Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/DLfKtGm2VGo06slN2VJE/CvvhVR9tvJQjI36sJ6ho.mp3",
+      "languages": ["mn"]
+    },
+    {
+      "id": "BTUIboFmihb87sfmikzP",
+      "name": "Kaanchi",
+      "description": "Expressive, Real & Emotional",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/BTUIboFmihb87sfmikzP/6f9d47cd-e4c1-45ab-96ca-c2562666c816.mp3",
+      "languages": [
+        "ne",
+        "id",
+        "nl",
+        "es",
+        "uk",
+        "it",
+        "ms",
+        "hi",
+        "tr",
+        "ko",
+        "ar",
+        "el",
+        "de",
+        "no",
+        "fr",
+        "hr",
+        "cs",
+        "da",
+        "pl"
+      ]
+    },
+    {
+      "id": "HkUjoHqRfXAnlMzQfp8a",
+      "name": "Bishnu",
+      "description": "Proud Nepali Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/HkUjoHqRfXAnlMzQfp8a/9CCxbgjUPxe7lRGH7d20.mp3",
+      "languages": ["ne"]
+    },
+    {
+      "id": "5Q1qGN5LYPBQ1b0SIFdA",
+      "name": "Kamala",
+      "description": "Firm Nepali Friend",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/5Q1qGN5LYPBQ1b0SIFdA/zQKqQL7RrhS0zOTXi2zu.mp3",
+      "languages": ["ne"]
+    },
+    {
+      "id": "uNsWM1StCcpydKYOjKyu",
+      "name": "Mia Starset",
+      "description": "Clear and Friendly",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/QKdDeznZ5rOjD7lKF6P6ID3jhJM2/voices/uNsWM1StCcpydKYOjKyu/868f87d5-7724-4786-a7fa-a48e01b2ba54.mp3",
+      "languages": [
+        "no",
+        "hi",
+        "fil",
+        "hu",
+        "tr",
+        "ru",
+        "ro",
+        "zh",
+        "nl",
+        "ms",
+        "pt",
+        "sk",
+        "id",
+        "uk",
+        "el",
+        "sv",
+        "fr",
+        "ta",
+        "it",
+        "es",
+        "cs",
+        "ar",
+        "de",
+        "pl"
+      ]
+    },
+    {
+      "id": "b3jcIbyC3BSnaRu8avEk",
+      "name": "Emma",
+      "description": "Shy and Friendly",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/OSbmAb1GKjNVlChP2UgZukCicWR2/voices/b3jcIbyC3BSnaRu8avEk/bZ5dFORSQeyFBQ7VAv9C.mp3",
+      "languages": [
+        "no",
+        "fi",
+        "ru",
+        "id",
+        "el",
+        "ta",
+        "hu",
+        "sv",
+        "hr",
+        "vi",
+        "da",
+        "cs",
+        "pl",
+        "ro",
+        "ms",
+        "tr",
+        "ar",
+        "it",
+        "ko",
+        "es",
+        "nl",
+        "de"
+      ]
+    },
+    {
+      "id": "xF681s0UeE04gsf0mVsJ",
+      "name": "Olaf",
+      "description": "Clear and Natural",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/xF681s0UeE04gsf0mVsJ/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiNU5ac2Jscng3U1UwTk94ZUxXZXI3MXpzcFZ3MSIsImZpbGVuYW1lIjoiM2RjNmRmZDEtOWRhOS00ZGU3LThlYmItZDdhODE2ZDc4MjE1Lm1wMyIsInRpbWVzdGFtcCI6MTc5MTk2ODQwMDAwMDAwMH0%3D",
+      "languages": [
+        "no",
+        "ro",
+        "ms",
+        "cs",
+        "hi",
+        "zh",
+        "sv",
+        "hr",
+        "pl",
+        "nl",
+        "tr",
+        "da",
+        "es",
+        "ru",
+        "pt",
+        "ar",
+        "fr",
+        "uk",
+        "it",
+        "en"
+      ]
+    },
+    {
+      "id": "Zcdoxp4Mfxbmk4fIwInk",
+      "name": "Barsha",
+      "description": "Engaging Odia Young Girl",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/Zcdoxp4Mfxbmk4fIwInk/4GIe4nblbu4LBie4s188.mp3",
+      "languages": [
+        "or",
+        "ms",
+        "no",
+        "es",
+        "uk",
+        "it",
+        "tr",
+        "pt",
+        "id",
+        "nl",
+        "en",
+        "de",
+        "hi",
+        "ko",
+        "el",
+        "ru",
+        "ro",
+        "cs",
+        "vi"
+      ]
+    },
+    {
+      "id": "foG6Z7LGrkqvUz7pYqJy",
+      "name": "Manohar",
+      "description": "Casual Odia Podcast Host",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/foG6Z7LGrkqvUz7pYqJy/xb9JvrrkdyIlKm8jqDgC.mp3",
+      "languages": [
+        "or",
+        "id",
+        "uk",
+        "zh",
+        "hi",
+        "de",
+        "ko",
+        "it",
+        "es",
+        "el",
+        "no",
+        "hr",
+        "ru",
+        "cs",
+        "pl"
+      ]
+    },
+    {
+      "id": "vlM1zi2SfTmdlEJg5RPm",
+      "name": "Debasish",
+      "description": "Warm Puri Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/vlM1zi2SfTmdlEJg5RPm/JCKQlPvoE8KNsIT7gmWG.mp3",
+      "languages": ["or"]
+    },
+    {
+      "id": "Nkdwt1QR5c6a36OOMwjh",
+      "name": "Zarghuna",
+      "description": "Serious Kandahari Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/Nkdwt1QR5c6a36OOMwjh/aHGTpbx4UIGawruCTQfb.mp3",
+      "languages": ["ps"]
+    },
+    {
+      "id": "8soz44FQzK7cxS9CGFyF",
+      "name": "Shakila",
+      "description": "Expressive Kandahari Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/8soz44FQzK7cxS9CGFyF/rbkRilJOwxJKeAaz6Kub.mp3",
+      "languages": ["ps"]
+    },
+    {
+      "id": "ubfw5c1EO6ROUyJG7hew",
+      "name": "Farhad",
+      "description": "Friendly Upbeat Ad",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/ubfw5c1EO6ROUyJG7hew/S0ghe93uNDzUneJhqOh7.mp3",
+      "languages": ["ps"]
+    },
+    {
+      "id": "xKk80LgyXTAl6McCiFke",
+      "name": "Kaveh",
+      "description": "Cheerful Kermani Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/xKk80LgyXTAl6McCiFke/tfHg3tIx6ykqBQm6ZVr3.mp3",
+      "languages": ["fa"]
+    },
+    {
+      "id": "N7wuKHXQQ5fKd75noieq",
+      "name": "Niloofar",
+      "description": "Curious Tehrani Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/N7wuKHXQQ5fKd75noieq/XlCNpTECzkhPiPPNtuXp.mp3",
+      "languages": ["fa"]
+    },
+    {
+      "id": "VKDkQOjcRZb7aNtJGaWt",
+      "name": "Kourosh",
+      "description": "Confident Mashhadi Ad",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/VKDkQOjcRZb7aNtJGaWt/hVkz4LLiwmOpCOVsqEc8.mp3",
+      "languages": ["fa"]
+    },
+    {
+      "id": "hIssydxXZ1WuDorjx6Ic",
+      "name": "Adam",
+      "description": "Serious, Rich, and Smoky",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/OL55YKALeab7lyIfDKwe0l2b1bR2/voices/hIssydxXZ1WuDorjx6Ic/kNa9LiskFM0zlZprIFgg.mp3",
+      "languages": [
+        "pl",
+        "hu",
+        "ro",
+        "sk",
+        "sv",
+        "fr",
+        "ta",
+        "it",
+        "cs",
+        "el",
+        "vi",
+        "hr",
+        "no",
+        "hi",
+        "id",
+        "ru",
+        "ar",
+        "ms",
+        "uk",
+        "tr",
+        "es",
+        "ko",
+        "en",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "H5xTcsAIeS5RAykjz57a",
+      "name": "Alex",
+      "description": "Warm Storyteller",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/H5xTcsAIeS5RAykjz57a/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiT0w1NVlLQUxlYWI3bHlJZkRLd2UwbDJiMWJSMiIsImZpbGVuYW1lIjoiOGZlNGJhNDctZjEwNy00Yjc3LTk2MWMtZWYzYTNlOTM5OTU1Lm1wMyIsInRpbWVzdGFtcCI6MTc5MTk2ODQwMDAwMDAwMH0%3D",
+      "languages": [
+        "pl",
+        "cs",
+        "sk",
+        "sv",
+        "ta",
+        "da",
+        "el",
+        "fr",
+        "hr",
+        "hi",
+        "no",
+        "vi",
+        "ro",
+        "id",
+        "uk",
+        "tr",
+        "ko",
+        "ar",
+        "it",
+        "zh",
+        "es",
+        "nl",
+        "en",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "o2xdfKUpc1Bwq7RchZuW",
+      "name": "Piotr",
+      "description": "Engaging, Reassuring Storyteller",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/WREaahKO7NZBbjp6DTUFGPrnqHD3/voices/o2xdfKUpc1Bwq7RchZuW/FVTB9TXCDzUSEKDPzIvD.mp3",
+      "languages": [
+        "pl",
+        "el",
+        "ms",
+        "hi",
+        "no",
+        "fr",
+        "hr",
+        "cs",
+        "hu",
+        "vi",
+        "it",
+        "ro",
+        "uk",
+        "ko",
+        "ar",
+        "tr",
+        "es",
+        "nl",
+        "ru",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "33B4UnXyTNbgLmdEDh5P",
+      "name": "Keren",
+      "description": "Sweet, Vibrant and Rhythmic",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/33B4UnXyTNbgLmdEDh5P/ArnzDsFaz6KDoDcDD8V2.mp3",
+      "languages": ["pt"]
+    },
+    {
+      "id": "36rVQA1AOIPwpA3Hg1tC",
+      "name": "Matheus",
+      "description": "Friendly and Energetic",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/36rVQA1AOIPwpA3Hg1tC/ewP6z1S1gE5Mb9nBSNaV.mp3",
+      "languages": ["pt"]
+    },
+    {
+      "id": "r2fkFV8WAqXq2AqBpgJT",
+      "name": "Amandoca",
+      "description": "Fun, Breathy and Vibrant",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/bhxhV7JK9ENh5SdYnMwMtztTTQD2/voices/r2fkFV8WAqXq2AqBpgJT/e5f91486-26b6-48ee-b0a2-f0c4f7c344dd.mp3",
+      "languages": ["pt"]
+    },
+    {
+      "id": "ttyKbP9zTIRyRCN6b2Ye",
+      "name": "Yatin",
+      "description": "Punjabi Customer Support",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/ttyKbP9zTIRyRCN6b2Ye/IC5maW748q7E9nSArUrj.mp3",
+      "languages": [
+        "pa",
+        "fr",
+        "no",
+        "hi",
+        "hr",
+        "ar",
+        "fil",
+        "ru",
+        "uk",
+        "es",
+        "bg",
+        "tr",
+        "ta",
+        "ms",
+        "pt",
+        "ro",
+        "ko"
+      ]
+    },
+    {
+      "id": "HkrBPy9A2svfb9tZ9YaL",
+      "name": "Sufi",
+      "description": "Wise Punjabi Conversation",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/HkrBPy9A2svfb9tZ9YaL/EYpJhSMqis0Ge3pTgTtr.mp3",
+      "languages": ["pa", "hi", "ms", "sv", "ro", "uk", "nl", "pt"]
+    },
+    {
+      "id": "TMoHpmi3HTyjpoLh2KMT",
+      "name": "Raqib",
+      "description": "Real Punjabi Support Agent",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/TMoHpmi3HTyjpoLh2KMT/1vme1u9dvh0i2DjUcZDn.mp3",
+      "languages": [
+        "pa",
+        "el",
+        "ms",
+        "id",
+        "ta",
+        "no",
+        "cs",
+        "hi",
+        "fi",
+        "fr",
+        "ro",
+        "ar",
+        "ko",
+        "tr",
+        "es",
+        "nl",
+        "en",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "OlBp4oyr3FBAGEAtJOnU",
+      "name": "Jora Slobod",
+      "description": "Calm, Deep and Reassuring",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/OlBp4oyr3FBAGEAtJOnU/Uub5cEzcyVo34vqgA9cA.mp3",
+      "languages": [
+        "ro",
+        "el",
+        "ja",
+        "hr",
+        "bg",
+        "fil",
+        "cs",
+        "sk",
+        "pl",
+        "da",
+        "ms",
+        "sv",
+        "id",
+        "ta",
+        "no",
+        "hi",
+        "fr",
+        "vi",
+        "uk",
+        "it",
+        "tr",
+        "ar",
+        "es",
+        "nl",
+        "en",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "3z9q8Y7plHbvhDZehEII",
+      "name": "Antonia",
+      "description": "Mellow, Warm and Cute",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/3z9q8Y7plHbvhDZehEII/RizL5Q4u5cwB0Qrp02so.mp3",
+      "languages": ["ro"]
+    },
+    {
+      "id": "gbLy9ep70G3JW53cTzFC",
+      "name": "Corina Ioana",
+      "description": "Clear, Friendly and Calm",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/gbLy9ep70G3JW53cTzFC/ORZ4ycrJb2N6RvCCndYi.mp3",
+      "languages": [
+        "ro",
+        "ko",
+        "it",
+        "ar",
+        "no",
+        "el",
+        "uk",
+        "es",
+        "tr",
+        "vi",
+        "ta",
+        "en",
+        "sv",
+        "ru",
+        "de",
+        "pt",
+        "pl"
+      ]
+    },
+    {
+      "id": "3EuKHIEZbSzrHGNmdYsx",
+      "name": "Nikolay",
+      "description": "Confident, Clear and Engaging",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/fbf84673baa740ae87ecf80121645a80/voices/3EuKHIEZbSzrHGNmdYsx/eDCArYD3qxTq5zrHJjYL.mp3",
+      "languages": ["ru"]
+    },
+    {
+      "id": "gJEfHTTiifXEDmO687lC",
+      "name": "Prince Nur",
+      "description": "Deep, Rich and Balanced",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/fdf00c0e5bee40abad820eb9de6a0acc/voices/gJEfHTTiifXEDmO687lC/bvLjXgefFonQ8qV9UFjN.mp3",
+      "languages": [
+        "ru",
+        "el",
+        "hu",
+        "id",
+        "no",
+        "cs",
+        "hi",
+        "vi",
+        "ro",
+        "it",
+        "zh",
+        "ko",
+        "tr",
+        "es",
+        "nl",
+        "en",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "txnCCHHGKmYIwrn7HfHQ",
+      "name": "Alexandr Vlasov",
+      "description": "Vibrant and Energetic",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/4c37c646e393427a98404da71421521a/voices/txnCCHHGKmYIwrn7HfHQ/9X9MXSKyYdsdkoNjOwY4.mp3",
+      "languages": ["ru"]
+    },
+    {
+      "id": "ih4fthN0aVU5Vs9NMwgk",
+      "name": "Milica",
+      "description": "Warm, Calm, Narrator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/ih4fthN0aVU5Vs9NMwgk/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiZ2k0NTdVY0JlSExQdDI0QVF0ZU0ubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["sr"]
+    },
+    {
+      "id": "5lDS2fR0uHPW5ShjjPzv",
+      "name": "Stefan",
+      "description": "Bright, Playful Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/5lDS2fR0uHPW5ShjjPzv/gLAhmF22jmjRyop8549F.mp3",
+      "languages": ["sr"]
+    },
+    {
+      "id": "PcQ1oUfPHim3ZuyULxyk",
+      "name": "Marko",
+      "description": "Upbeat, Punchy Creator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/PcQ1oUfPHim3ZuyULxyk/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoidXJkSzE4OW5nZU9abEdnTGVNdlEubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["sr"]
+    },
+    {
+      "id": "QfY4EJSXrwbmN0wR4597",
+      "name": "Marvi",
+      "description": "Warm, Proud Narrator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/QfY4EJSXrwbmN0wR4597/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiYVk5U0ZwVWpiYXN6QXJJSUNzMFQubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["sd"]
+    },
+    {
+      "id": "qpY7umg1e4iJEGDeTeVJ",
+      "name": "Sahil",
+      "description": "Playful Karachi Creator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/qpY7umg1e4iJEGDeTeVJ/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiZFdGQVJKaEVEWkNPZHFWYkxEZXcubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["sd"]
+    },
+    {
+      "id": "exl6D4IXyroS6H91BC5a",
+      "name": "Amber",
+      "description": "Cheerful Social Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/exl6D4IXyroS6H91BC5a/aQbkNT34jwrAYS2L7aa9.mp3",
+      "languages": ["sd"]
+    },
+    {
+      "id": "bYqmvVkXUBwLwYpGHGz3",
+      "name": "Andrej",
+      "description": "Balanced and Airy",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/nhzejzhpgsgVFjfm647xakUeR0u2/voices/bYqmvVkXUBwLwYpGHGz3/7zw88eoPx7M0amQdujCP.mp3",
+      "languages": [
+        "sk",
+        "hi",
+        "el",
+        "ms",
+        "no",
+        "id",
+        "hr",
+        "cs",
+        "fi",
+        "ro",
+        "ko",
+        "ar",
+        "tr",
+        "es",
+        "nl"
+      ]
+    },
+    {
+      "id": "5TUD5nYN251MvBggIfLu",
+      "name": "Alex",
+      "description": "Pleasant, Warm and Trustworthy",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/5TUD5nYN251MvBggIfLu/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoiTmxKMGo2SGxrQVp2bHhhSWxKOFRJOUFMcUtGMiIsImZpbGVuYW1lIjoiN2I4NTFmNWMtNWJlOC00N2YwLWE4OGYtOTNjNjYwODgxMTNiLm1wMyIsInRpbWVzdGFtcCI6MTc5MTk2ODQwMDAwMDAwMH0%3D",
+      "languages": ["sk"]
+    },
+    {
+      "id": "Zai7B4Aol2bJtneyq0L1",
+      "name": "Luki Zajo",
+      "description": "Lively, Deep and Focused",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/eXX5T1G5caWhvH2pcZFz3j3ch8Z2/voices/Zai7B4Aol2bJtneyq0L1/9QDeP48QP1jVSPAIJBCE.mp3",
+      "languages": ["sk"]
+    },
+    {
+      "id": "XGfMwCpKmpWdTb1sermJ",
+      "name": "Ana",
+      "description": "Calm, Warm Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/XGfMwCpKmpWdTb1sermJ/VNaKGy7hqLkWhv4Hwxxw.mp3",
+      "languages": ["sl"]
+    },
+    {
+      "id": "SmCUS1ekZnVjC5lqnRQG",
+      "name": "Luka",
+      "description": "Warm, Amused Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/SmCUS1ekZnVjC5lqnRQG/8S6OQkbxl1y8RErGAwX4.mp3",
+      "languages": ["sl"]
+    },
+    {
+      "id": "tpBlihqtz4wU2AHMYIto",
+      "name": "Jan",
+      "description": "Playful Upbeat Ad",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/tpBlihqtz4wU2AHMYIto/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoidG1qVVo0VW51OHRhVTJsenNZRXEubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["sl"]
+    },
+    {
+      "id": "ooA20ff7b4vtPDBR3VIi",
+      "name": "Cabdi",
+      "description": "Calm, Proud Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/ooA20ff7b4vtPDBR3VIi/xqkitIV2vDHcaXi9TmjC.mp3",
+      "languages": ["so"]
+    },
+    {
+      "id": "jidIgMpfzv7AizCIICKC",
+      "name": "Ifrah",
+      "description": "Warm, Rhythmic Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/jidIgMpfzv7AizCIICKC/xS86HnBUHrQkXtQaNliO.mp3",
+      "languages": ["so"]
+    },
+    {
+      "id": "b3IBTmoUZMXpjx6uOk6v",
+      "name": "Mustafe",
+      "description": "Friendly, Direct Creator",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/b3IBTmoUZMXpjx6uOk6v/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiIxZGEwNmVhNjc5YTU0OTc1YWQ5NmEyMjIxZmU2NTMwZCIsImZpbGVuYW1lIjoiMmM5VGJRaHRpV0ZNc09zWmx1V0cubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["so"]
+    },
+    {
+      "id": "CaJslL1xziwefCeTNzHv",
+      "name": "Cristina Campos",
+      "description": "Friendly and Soft",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/c093a158b7da4dadb8f9a5fae10b7211/voices/CaJslL1xziwefCeTNzHv/piQKkajjFXnelvIxcX33.mp3",
+      "languages": ["es"]
+    },
+    {
+      "id": "dlGxemPxFMTY7iXagmOj",
+      "name": "Fernando Martínez",
+      "description": "Rapid, Persuasive",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/dlGxemPxFMTY7iXagmOj/lQty6bCYbkLtTgnwqvDs.mp3",
+      "languages": [
+        "es",
+        "en",
+        "pt",
+        "ru",
+        "ar",
+        "hu",
+        "ro",
+        "nl",
+        "id",
+        "cs",
+        "sk",
+        "el",
+        "ta",
+        "sv",
+        "hr",
+        "it"
+      ]
+    },
+    {
+      "id": "kcQkGnn0HAT2JRDQ4Ljp",
+      "name": "Norah",
+      "description": "Warm, Friendly and Clear",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/06c63e017f47462b814df82e5e4bd95e/voices/kcQkGnn0HAT2JRDQ4Ljp/ahsfnWSIKEI3UbM2BaEE.mp3",
+      "languages": [
+        "es",
+        "hi",
+        "ru",
+        "ko",
+        "el",
+        "sk",
+        "ro",
+        "pt",
+        "sv",
+        "pl",
+        "ta",
+        "fr",
+        "no",
+        "hr",
+        "hu",
+        "id",
+        "ms",
+        "cs",
+        "ar",
+        "it",
+        "tr",
+        "en",
+        "nl",
+        "de"
+      ]
+    },
+    {
+      "id": "90GgjYd3t15Qldd8eZuQ",
+      "name": "Baraka",
+      "description": "Playful, Confident Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/90GgjYd3t15Qldd8eZuQ/1DmVaUcG1NISazaeRB1m.mp3",
+      "languages": ["sw"]
+    },
+    {
+      "id": "1F0knNkQeIgyHeW4heKC",
+      "name": "Neema",
+      "description": "Bright, Urgent Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/1F0knNkQeIgyHeW4heKC/MDHbS3c9atCkwt5GEX3M.mp3",
+      "languages": ["sw"]
+    },
+    {
+      "id": "fcJJxRPg9WEEhH0Uqnwn",
+      "name": "Kelvin",
+      "description": "Upbeat Ad",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/fcJJxRPg9WEEhH0Uqnwn/xYiU4C9shxQ53fVVHaCG.mp3",
+      "languages": ["sw"]
+    },
+    {
+      "id": "4xkUqaR9MYOJHoaC1Nak",
+      "name": "Sanna Hartfield",
+      "description": "Direct and Natural",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/4xkUqaR9MYOJHoaC1Nak/l4PwfhXHwvKzA0G9XP46.mp3",
+      "languages": [
+        "sv",
+        "cs",
+        "hi",
+        "hr",
+        "bg",
+        "fil",
+        "ro",
+        "ru",
+        "el",
+        "ta",
+        "no",
+        "fr",
+        "ms",
+        "vi",
+        "id",
+        "da",
+        "it",
+        "pl",
+        "ar",
+        "tr",
+        "es",
+        "pt",
+        "ko",
+        "nl",
+        "de"
+      ]
+    },
+    {
+      "id": "aSLKtNoVBZlxQEMsnGL2",
+      "name": "Sanna Hartfield",
+      "description": "Calm and Soothing",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/custom/voices/aSLKtNoVBZlxQEMsnGL2/g7yysxvG83AAWczMihDs.mp3",
+      "languages": [
+        "sv",
+        "de",
+        "hi",
+        "cs",
+        "fr",
+        "hu",
+        "ta",
+        "hr",
+        "da",
+        "el",
+        "ms",
+        "uk",
+        "id",
+        "bg",
+        "no",
+        "it",
+        "ko",
+        "es",
+        "ar",
+        "nl",
+        "tr",
+        "ru",
+        "ro",
+        "pl",
+        "pt"
+      ]
+    },
+    {
+      "id": "x0u3EW21dbrORJzOq1m9",
+      "name": "Adam Composer",
+      "description": "Resonant and Smooth",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/Clk6kdJ10yNzb14pOOqXKi1y5qW2/voices/x0u3EW21dbrORJzOq1m9/ffda0752-26f1-4341-8f31-161771679941.mp3",
+      "languages": [
+        "sv",
+        "es",
+        "nl",
+        "vi",
+        "it",
+        "hr",
+        "no",
+        "hi",
+        "id",
+        "zh",
+        "tr",
+        "ar",
+        "ms",
+        "pt",
+        "ro",
+        "ko"
+      ]
+    },
+    {
+      "id": "KPreuhL3MQVetrPhrdNZ",
+      "name": "Farrukhzoda",
+      "description": "Gentle Tajik Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/KPreuhL3MQVetrPhrdNZ/iG634kYECeT2AgC9Ar0h.mp3",
+      "languages": ["tg"]
+    },
+    {
+      "id": "3uxPVGL0rVERUcbU6XB4",
+      "name": "Gulnora",
+      "description": "Bright, Cheerful Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/3uxPVGL0rVERUcbU6XB4/lItoBfEzqD7c6ylCrqGz.mp3",
+      "languages": ["tg"]
+    },
+    {
+      "id": "jl8itJs8Zwx8o25TFD6K",
+      "name": "Sherali",
+      "description": "Warm, Confident Ad",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/jl8itJs8Zwx8o25TFD6K/mY7oBnc7ZTs4fIuIKTQw.mp3",
+      "languages": ["tg"]
+    },
+    {
+      "id": "gqFUMFHCD2nbbcYVtPGB",
+      "name": "Nila",
+      "description": "Calm, Wise and Clear",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/gqFUMFHCD2nbbcYVtPGB/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiI1MTRkOTRlOTI0MWM0OGU4Yjc5MDUzNzU3MjljNDM2ZiIsImZpbGVuYW1lIjoic2hQQUVjWnpKY0ZlS0VrWnQ0VXYubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": [
+        "ta",
+        "fil",
+        "ro",
+        "hr",
+        "ms",
+        "ko",
+        "el",
+        "uk",
+        "sv",
+        "it",
+        "id",
+        "no",
+        "fr",
+        "bg",
+        "vi",
+        "hu",
+        "cs",
+        "tr",
+        "ru",
+        "en",
+        "de",
+        "pt",
+        "pl"
+      ]
+    },
+    {
+      "id": "gCr8TeSJgJaeaIoV4RWH",
+      "name": "Meera",
+      "description": "Friendly and Conversational",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/514d94e9241c48e8b7905375729c436f/voices/gCr8TeSJgJaeaIoV4RWH/CTpfoY4KKQGv5il8CtEM.mp3",
+      "languages": [
+        "ta",
+        "es",
+        "hi",
+        "fr",
+        "ro",
+        "id",
+        "sk",
+        "sv",
+        "hr",
+        "it",
+        "el",
+        "bg",
+        "cs",
+        "no",
+        "vi",
+        "uk",
+        "ko",
+        "tr",
+        "ar",
+        "nl",
+        "ru",
+        "pl",
+        "en",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "C2RGMrNBTZaNfddRPeRH",
+      "name": "Nila",
+      "description": "Warm, Clear and Conversational",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/514d94e9241c48e8b7905375729c436f/voices/C2RGMrNBTZaNfddRPeRH/AIgN0lfgcgEfOLsen6Ki.mp3",
+      "languages": [
+        "ta",
+        "en",
+        "cs",
+        "fr",
+        "el",
+        "hi",
+        "ru",
+        "zh",
+        "hr",
+        "ko",
+        "pt",
+        "ms",
+        "no",
+        "hu",
+        "bg",
+        "ro",
+        "sv",
+        "vi",
+        "pl",
+        "uk",
+        "it",
+        "tr",
+        "ar",
+        "es",
+        "de"
+      ]
+    },
+    {
+      "id": "f4UZfBDD7d4QR1DcXAMf",
+      "name": "Sai Datta",
+      "description": "Dramatic Telugu Audiobook",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/f4UZfBDD7d4QR1DcXAMf/4p2UvsstY0h2BrrguFoA.mp3",
+      "languages": ["te", "es", "tr", "uk", "ko", "ar", "el", "no", "hi"]
+    },
+    {
+      "id": "QKyvRuehpb8zB3cRkzIn",
+      "name": "Seeta",
+      "description": "Rich Telugu Story Narrator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/QKyvRuehpb8zB3cRkzIn/nOLBk19ATzKj9O3bXpNB.mp3",
+      "languages": [
+        "te",
+        "tr",
+        "id",
+        "uk",
+        "ms",
+        "es",
+        "ar",
+        "ru",
+        "el",
+        "no",
+        "vi"
+      ]
+    },
+    {
+      "id": "RoLT1qx7XJRXxWSIG5hS",
+      "name": "Bharadwaj",
+      "description": "Profound Telugu Mythology",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/RoLT1qx7XJRXxWSIG5hS/oXgQejAyyUAG9ZFlkAlI.mp3",
+      "languages": [
+        "te",
+        "uk",
+        "tr",
+        "el",
+        "it",
+        "ko",
+        "es",
+        "no",
+        "ru",
+        "id",
+        "cs",
+        "de",
+        "pt",
+        "hu",
+        "ms",
+        "vi",
+        "pl",
+        "hi"
+      ]
+    },
+    {
+      "id": "v2NF9R77fF8wZRdbGYTg",
+      "name": "Siriporn",
+      "description": "Warm, Gentle, Calm",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/v2NF9R77fF8wZRdbGYTg/UczJyRhAwDdHK4XE7577.mp3",
+      "languages": ["th"]
+    },
+    {
+      "id": "XLXcyPK1jTjw1pYLLcM9",
+      "name": "Somchai",
+      "description": "Warm Baritone, Serious",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/XLXcyPK1jTjw1pYLLcM9/C8YQH9ZwkciuYabRMTwl.mp3",
+      "languages": ["th"]
+    },
+    {
+      "id": "RIc0VzgLsI8EhceUkZx4",
+      "name": "Nueng",
+      "description": "Cheerful, Bright, Friendly",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/RIc0VzgLsI8EhceUkZx4/mqiMmMTIuOVv8D5crDH5.mp3",
+      "languages": ["th"]
+    },
+    {
+      "id": "oPC5I9GKjMReiaM29gjY",
+      "name": "Gökçe Deniz",
+      "description": "Joyful, Friendly and Warm",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/oPC5I9GKjMReiaM29gjY/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ3b3Jrc3BhY2VfaWQiOiJiMzI5NWZkNzdhMDM0Y2I2YTAzYmQ5YjRlNmM5ZjcwMyIsImZpbGVuYW1lIjoiVENIcHZocG9TMm5aN3djdVQ2UHkubXAzIiwidGltZXN0YW1wIjoxNzkxOTY4NDAwMDAwMDAwfQ%3D%3D",
+      "languages": ["tr", "el", "no", "ms", "ro", "ar", "en"]
+    },
+    {
+      "id": "PdYVUd1CAGSXsTvZZTNn",
+      "name": "Mia",
+      "description": "Clear, Steady and Warm",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/Gp7macCqIbcDzuRHmrksJ4SdQH02/voices/PdYVUd1CAGSXsTvZZTNn/Sa6vpYH4HYQ556GX9J4G.mp3",
+      "languages": [
+        "tr",
+        "hi",
+        "fil",
+        "es",
+        "hr",
+        "ro",
+        "hu",
+        "nl",
+        "uk",
+        "sk",
+        "it",
+        "da",
+        "el",
+        "ko",
+        "zh",
+        "no",
+        "id",
+        "ar",
+        "vi",
+        "fr",
+        "sv",
+        "ru",
+        "de",
+        "pt",
+        "pl"
+      ]
+    },
+    {
+      "id": "IuRRIAcbQK5AQk1XevPj",
+      "name": "Doga",
+      "description": "Upbeat and Rich",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/bd6a6321e92640508e2b718a1b5e23a8/voices/IuRRIAcbQK5AQk1XevPj/dzo2bbYlqFHuucNnyWPU.mp3",
+      "languages": [
+        "tr",
+        "de",
+        "pt",
+        "es",
+        "el",
+        "it",
+        "pl",
+        "hi",
+        "ru",
+        "fr",
+        "id",
+        "nl",
+        "cs",
+        "uk",
+        "ta",
+        "sv",
+        "no"
+      ]
+    },
+    {
+      "id": "Ntd0iVwICtUtA6Fvx27M",
+      "name": "Evgeniy Shevchenko",
+      "description": "Vibrant and Rich",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/0C5bUhgexLd2XXTbJno4O0594Yz1/voices/Ntd0iVwICtUtA6Fvx27M/etVdkbJAlgLzzPLOHWJc.mp3",
+      "languages": [
+        "uk",
+        "id",
+        "it",
+        "no",
+        "es",
+        "ar",
+        "fr",
+        "cs",
+        "tr",
+        "ro",
+        "ru",
+        "de",
+        "pt",
+        "hi",
+        "pl"
+      ]
+    },
+    {
+      "id": "9Sj8ugvpK1DmcAXyvi3a",
+      "name": "Alex Nekrasov",
+      "description": "Confident and Clear",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/422ab51746234a479c3d767267557dd0/voices/9Sj8ugvpK1DmcAXyvi3a/2dCZWU3mjLdCIto8IEde.mp3",
+      "languages": [
+        "uk",
+        "hu",
+        "ko",
+        "hr",
+        "sk",
+        "sv",
+        "ta",
+        "es",
+        "no",
+        "hi",
+        "ms",
+        "ru",
+        "vi",
+        "ar",
+        "tr",
+        "nl",
+        "de"
+      ]
+    },
+    {
+      "id": "jn6ifzU1eO5tfUZ2ZJVg",
+      "name": "Bogdan",
+      "description": "Melodic and Calm",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/SWpfSBMFk8RnRE7OgOkgZXoBbOD2/voices/jn6ifzU1eO5tfUZ2ZJVg/dwThNtKnoihElXMqWhAb.mp3",
+      "languages": [
+        "uk",
+        "fr",
+        "el",
+        "hi",
+        "no",
+        "da",
+        "vi",
+        "cs",
+        "ro",
+        "id",
+        "tr",
+        "ar",
+        "es",
+        "en",
+        "de",
+        "pt"
+      ]
+    },
+    {
+      "id": "UT6USLtoAlXHj5k4sOLY",
+      "name": "Reva",
+      "description": "Warm Urdu Narration",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/UT6USLtoAlXHj5k4sOLY/5JdIhu9pKU7Tjown3dtJ.mp3",
+      "languages": [
+        "ur",
+        "fr",
+        "no",
+        "fil",
+        "hr",
+        "ru",
+        "ar",
+        "ta",
+        "ms",
+        "uk",
+        "ro",
+        "es",
+        "tr",
+        "nl",
+        "pt"
+      ]
+    },
+    {
+      "id": "o85TqPN3F4P7dWae2paA",
+      "name": "Reva",
+      "description": "Soothing Urdu AI Companion",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/o85TqPN3F4P7dWae2paA/Ox54OVe0GGi6DP8GWIyy.mp3",
+      "languages": ["ur"]
+    },
+    {
+      "id": "GnmcdQ5D9NktfEwK2h3j",
+      "name": "Kamran M",
+      "description": "Dramatic & Suspenseful",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/ed9b05e6324c457685490352e9a1ec90/voices/GnmcdQ5D9NktfEwK2h3j/0d6a7f37-c4d8-4783-a956-4dae2a894c62.mp3",
+      "languages": [
+        "ur",
+        "tr",
+        "es",
+        "ar",
+        "pt",
+        "uk",
+        "ro",
+        "it",
+        "hi",
+        "de",
+        "no",
+        "id",
+        "ko",
+        "cs",
+        "ru",
+        "fr",
+        "vi",
+        "pl"
+      ]
+    },
+    {
+      "id": "xDwfBjUEPdIoQekNOXAX",
+      "name": "Jahongir",
+      "description": "Calm, Proud, Deep",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/xDwfBjUEPdIoQekNOXAX/Eh7Ylvw6F68pR9MtA7wB.mp3",
+      "languages": ["uz"]
+    },
+    {
+      "id": "6Fkh9WgMXOqBcOWxX91f",
+      "name": "Gulnora",
+      "description": "Warm, Calm, Mellow",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/6Fkh9WgMXOqBcOWxX91f/rWm09PAc4W76pZ6O3fCq.mp3",
+      "languages": ["uz"]
+    },
+    {
+      "id": "cyPun3bl9MxcpLBX6pT0",
+      "name": "Zilola",
+      "description": "Cheerful, Amused, Quick",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/cyPun3bl9MxcpLBX6pT0/FvBJTw7QvqsvvGCnBhTa.mp3",
+      "languages": ["uz"]
+    },
+    {
+      "id": "ueSxRO0nLF1bj93J2hVt",
+      "name": "Trung Caha",
+      "description": "Clear, Firm and Informative",
+      "previewUrl": "https://api.us.elevenlabs.io/v1/voices/ueSxRO0nLF1bj93J2hVt/previews/audio?payload=eyJ2b2ljZV9zb3VyY2UiOiJjdXN0b20iLCJ1c2VyX2lkIjoieTZmS1RGRUc3RWUxN1oxekRaSG9HRk5zVktZMiIsImZpbGVuYW1lIjoiZGU0YWM2ZTktNzVkNy00NGM1LWJiNTAtMjMwNWRmZGRhMjgwLm1wMyIsInRpbWVzdGFtcCI6MTc5MTk2ODQwMDAwMDAwMH0%3D",
+      "languages": [
+        "vi",
+        "pt",
+        "es",
+        "it",
+        "hi",
+        "ru",
+        "ro",
+        "zh",
+        "ko",
+        "en",
+        "hr",
+        "sv",
+        "no",
+        "da"
+      ]
+    },
+    {
+      "id": "qByVAGjXwGlkcRDJoiHg",
+      "name": "Kiều Linh",
+      "description": "",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/29ca19d1407e47fc86008497a8499f88/voices/qByVAGjXwGlkcRDJoiHg/e95723e3-1ba6-4b30-b302-6e4bcbf5b808.mp3",
+      "languages": ["vi"]
+    },
+    {
+      "id": "3VnrjnYrskPMDsapTr8X",
+      "name": "Tung Dang",
+      "description": "Deep, Warm and Resonant",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/user/COsSJJG6gjWu8B6HtAYraUqntxT2/voices/3VnrjnYrskPMDsapTr8X/rTtnskqz8S0pmuxMwNB3.mp3",
+      "languages": ["vi"]
+    },
+    {
+      "id": "NlhNG6a8fvDk5btEMscL",
+      "name": "Rhodri",
+      "description": "Social Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/NlhNG6a8fvDk5btEMscL/3742ec6e-7bde-464c-938c-42635ae77989.mp3",
+      "languages": ["cy"]
+    },
+    {
+      "id": "YFFJUJzfz7UUj3sL4lCy",
+      "name": "Gethin",
+      "description": "Social Creator",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/YFFJUJzfz7UUj3sL4lCy/171a570e-1ced-4ee9-bac3-c2df4df9eb61.mp3",
+      "languages": ["cy"]
+    },
+    {
+      "id": "9rolAbzZghJ8ATSnsIPd",
+      "name": "Ffion",
+      "description": "Conversational Partner",
+      "previewUrl": "https://storage.googleapis.com/eleven-public-prod/database/workspace/1da06ea679a54975ad96a2221fe6530d/voices/9rolAbzZghJ8ATSnsIPd/c4b52e8c-a905-4ad3-9d5a-0b585f28a389.mp3",
+      "languages": ["cy"]
+    }
+  ]
+}

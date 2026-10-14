@@ -1,0 +1,135 @@
+{
+  "/audio/emotions/excited-nl.mp3": {
+    "duration": 3.28,
+    "words": [
+      ["We", 0.08],
+      ["hebben", 0.28],
+      ["vandaag", 0.56],
+      ["de", 0.92],
+      ["sleutels", 1.08],
+      ["van", 1.6],
+      ["ons", 1.76],
+      ["nieuwe", 1.88],
+      ["huis", 2.16],
+      ["gekregen!", 2.48]
+    ]
+  },
+  "/audio/emotions/excited-en.mp3": {
+    "duration": 2.4,
+    "words": [
+      ["We", 0.08],
+      ["got", 0.24],
+      ["the", 0.4],
+      ["keys", 0.56],
+      ["to", 0.84],
+      ["the", 0.92],
+      ["new", 1.04],
+      ["place", 1.36],
+      ["today!", 1.6]
+    ]
+  },
+  "/audio/emotions/hopeful-en.mp3": {
+    "duration": 2.48,
+    "words": [
+      ["I", 0.08],
+      ["really", 0.32],
+      ["think", 0.8],
+      ["this", 0.96],
+      ["could", 1.24],
+      ["work", 1.48],
+      ["for", 1.68],
+      ["us.", 1.92]
+    ]
+  },
+  "/audio/emotions/hopeful-it.mp3": {
+    "duration": 2.96,
+    "words": [
+      ["Credo", 0.08],
+      ["davvero", 0.44],
+      ["che", 1.04],
+      ["possa", 1.24],
+      ["funzionare", 1.52],
+      ["per", 2.16],
+      ["noi.", 2.32]
+    ]
+  },
+  "/audio/emotions/tired-de.mp3": {
+    "duration": 3.36,
+    "words": [
+      ["Langer", 0.16],
+      ["Tag.", 0.8],
+      ["Können", 1.6],
+      ["wir", 1.88],
+      ["morgen", 2.04],
+      ["weitermachen?", 2.4]
+    ]
+  },
+  "/audio/emotions/tired-en.mp3": {
+    "duration": 3.28,
+    "words": [
+      ["Long", 0.24],
+      ["day.", 0.72],
+      ["Can", 1.6],
+      ["we", 1.84],
+      ["pick", 2],
+      ["this", 2.16],
+      ["up", 2.32],
+      ["tomorrow?", 2.48]
+    ]
+  },
+  "/audio/emotions/angry-en.mp3": {
+    "duration": 2.8,
+    "words": [
+      ["This", 0.08],
+      ["is", 0.24],
+      ["the", 0.4],
+      ["third", 0.64],
+      ["time", 1.12],
+      ["my", 1.36],
+      ["order’s", 1.56],
+      ["been", 1.88],
+      ["wrong.", 2.24]
+    ]
+  },
+  "/audio/emotions/angry-fr.mp3": {
+    "duration": 2.72,
+    "words": [
+      ["C’est", 0.08],
+      ["la", 0.24],
+      ["troisième", 0.4],
+      ["fois", 0.96],
+      ["que", 1.16],
+      ["ma", 1.28],
+      ["commande", 1.44],
+      ["est", 1.76],
+      ["fausse.", 1.96]
+    ]
+  },
+  "/audio/emotions/affectionate-es.mp3": {
+    "duration": 4.4,
+    "words": [
+      ["¡Ay,", 0.08],
+      ["Thomasito!", 0.56],
+      ["Eres", 1.84],
+      ["el", 2.24],
+      ["mejor", 2.4],
+      ["yerno", 3.04],
+      ["del", 3.52],
+      ["mundo.", 3.68]
+    ]
+  },
+  "/audio/emotions/affectionate-en.mp3": {
+    "duration": 4.56,
+    "words": [
+      ["Oh,", 0.16],
+      ["Thomasito!", 0.56],
+      ["You’re", 2.08],
+      ["the", 2.4],
+      ["best", 2.72],
+      ["son-in-law", 2.96],
+      ["in", 3.52],
+      ["the", 3.68],
+      ["world.", 3.84]
+    ]
+  }
+}

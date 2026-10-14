@@ -1,0 +1,118 @@
+{
+  "/audio/call/01-said.mp3": {
+    "duration": 2.96,
+    "words": [
+      ["Riverside", 0],
+      ["Clinic,", 0.56],
+      ["this", 1.12],
+      ["is", 1.28],
+      ["James.", 1.6],
+      ["How", 2.08],
+      ["can", 2.24],
+      ["I", 2.36],
+      ["help?", 2.48]
+    ]
+  },
+  "/audio/call/01-heard.mp3": {
+    "duration": 3.52,
+    "words": [
+      ["Clinique", 0],
+      ["Riverside,", 0.36],
+      ["ici", 1.32],
+      ["James.", 1.68],
+      ["Comment", 2.36],
+      ["puis-je", 2.56],
+      ["vous", 2.8],
+      ["aider ?", 2.96]
+    ]
+  },
+  "/audio/call/02-said.mp3": {
+    "duration": 3.04,
+    "words": [
+      ["Bonjour,", 0],
+      ["j’aimerais", 0.88],
+      ["prendre", 1.32],
+      ["rendez-vous", 1.68],
+      ["pour", 2.12],
+      ["ma", 2.24],
+      ["fille.", 2.48]
+    ]
+  },
+  "/audio/call/02-heard.mp3": {
+    "duration": 3.12,
+    "words": [
+      ["Hi,", 0],
+      ["I’d", 0.68],
+      ["like", 0.88],
+      ["to", 1.12],
+      ["book", 1.28],
+      ["an", 1.4],
+      ["appointment", 1.72],
+      ["for", 2.08],
+      ["my", 2.24],
+      ["daughter.", 2.56]
+    ]
+  },
+  "/audio/call/03-said.mp3": {
+    "duration": 2.72,
+    "words": [
+      ["Of", 0],
+      ["course.", 0.48],
+      ["Does", 1.12],
+      ["tomorrow", 1.52],
+      ["morning", 1.92],
+      ["work?", 2.32]
+    ]
+  },
+  "/audio/call/03-heard.mp3": {
+    "duration": 2.64,
+    "words": [
+      ["Bien", 0],
+      ["sûr.", 0.32],
+      ["Demain", 1.04],
+      ["matin,", 1.36],
+      ["ça", 1.92],
+      ["vous", 2.08],
+      ["va ?", 2.24]
+    ]
+  },
+  "/audio/call/04-said.mp3": {
+    "duration": 2,
+    "words": [
+      ["Parfait.", 0],
+      ["Vers", 0.88],
+      ["dix", 1.2],
+      ["heures ?", 1.4]
+    ]
+  },
+  "/audio/call/04-heard.mp3": {
+    "duration": 2.08,
+    "words": [
+      ["Perfect.", 0],
+      ["Around", 0.96],
+      ["ten?", 1.44]
+    ]
+  },
+  "/audio/call/05-said.mp3": {
+    "duration": 2.08,
+    "words": [
+      ["Ten", 0],
+      ["it", 0.36],
+      ["is.", 0.48],
+      ["See", 1.2],
+      ["you", 1.32],
+      ["tomorrow.", 1.44]
+    ]
+  },
+  "/audio/call/05-heard.mp3": {
+    "duration": 2.32,
+    "words": [
+      ["Dix", 0],
+      ["heures,", 0.28],
+      ["c’est", 0.88],
+      ["noté.", 1.08],
+      ["À", 1.64],
+      ["demain.", 1.76]
+    ]
+  }
+}
