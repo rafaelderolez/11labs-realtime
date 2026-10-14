@@ -3,7 +3,7 @@ import OPTIONS from "@/lib/translate-options.json"
 
 export type Voice = (typeof OPTIONS.voices)[number]
 
-export const LANGUAGES = OPTIONS.languages
+const LANGUAGES = OPTIONS.languages
 export const VOICES: Voice[] = OPTIONS.voices
 
 const LANGUAGE_NAMES = new Map(LANGUAGES.map((l) => [l.code, l.name]))

@@ -49,7 +49,7 @@ export function TranslationSettings({
       </h3>
 
       {/* Built at product size and zoomed down, like the reference screenshot. */}
-      <div className="flex w-[400px] shrink-0 [zoom:0.7] flex-col gap-4 rounded-xl border border-hairline bg-surface p-4 shadow-[0_1px_0.5px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.12)]">
+      <div className="flex w-[400px] shrink-0 [zoom:0.7] flex-col gap-4 rounded-xl border border-[#FDFCFC] bg-white p-4 shadow-[0_1px_0.5px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.12)]">
         <Field label="Input language">
           <Globe className="size-4 shrink-0" strokeWidth={1.75} />
           <span className="flex flex-1 justify-between gap-2">

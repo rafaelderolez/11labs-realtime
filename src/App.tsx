@@ -6,7 +6,7 @@ import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { TextBlock } from "@/components/text-block"
 
-export function App() {
+function App() {
   return (
     <div className="min-h-svh bg-background text-foreground">
       <Header />
