@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react"
 import { Pause, Play } from "lucide-react"
 import { motion, useReducedMotion } from "motion/react"
+import { useEffect, useRef, useState } from "react"
 
 import { LetterGlobe } from "@/components/letter-globe"
 import { EMOTION_CLIPS, emotionClipPath } from "@/lib/emotion-script"

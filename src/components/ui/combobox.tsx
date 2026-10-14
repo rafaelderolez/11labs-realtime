@@ -2,8 +2,8 @@
 // so the two can sit side by side. The list fades at whichever edge has more
 // to scroll to.
 
-import * as React from "react"
 import { ChevronDownIcon } from "lucide-react"
+import * as React from "react"
 
 import {
   Command,

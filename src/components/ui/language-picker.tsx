@@ -3,9 +3,9 @@
 // selected row. Flags are circle-flags (MIT, https://github.com/HatScripts/circle-flags)
 // copied into public/flags, one per language code.
 
-import * as React from "react"
 import { Select as SelectPrimitive } from "@base-ui/react/select"
 import { CheckIcon, ChevronDownIcon } from "lucide-react"
+import * as React from "react"
 
 import {
   controlItem,

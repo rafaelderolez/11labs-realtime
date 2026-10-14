@@ -1,4 +1,3 @@
-import { Suspense, lazy, memo, useEffect, useRef, useState } from "react"
 import { Volume2, VolumeX } from "lucide-react"
 import {
   AnimatePresence,
@@ -6,6 +5,7 @@ import {
   useInView,
   useReducedMotion,
 } from "motion/react"
+import { Suspense, lazy, memo, useEffect, useRef, useState } from "react"
 
 import { LanguageFlag } from "@/components/ui/language-picker"
 import { CALL, SPEAKERS, clipPath, type Side } from "@/lib/call-script"

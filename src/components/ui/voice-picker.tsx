@@ -3,8 +3,8 @@
 // for the one previewing: a WebGL canvas per row would run past the browser's
 // context limit with a few hundred voices.
 
-import * as React from "react"
 import { Pause, Play } from "lucide-react"
+import * as React from "react"
 
 import { Combobox, ComboboxItem } from "@/components/ui/combobox"
 import { Orb } from "@/components/ui/orb"

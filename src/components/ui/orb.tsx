@@ -3,9 +3,9 @@
 // Compiler rules flag.
 /* oxlint-disable react/refs, react/purity, react/immutability, react/preserve-manual-memoization */
 
-import { useEffect, useMemo, useRef } from "react"
 import { useTexture } from "@react-three/drei"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
+import { useEffect, useMemo, useRef } from "react"
 import * as THREE from "three"
 
 export type AgentState = null | "thinking" | "listening" | "talking"
