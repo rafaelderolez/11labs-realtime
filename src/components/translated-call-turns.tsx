@@ -30,6 +30,11 @@ const PAN = 0.6
  * up to make room by the time the card pops in with the first word (s).
  */
 const ROOM = 0.3
+/**
+ * How early the orb starts easing into the next voice's colours, so it has
+ * mostly arrived by the time the translation starts (s).
+ */
+const ORB_LEAD = 0.4
 
 type Word = [text: string, start: number]
 
@@ -235,10 +240,10 @@ export function TranslatedCallTurns({ className }: { className?: string }) {
     (line) => time >= line.start && time < line.start + line.duration
   )
   // Whose voice the latest translation is in. It holds between turns, so the
-  // orb only changes colour when the next translation starts.
+  // orb only changes colour as the next translation starts.
   const voice = other(
-    LINES.findLast((line) => !line.own && time >= line.start)?.side ??
-      SCHEDULE.turns[0].heard.side
+    LINES.findLast((line) => !line.own && time >= line.start - ORB_LEAD)
+      ?.side ?? SCHEDULE.turns[0].heard.side
   )
 
   return (
