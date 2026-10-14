@@ -3,22 +3,14 @@ import { Radio } from "@base-ui/react/radio"
 import { RadioGroup } from "@base-ui/react/radio-group"
 import { Globe } from "lucide-react"
 
-import {
-  Combobox,
-  ComboboxItem,
-  controlItem,
-  controlPopup,
-  controlTrigger,
-} from "@/components/ui/combobox"
+import { Combobox, ComboboxItem } from "@/components/ui/combobox"
 import { CommandGroup, CommandSeparator } from "@/components/ui/command"
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectSeparator,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+  LanguageFlag,
+  LanguagePicker,
+  LanguagePickerGroup,
+  LanguagePickerItem,
+} from "@/components/ui/language-picker"
 import { VoicePicker, VoicePickerItem } from "@/components/ui/voice-picker"
 import { EMOTION_CLIPS } from "@/lib/emotion-script"
 import {
@@ -67,7 +59,18 @@ export function TranslationSettings({
   const voices = voicesFor(settings.outputLang)
   const selectedVoice = VOICES.find((v) => v.id === settings.voiceId)
   const [voiceOpen, setVoiceOpen] = useState(false)
+  // Output languages picked this session, newest first.
+  const [recentOutputs, setRecentOutputs] = useState([settings.outputLang])
   const [outputOpen, setOutputOpen] = useState(false)
+  const outputLanguages = LANGUAGES.filter((l) => l.code !== sourceLang)
+
+  function pickOutput(lang: string) {
+    onSettingsChange({ outputLang: lang })
+    setRecentOutputs((recent) =>
+      [lang, ...recent.filter((code) => code !== lang)].slice(0, 3)
+    )
+    setOutputOpen(false)
+  }
 
   function pickVoice(voiceId: string | null) {
     onSettingsChange({ voiceId })
@@ -87,49 +90,46 @@ export function TranslationSettings({
       </h3>
 
       <Field label="Input language" id={`${id}-input`}>
-        <Select
+        <LanguagePicker
+          id={`${id}-input`}
           value={input}
-          onValueChange={(value) => {
-            const lang = value as string
+          onValueChange={(lang) => {
             setInputChoice(lang)
             const clip = INPUT_LANGUAGES.find(([code]) => code === lang)
             if (clip) onSettingsChange({ clipIndex: clip[1] })
           }}
+          trigger={
+            input === AUTO ? (
+              <>
+                <AutoIcon />
+                <span className="flex flex-1 justify-between gap-2">
+                  Auto-detect
+                  <span className="text-muted-foreground">
+                    {languageName(sourceLang)}
+                  </span>
+                </span>
+              </>
+            ) : (
+              <>
+                <LanguageFlag code={input} />
+                {languageName(input)}
+              </>
+            )
+          }
         >
-          <SelectTrigger id={`${id}-input`} className={controlTrigger}>
-            <SelectValue>
-              {(value: string) => (
-                <>
-                  <Globe
-                    className="size-4 text-muted-foreground"
-                    strokeWidth={1.75}
-                  />
-                  {value === AUTO ? (
-                    <span className="flex flex-1 justify-between gap-2">
-                      Auto-detect
-                      <span className="text-muted-foreground">
-                        {languageName(sourceLang)}
-                      </span>
-                    </span>
-                  ) : (
-                    languageName(value)
-                  )}
-                </>
-              )}
-            </SelectValue>
-          </SelectTrigger>
-          <SelectContent className={controlPopup}>
-            <SelectItem value={AUTO} className={controlItem}>
-              Auto-detect
-            </SelectItem>
-            <SelectSeparator />
+          <LanguagePickerGroup label="Default">
+            <LanguagePickerItem value={AUTO} icon={<AutoIcon />}>
+              Auto (Recommended)
+            </LanguagePickerItem>
+          </LanguagePickerGroup>
+          <LanguagePickerGroup label="All Languages">
             {INPUT_LANGUAGES.map(([code]) => (
-              <SelectItem key={code} value={code} className={controlItem}>
+              <LanguagePickerItem key={code} value={code}>
                 {languageName(code)}
-              </SelectItem>
+              </LanguagePickerItem>
             ))}
-          </SelectContent>
-        </Select>
+          </LanguagePickerGroup>
+        </LanguagePicker>
       </Field>
 
       <Field label="Output language" id={`${id}-output`}>
@@ -137,26 +137,43 @@ export function TranslationSettings({
           id={`${id}-output`}
           open={outputOpen}
           onOpenChange={setOutputOpen}
-          value={settings.outputLang}
+          // Highlight the recent entry so the list opens at the top.
+          value={
+            recentOutputs.includes(settings.outputLang)
+              ? `recent-${settings.outputLang}`
+              : settings.outputLang
+          }
+          icon={<LanguageFlag code={settings.outputLang} />}
           label={languageName(settings.outputLang)}
           placeholder="Search languages..."
           empty="No language found."
         >
-          <CommandGroup>
-            {/* Translating into the language being spoken isn't a translation. */}
-            {LANGUAGES.filter((l) => l.code !== sourceLang).map((l) => (
-              <ComboboxItem
+          {/* Translating into the language being spoken isn't a translation. */}
+          {recentOutputs.some((code) => code !== sourceLang) ? (
+            <CommandGroup heading="Recently Used" className={languageGroup}>
+              {recentOutputs
+                .filter((code) => code !== sourceLang)
+                .map((code) => (
+                  <OutputItem
+                    key={code}
+                    // cmdk keys items by value, so the repeat needs its own.
+                    value={`recent-${code}`}
+                    code={code}
+                    isSelected={settings.outputLang === code}
+                    onPick={pickOutput}
+                  />
+                ))}
+            </CommandGroup>
+          ) : null}
+          <CommandGroup heading="All Languages" className={languageGroup}>
+            {outputLanguages.map((l) => (
+              <OutputItem
                 key={l.code}
                 value={l.code}
-                keywords={[l.name]}
+                code={l.code}
                 isSelected={settings.outputLang === l.code}
-                onSelect={() => {
-                  onSettingsChange({ outputLang: l.code })
-                  setOutputOpen(false)
-                }}
-              >
-                {l.name}
-              </ComboboxItem>
+                onPick={pickOutput}
+              />
             ))}
           </CommandGroup>
         </Combobox>
@@ -239,6 +256,38 @@ export function TranslationSettings({
       </div>
     </section>
   )
+}
+
+/** Matches the Language picker's section labels. */
+const languageGroup =
+  "p-0 **:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:pt-2 **:[[cmdk-group-heading]]:pb-1 **:[[cmdk-group-heading]]:text-label-sm! **:[[cmdk-group-heading]]:font-normal!"
+
+function OutputItem({
+  value,
+  code,
+  isSelected,
+  onPick,
+}: {
+  value: string
+  code: string
+  isSelected: boolean
+  onPick: (code: string) => void
+}) {
+  return (
+    <ComboboxItem
+      value={value}
+      keywords={[languageName(code)]}
+      isSelected={isSelected}
+      onSelect={() => onPick(code)}
+    >
+      <LanguageFlag code={code} />
+      {languageName(code)}
+    </ComboboxItem>
+  )
+}
+
+function AutoIcon() {
+  return <Globe className="size-4 shrink-0" strokeWidth={1.75} />
 }
 
 function Field({

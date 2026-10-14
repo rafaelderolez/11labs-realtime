@@ -145,4 +145,4 @@ function updateFade(list: HTMLElement) {
   )
 }
 
-export { Combobox, ComboboxItem }
+export { Combobox, ComboboxItem, updateFade }
