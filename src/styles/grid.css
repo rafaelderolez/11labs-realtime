@@ -1,0 +1,126 @@
+/*
+ * Page grid
+ *
+ * Every section is one grid with named column lines:
+ *
+ *   bleed   full viewport
+ *   outer   the container (max 1176px), where the vertical lines sit
+ *   edge    one gutter inside outer, where media and cards sit flush
+ *   col     12 columns between the edge lines
+ *
+ * Direct children pick a position with `col-bleed`, `col-outer`, `col-edge`
+ * (the default), or `col-from-{n} col-span-{n}`. Nested content stays on the
+ * page columns with `col-edge grid grid-cols-subgrid`, where Tailwind's own
+ * `col-start-*` works again. Text inset is plain padding: `px-content`.
+ *
+ * The container model mirrors elevenlabs.io: the space outside the lines is
+ * 20 / 40 / 64px (<sm / sm / xl) until the container hits 1176px.
+ */
+
+:root {
+  --grid-max: 1176px;
+  --grid-columns: 12;
+  --grid-outside: 20px;
+  --grid-gutter: 8px;
+  --grid-content: 8px;
+  --grid-line: oklch(0 0 0 / 5%);
+
+  @media (width >= 40rem) {
+    --grid-outside: 40px;
+    --grid-gutter: 12px;
+    --grid-content: 16px;
+  }
+
+  @media (width >= 80rem) {
+    --grid-outside: 64px;
+    --grid-content: 20px;
+  }
+}
+
+.dark {
+  --grid-line: oklch(1 0 0 / 10%);
+}
+
+@theme inline {
+  --spacing-gutter: var(--grid-gutter);
+  --spacing-content: var(--grid-content);
+  --container-outer: var(--grid-max);
+}
+
+/*
+ * `column-gap` sits between every track, including the zero-width tracks that
+ * mark the outer lines. So outer -> edge is exactly one gutter, and the side
+ * tracks give one gutter back to land the outer line on the container edge.
+ */
+@utility page-grid {
+  --grid-side: max(var(--grid-outside), (100% - var(--grid-max)) / 2);
+
+  position: relative;
+  display: grid;
+  column-gap: var(--grid-gutter);
+  grid-template-columns:
+    [bleed-start] calc(var(--grid-side) - var(--grid-gutter))
+    [outer-start] 0
+    [edge-start] repeat(var(--grid-columns), [col] minmax(0, 1fr))
+    [col edge-end] 0
+    [outer-end] calc(var(--grid-side) - var(--grid-gutter))
+    [bleed-end];
+
+  /* Vertical lines on the outer edges, on by default. */
+  &::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset-block: 0;
+    inset-inline: var(--grid-side);
+    border-inline: 1px solid var(--grid-line);
+  }
+}
+
+@utility lines-hidden {
+  &::before {
+    display: none;
+  }
+}
+
+@utility lines-visible {
+  &::before {
+    display: block;
+  }
+}
+
+/* Full-bleed horizontal line on top of a section. Opt-in. */
+@utility divider-t {
+  &::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 1px;
+    background: var(--grid-line);
+  }
+}
+
+@utility col-bleed {
+  grid-column: bleed;
+}
+
+@utility col-outer {
+  grid-column: outer;
+}
+
+@utility col-edge {
+  grid-column: edge;
+}
+
+/* Start on page column n (1-12). Pair with `col-span-{n}`. */
+@utility col-from-* {
+  grid-column-start: --value(integer) col;
+}
+
+@layer base {
+  :where(.page-grid > *) {
+    grid-column: edge;
+  }
+}

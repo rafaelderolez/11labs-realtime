@@ -1,0 +1,64 @@
+/*
+ * Type scale
+ *
+ * Every text style is one token that sets size, line height, and tracking
+ * together, so markup never pairs `text-*` with `leading-*` or `tracking-*`.
+ * Tailwind's default scale (`text-sm`, `text-xl`, ...) is removed, so these
+ * are the only sizes that exist.
+ *
+ *   display    48 / 52   page headlines
+ *   heading    28 / 32   section headlines
+ *   title      20 / 27   section leads, wordmark
+ *   body       15 / 22   running text, card titles
+ *   body-sm    14 / 21   secondary text, descriptions
+ *   label      16 / 24   large controls
+ *   label-sm   14 / 20   nav, default controls
+ *   label-xs   12 / 16   compact controls
+ *   micro      11 / 16   annotations, debug labels
+ *
+ * Body styles get relaxed leading for paragraphs; label styles get tight
+ * leading for single lines inside fixed-height controls. Weight and color
+ * stay separate (`font-*`, `text-muted-foreground`).
+ */
+
+@font-face {
+  font-family: "KMR Waldenburg";
+  src: url("../assets/fonts/KMR-Waldenburg-Buch.woff2") format("woff2");
+  font-weight: 375;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --text-*: initial;
+
+  --text-display: 3rem;
+  --text-display--line-height: calc(52 / 48);
+  --text-display--letter-spacing: -0.02em;
+
+  --text-heading: 1.75rem;
+  --text-heading--line-height: calc(32 / 28);
+
+  --text-title: 1.25rem;
+  --text-title--line-height: calc(27 / 20);
+  --text-title--letter-spacing: -0.01em;
+
+  --text-body: 0.9375rem;
+  --text-body--line-height: calc(22 / 15);
+  --text-body--letter-spacing: 0.01em;
+
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: calc(21 / 14);
+
+  --text-label: 1rem;
+  --text-label--line-height: calc(24 / 16);
+
+  --text-label-sm: 0.875rem;
+  --text-label-sm--line-height: calc(20 / 14);
+
+  --text-label-xs: 0.75rem;
+  --text-label-xs--line-height: calc(16 / 12);
+
+  --text-micro: 0.6875rem;
+  --text-micro--line-height: calc(16 / 11);
+}
