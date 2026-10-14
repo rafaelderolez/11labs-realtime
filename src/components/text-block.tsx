@@ -4,7 +4,7 @@ export function TextBlock() {
   return (
     <section className="page-grid divider-t gap-y-7 py-50">
       <h2 className="px-content font-heading text-heading lg:col-span-6 lg:col-from-1">
-        You do you, I do me
+        You do you
         <span className="block text-foreground/40">
           Eleven Realtime handles the rest
         </span>
