@@ -40,7 +40,7 @@ function VoicePicker({
   id,
   className,
 }: {
-  /** Voice shown in the trigger; its id seeds the orb. */
+  /** Voice shown in the trigger; its id picks the swatch colors. */
   value?: PickerVoice
   /** The selected item's id, when it differs from the voice shown. */
   selectedId?: string
@@ -89,18 +89,7 @@ function VoicePicker({
         }}
         value={selectedId}
         label={trigger ?? value?.name}
-        icon={
-          value ? (
-            <span className="relative size-6 shrink-0">
-              <Orb
-                agentState="thinking"
-                colors={orbColors(value.id)}
-                seed={hash(value.id)}
-                className="absolute inset-0"
-              />
-            </span>
-          ) : null
-        }
+        icon={value ? <VoiceSwatch id={value.id} className="size-6" /> : null}
         placeholder="Search voices..."
         empty="No voice found."
         className={className}
