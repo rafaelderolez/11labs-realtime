@@ -34,7 +34,7 @@ export const CALL: Turn[] = [
     id: "01",
     by: "right",
     said: "Riverside Clinic, this is James. How can I help?",
-    heard: "Clinique Riverside, ici James. Comment puis-je vous aider ?",
+    heard: "Clinique Riverside, ici James. Comment puis-je vous aider?",
   },
   {
     id: "02",
@@ -46,12 +46,12 @@ export const CALL: Turn[] = [
     id: "03",
     by: "right",
     said: "Of course. Does tomorrow morning work?",
-    heard: "Bien sûr. Demain matin, ça vous va ?",
+    heard: "Bien sûr. Demain matin, ça vous va?",
   },
   {
     id: "04",
     by: "left",
-    said: "Parfait. Vers dix heures ?",
+    said: "Parfait. Vers dix heures?",
     heard: "Perfect. Around ten?",
   },
   {
