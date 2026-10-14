@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "elevenlabs-realtime",
+  "compatibility_date": "2026-10-15",
+  // A static site: no Worker script, just the Vite build.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application",
+  },
+  "routes": [{ "pattern": "elevenlabs.derolez.dev", "custom_domain": true }],
+}

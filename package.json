@@ -8,6 +8,7 @@
     "audio:emotions": "node --env-file=.env.local scripts/generate-emotion-audio.ts",
     "build": "tsc -b && vite build",
     "deadcode": "fallow dead-code",
+    "deploy": "pnpm build && wrangler deploy",
     "dev": "vite",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
@@ -49,7 +50,8 @@
     "react-doctor": "^0.9.18",
     "simple-git-hooks": "^2.14.0",
     "typescript": "~6.0.2",
-    "vite": "^8"
+    "vite": "^8",
+    "wrangler": "^4.151.0"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged && pnpm deadcode && pnpm react-doctor --staged"
@@ -60,5 +62,6 @@
       "oxfmt --no-error-on-unmatched-pattern"
     ],
     "*.{json,jsonc,css,md,html,yaml,yml}": "oxfmt --no-error-on-unmatched-pattern"
-  }
+  },
+  "packageManager": "pnpm@10.28.1"
 }
