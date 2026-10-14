@@ -6,7 +6,10 @@
   "tabWidth": 2,
   "trailingComma": "es5",
   "printWidth": 80,
-  "sortPackageJson": false,
+  "sortImports": true,
+  "sortPackageJson": {
+    "sortScripts": true
+  },
   "sortTailwindcss": {
     "stylesheet": "src/index.css",
     "functions": ["cn", "cva"]
