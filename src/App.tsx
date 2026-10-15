@@ -1,4 +1,4 @@
-import { GridOverlay } from "@/components/grid-overlay"
+import { FloatingToolbar } from "@/components/floating-toolbar"
 import { Bentos } from "@/components/sections/bentos"
 import { CallDemo } from "@/components/sections/call-demo"
 import { Features } from "@/components/sections/features"
@@ -20,7 +20,7 @@ function App() {
         <Bentos />
       </main>
       <Footer />
-      <GridOverlay />
+      <FloatingToolbar />
       <Toaster />
     </div>
   )

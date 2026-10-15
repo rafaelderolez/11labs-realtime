@@ -13,7 +13,9 @@ type ThemeProviderProps = {
 
 type ThemeProviderState = {
   theme: Theme
+  resolvedTheme: ResolvedTheme
   setTheme: (theme: Theme) => void
+  toggleTheme: () => void
 }
 
 const COLOR_SCHEME_QUERY = "(prefers-color-scheme: dark)"
@@ -39,11 +41,21 @@ function getSystemTheme(): ResolvedTheme {
   return "light"
 }
 
+function subscribeToSystemTheme(onChange: () => void) {
+  const mediaQuery = window.matchMedia(COLOR_SCHEME_QUERY)
+  mediaQuery.addEventListener("change", onChange)
+
+  return () => {
+    mediaQuery.removeEventListener("change", onChange)
+  }
+}
+
 function disableTransitionsTemporarily() {
   const style = document.createElement("style")
   style.appendChild(
     document.createTextNode(
-      "*,*::before,*::after{-webkit-transition:none!important;transition:none!important}"
+      // Elements marked data-theme-transition animate the switch on purpose.
+      "*:not([data-theme-transition]),*::before,*::after{-webkit-transition:none!important;transition:none!important}"
     )
   )
   document.head.appendChild(style)
@@ -81,6 +93,16 @@ export function ThemeProvider({
     },
     [storageKey]
   )
+
+  const systemTheme = React.useSyncExternalStore(
+    subscribeToSystemTheme,
+    getSystemTheme
+  )
+  const resolvedTheme = theme === "system" ? systemTheme : theme
+
+  const toggleTheme = React.useCallback(() => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark")
+  }, [resolvedTheme, setTheme])
 
   const applyTheme = React.useCallback(
     (nextTheme: Theme) => {
@@ -120,17 +142,10 @@ export function ThemeProvider({
     }
   }, [theme, applyTheme])
 
-  useHotkey(
-    "D",
-    () => {
-      const resolvedTheme = theme === "system" ? getSystemTheme() : theme
-      setTheme(resolvedTheme === "dark" ? "light" : "dark")
-    },
-    {
-      requireReset: true,
-      meta: { name: "Toggle theme", description: "Switch light and dark mode" },
-    }
-  )
+  useHotkey("D", toggleTheme, {
+    requireReset: true,
+    meta: { name: "Toggle theme", description: "Switch light and dark mode" },
+  })
 
   React.useEffect(() => {
     const handleStorageChange = (event: StorageEvent) => {
@@ -160,9 +175,11 @@ export function ThemeProvider({
   const value = React.useMemo(
     () => ({
       theme,
+      resolvedTheme,
       setTheme,
+      toggleTheme,
     }),
-    [theme, setTheme]
+    [theme, resolvedTheme, setTheme, toggleTheme]
   )
 
   return (
@@ -170,4 +187,13 @@ export function ThemeProvider({
       {children}
     </ThemeProviderContext.Provider>
   )
+}
+
+export function useTheme() {
+  const context = React.useContext(ThemeProviderContext)
+  if (context === undefined) {
+    throw new Error("useTheme must be used within a ThemeProvider")
+  }
+
+  return context
 }
