@@ -9,15 +9,17 @@ export function Footer() {
     <footer className="page-grid divider-t gap-y-16 pt-20 pb-10 lg:gap-y-40 lg:pt-50">
       <div className="grid grid-cols-subgrid gap-y-7">
         <h2 className="col-span-12 px-content font-heading text-heading text-trim lg:col-span-6 lg:col-from-1">
-          Hey ElevenLabs design team
+          Hey ElevenLabs team
           <span className="block text-tertiary-foreground">
             Thanks for reviewing!
           </span>
         </h2>
         <div className="col-span-12 flex flex-col gap-10 px-content lg:col-span-5 lg:col-from-7 lg:px-0">
           <p className="text-body text-pretty text-trim sm:text-title">
-            I hope this gives a sense of how I think about my work, and I'd love
-            to keep the conversation going.
+            <span className="xl:block">
+              I hope this shows how I think about my work.
+            </span>{" "}
+            I'd love to keep the conversation going.
           </p>
           <ul className="flex flex-col gap-2 text-label-sm text-muted-foreground">
             <li className="flex items-center gap-2">
@@ -27,7 +29,7 @@ export function Footer() {
                 strokeWidth={1.75}
                 aria-hidden
               />
-              Say hi to Tom Parkes
+              Say hi to Tom Parkes for me!
             </li>
             <li className="flex">
               <a
