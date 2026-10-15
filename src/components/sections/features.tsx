@@ -26,12 +26,12 @@ const FEATURES = [
 
 export function Features() {
   return (
-    <section className="page-grid lines-hidden pt-10 pb-28">
-      <ul className="col-edge grid grid-cols-subgrid gap-y-7">
+    <section className="page-grid lines-hidden pt-10 pb-20 lg:pb-28">
+      <ul className="col-edge grid grid-cols-subgrid gap-y-10">
         {FEATURES.map(({ icon: Icon, text }) => (
           <li
             key={text}
-            className="col-span-12 flex flex-col gap-5 px-content sm:col-span-6 lg:col-span-3"
+            className="col-span-12 flex flex-col gap-3 px-content sm:col-span-6 lg:col-span-3"
           >
             <Icon className="size-4.5" />
             <p className="text-body-sm text-muted-foreground">{text}</p>

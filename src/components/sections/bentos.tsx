@@ -8,11 +8,11 @@ export function Bentos() {
   const [clipIndex, setClipIndex] = useState(0)
 
   return (
-    <section id="demo" className="page-grid scroll-mt-10 pb-30">
+    <section id="demo" className="page-grid scroll-mt-10 pb-16 lg:pb-28">
       <div className="col-edge grid grid-cols-subgrid">
         <LiveTranslationDemo
           onClipChange={setClipIndex}
-          className="col-span-12 h-90 md:h-120 lg:col-span-8 lg:row-start-1"
+          className="col-span-12 md:h-120 lg:col-span-8 lg:row-start-1"
         />
         <Caption
           className="col-span-12 text-pretty max-lg:pb-16 lg:col-span-6 lg:col-start-1 lg:row-start-2"
@@ -24,7 +24,7 @@ export function Bentos() {
         </Caption>
         <TranslationSettings
           clipIndex={clipIndex}
-          className="col-span-12 h-120 lg:col-span-4 lg:col-start-9 lg:row-start-1"
+          className="col-span-12 lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:h-120"
         />
         <Caption
           className="col-span-12 lg:col-span-4 lg:col-start-9 lg:row-start-2"

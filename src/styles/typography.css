@@ -37,7 +37,7 @@
 @theme {
   --text-*: initial;
 
-  --text-display: clamp(2.25rem, 1.5rem + 3.75vw, 3rem);
+  --text-display: clamp(1.75rem, 10vw - 0.5rem, 3rem);
   --text-display--line-height: calc(52 / 48);
   --text-display--letter-spacing: -0.02em;
 
