@@ -8,6 +8,8 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import { useEffect, useMemo, useRef, useState } from "react"
 import * as THREE from "three"
 
+import perlinNoiseUrl from "@/assets/images/perlin-noise.png"
+
 type AgentState = null | "thinking" | "listening" | "talking"
 
 type OrbProps = {
@@ -109,9 +111,7 @@ function Scene({
   const [targetColor1] = useState(() => new THREE.Color(colors[0]))
   const [targetColor2] = useState(() => new THREE.Color(colors[1]))
   const animSpeedRef = useRef(0.1)
-  const loadedNoiseTexture = useTexture(
-    "https://storage.googleapis.com/eleven-public-cdn/images/perlin-noise.png"
-  )
+  const loadedNoiseTexture = useTexture(perlinNoiseUrl)
   // A clone, so the wrapping doesn't leak into drei's shared texture cache.
   const perlinNoiseTexture = useMemo(() => {
     const texture = loadedNoiseTexture.clone()
