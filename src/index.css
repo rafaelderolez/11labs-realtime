@@ -48,17 +48,7 @@
   --font-heading: "KMR Waldenburg", var(--font-sans);
   --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   --font-sans: "Inter Variable", sans-serif;
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
   --color-surface: var(--surface);
-  --color-surface-subtle: var(--surface-subtle);
   --color-surface-faint: var(--surface-faint);
   --color-hairline: var(--hairline);
   --color-pill: var(--pill);
@@ -86,11 +76,6 @@
   /* A floating panel: a contact edge plus a soft lift. */
   --shadow-panel: 0 1px 0.5px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.12);
   --color-pill-hover: var(--pill-hover);
-  --color-bubble-quiet: var(--bubble-quiet);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -103,9 +88,6 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
@@ -122,9 +104,6 @@
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.147 0.004 49.25);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.147 0.004 49.25);
   --primary: #000;
   --primary-foreground: var(--surface-faint);
   --secondary: oklch(0.97 0.001 106.424);
@@ -137,20 +116,7 @@
   --border: oklch(0.923 0.003 48.717);
   --input: oklch(0.923 0.003 48.717);
   --ring: #4b82f5;
-  --chart-1: oklch(0.869 0.005 56.366);
-  --chart-2: oklch(0.553 0.013 58.071);
-  --chart-3: oklch(0.444 0.011 73.639);
-  --chart-4: oklch(0.374 0.01 67.558);
-  --chart-5: oklch(0.268 0.007 34.298);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0.001 106.423);
-  --sidebar-foreground: oklch(0.147 0.004 49.25);
-  --sidebar-primary: oklch(0.216 0.006 56.043);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-accent: oklch(0.97 0.001 106.424);
-  --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
-  --sidebar-border: oklch(0.923 0.003 48.717);
-  --sidebar-ring: oklch(0.709 0.01 56.259);
   --surface: #f5f3f1;
   --surface-subtle: #faf8f8;
   --surface-faint: #fdfcfc;
@@ -171,8 +137,6 @@
   --control-shadow:
     0 0 0 1px rgb(0 0 0 / 0.06), 0 1px 2px rgb(0 0 0 / 0.04),
     0 2px 4px rgb(0 0 0 / 0.04);
-  /* A speaker's own words: a faint step from the surface toward the pill. */
-  --bubble-quiet: oklch(1 0 0 / 35%);
   /* The call's voice colours, lifted to read on the dark Listen button. */
   --sweep-tail: #8fb0ff;
   --sweep-head: #ff8dbb;
@@ -182,9 +146,6 @@
   --background: oklch(0.147 0.004 49.25);
   --foreground: oklch(0.985 0.001 106.423);
   --card: oklch(0.216 0.006 56.043);
-  --card-foreground: oklch(0.985 0.001 106.423);
-  --popover: oklch(0.216 0.006 56.043);
-  --popover-foreground: oklch(0.985 0.001 106.423);
   --primary: oklch(0.923 0.003 48.717);
   --primary-foreground: oklch(0.216 0.006 56.043);
   --secondary: oklch(0.268 0.007 34.298);
@@ -197,19 +158,6 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: #5b8ff7;
-  --chart-1: oklch(0.869 0.005 56.366);
-  --chart-2: oklch(0.553 0.013 58.071);
-  --chart-3: oklch(0.444 0.011 73.639);
-  --chart-4: oklch(0.374 0.01 67.558);
-  --chart-5: oklch(0.268 0.007 34.298);
-  --sidebar: oklch(0.216 0.006 56.043);
-  --sidebar-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-accent: oklch(0.268 0.007 34.298);
-  --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.553 0.013 58.071);
   --surface: var(--muted);
   --surface-subtle: var(--muted);
   --surface-faint: var(--muted);
@@ -220,7 +168,6 @@
   --surface-raised: var(--pill);
   --control: var(--pill-hover);
   --control-shadow: 0 0 0 1px var(--hairline), 0 1px 2px rgb(0 0 0 / 0.2);
-  --bubble-quiet: oklch(1 0 0 / 3%);
   /* Deepened to read on the light Listen button. */
   --sweep-tail: #4f7be0;
   --sweep-head: #e0558c;
