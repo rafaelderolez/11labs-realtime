@@ -1,6 +1,8 @@
 import { Globe } from "lucide-react"
 import { useId } from "react"
 
+import grainSmallUrl from "@/assets/images/grain-400.webp"
+import grainUrl from "@/assets/images/grain.webp"
 import { LanguageFlag } from "@/components/ui/language-picker"
 import { VoiceSwatch } from "@/components/ui/voice-picker"
 import { EMOTION_CLIPS } from "@/lib/emotion-script"
@@ -42,7 +44,11 @@ export function TranslationSettings({
       )}
     >
       <img
-        src="/grain-1.jpg"
+        src={grainUrl}
+        srcSet={`${grainSmallUrl} 400w, ${grainUrl} 819w`}
+        // Cover draws the portrait image at least 384px wide, and full width
+        // while the card spans the page below lg.
+        sizes="(min-width: 64rem) 384px, max(384px, 100vw)"
         alt=""
         aria-hidden
         loading="lazy"
