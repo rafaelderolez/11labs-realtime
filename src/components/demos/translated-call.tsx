@@ -22,8 +22,8 @@ import { cn } from "@/lib/utils"
  */
 const ROOM = 0.3
 /**
- * How early the orb starts easing into the next voice's colours, so it has
- * mostly arrived by the time the translation starts (s).
+ * How early the orb starts easing into the next speaker's colours, so it has
+ * mostly arrived by the time they start talking (s).
  */
 const ORB_LEAD = 0.4
 
@@ -52,12 +52,11 @@ export function TranslatedCall({ className }: { className?: string }) {
   const speaking = LINES.some(
     (line) => time >= line.start && time < line.start + line.duration
   )
-  // Whose voice the latest translation is in. It holds between turns, so the
-  // orb only changes colour as the next translation starts.
-  const voice = other(
-    LINES.findLast((line) => !line.own && time >= line.start - ORB_LEAD)
-      ?.side ?? SCHEDULE.turns[0].heard.side
-  )
+  // Who spoke last. It holds through their translation and the gap after, so
+  // the orb only changes colour as the next speaker starts.
+  const voice =
+    LINES.findLast((line) => line.own && time >= line.start - ORB_LEAD)?.side ??
+    SCHEDULE.turns[0].said.side
 
   return (
     <div
@@ -272,7 +271,7 @@ const VoiceOrb = lazy(() =>
   import("@/components/ui/orb").then((module) => ({ default: module.Orb }))
 )
 
-/** The orb takes on the colours of the voice the translation is spoken in.
+/** The orb takes on the colours of whoever is speaking, in either language.
  *  Hex, not OKLCH: they feed THREE.Color, which cannot parse oklch(). */
 const ORB_COLORS: Record<Side, [string, string]> = {
   left: ["#F9C9DA", "#E59BB8"],
