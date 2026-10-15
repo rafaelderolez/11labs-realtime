@@ -5,6 +5,11 @@ as a Design Engineer take-home for ElevenLabs.
 
 **Live:** [elevenlabs.derolez.dev](https://elevenlabs.derolez.dev)
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/lighthouse-dark.png">
+  <img alt="Lighthouse scores: 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO" src=".github/assets/lighthouse-light.png" width="469">
+</picture>
+
 The page has two interactive demos, both driven by real ElevenLabs audio:
 
 - **Translated call.** A looping phone call between a French and an English
