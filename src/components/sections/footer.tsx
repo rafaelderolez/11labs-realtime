@@ -3,6 +3,7 @@ import { ArrowUpRight, Speech } from "lucide-react"
 import { Logo } from "@/components/logo"
 
 const REPO_URL = "https://github.com/rafaelderolez/11labs-realtime"
+const PORTFOLIO_URL = "https://derolez.dev"
 
 export function Footer() {
   return (
@@ -52,7 +53,14 @@ export function Footer() {
       </div>
       <div className="flex items-center justify-between px-content text-label-sm text-muted-foreground">
         <Logo className="h-3 w-auto text-foreground" />
-        <p>Rafael Derolez</p>
+        <a
+          href={PORTFOLIO_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="transition-colors hover:text-foreground"
+        >
+          Rafael Derolez
+        </a>
       </div>
     </footer>
   )
