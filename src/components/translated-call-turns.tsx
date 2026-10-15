@@ -14,6 +14,7 @@ import {
 import { LanguageFlag } from "@/components/ui/language-picker"
 import { CALL, SPEAKERS, clipPath, type Side } from "@/lib/call-script"
 import TIMINGS from "@/lib/call-timings.json"
+import { usePageIdle } from "@/lib/use-page-idle"
 import { cn } from "@/lib/utils"
 
 /** How far the translation trails the speaker (s). */
@@ -220,6 +221,7 @@ export function TranslatedCallTurns({ className }: { className?: string }) {
   const inView = useInView(ref, { amount: 0.4 })
   const reduceMotion = useReducedMotion()
   const call = useCall(inView, reduceMotion)
+  const idle = usePageIdle()
   // Reduced motion shows the finished call.
   const time = reduceMotion ? SCHEDULE.duration - RESTART : call.time
 
@@ -254,14 +256,16 @@ export function TranslatedCallTurns({ className }: { className?: string }) {
         className
       )}
     >
-      <Orb active={speaking} voice={voice} paused={!!reduceMotion} />
+      {idle && <Orb active={speaking} voice={voice} paused={!!reduceMotion} />}
 
       <Turns spoken={spoken} />
 
       {/* Only offered once every line has loaded, so Listen always plays. */}
-      <Suspense>
-        <ListenButton sound={call.sound} onToggle={call.toggleSound} />
-      </Suspense>
+      {idle && (
+        <Suspense>
+          <ListenButton sound={call.sound} onToggle={call.toggleSound} />
+        </Suspense>
+      )}
 
       <ol className="sr-only">
         {CALL.map((turn) => (
@@ -439,7 +443,7 @@ function TurnCard({
   )
 }
 
-// three.js is heavy, so the orb loads on its own after the page.
+// three.js is heavy, so the orb loads on its own once the page is idle.
 const VoiceOrb = lazy(() =>
   import("@/components/ui/orb").then((module) => ({ default: module.Orb }))
 )
