@@ -192,4 +192,8 @@
   html {
     @apply font-sans motion-safe:scroll-smooth;
   }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }

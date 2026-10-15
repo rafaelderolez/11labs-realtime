@@ -1,5 +1,6 @@
 import { Logo } from "@/components/logo"
 import { PillButton } from "@/components/ui/pill-button"
+import { placeholderToast } from "@/lib/placeholder-toast"
 
 const NAV_ITEMS = [
   "Products",
@@ -37,11 +38,16 @@ export function Header() {
             size="sm"
             variant="secondary"
             className="hidden sm:inline-flex"
+            onClick={placeholderToast}
           >
             Contact Sales
           </PillButton>
           {/* Below `lg`, pulled out by its padding so the label sits on the content edge. */}
-          <PillButton size="sm" className={LOGIN_GHOST_BELOW_LG}>
+          <PillButton
+            size="sm"
+            className={LOGIN_GHOST_BELOW_LG}
+            onClick={placeholderToast}
+          >
             Login
           </PillButton>
         </div>

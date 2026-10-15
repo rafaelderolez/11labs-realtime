@@ -1,4 +1,5 @@
 import { PillButton } from "@/components/ui/pill-button"
+import { placeholderToast } from "@/lib/placeholder-toast"
 
 // Small on phones so both buttons fit on one row, large from `sm` up.
 const LARGE_FROM_SM = "sm:h-11 sm:px-5 sm:text-label"
@@ -18,10 +19,19 @@ export function Hero() {
         and hears the other in theirs.
       </p>
       <div className="col-edge mt-3 flex flex-wrap gap-2 px-content sm:gap-3 xl:mt-0">
-        <PillButton size="sm" className={LARGE_FROM_SM}>
+        <PillButton
+          size="sm"
+          className={LARGE_FROM_SM}
+          onClick={placeholderToast}
+        >
           Contact Sales
         </PillButton>
-        <PillButton size="sm" variant="secondary" className={LARGE_FROM_SM}>
+        <PillButton
+          size="sm"
+          variant="secondary"
+          className={LARGE_FROM_SM}
+          onClick={placeholderToast}
+        >
           Read documentation
         </PillButton>
       </div>
