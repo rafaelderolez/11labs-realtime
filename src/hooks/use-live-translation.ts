@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from "react"
 
-import { duck, fadeOut, fetchAudioBuffer } from "@/lib/audio"
+import { TRANSLATION_DELAY, duck, fadeOut, fetchAudioBuffer } from "@/lib/audio"
 import { CLIPS } from "@/lib/emotion-clips"
 
-/** How long after the source the translation starts (s). */
-export const TRANSLATION_DELAY = 1
 /** Fade-out when switching clips mid-playback (s). */
 const SWITCH_FADE = 0.25
 

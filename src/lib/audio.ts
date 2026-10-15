@@ -1,6 +1,11 @@
+/** How long after the original its translation starts, in both demos (s). */
+export const TRANSLATION_DELAY = 1.2
+
 /** How quiet the original voice gets while its translation plays over it. */
-const DUCKED_GAIN = 0.25
+const DUCKED_GAIN = 0.15
 const DUCK_DURATION = 0.4
+/** How long the original sits ducked before the translation comes in (s). */
+const DUCK_LEAD = 0.15
 
 /** Fetches and decodes one clip. Any context's buffers play in any other. */
 export async function fetchAudioBuffer(ctx: BaseAudioContext, src: string) {
@@ -9,10 +14,11 @@ export async function fetchAudioBuffer(ctx: BaseAudioContext, src: string) {
   return ctx.decodeAudioData(await response.arrayBuffer())
 }
 
-/** Holds `gain` at full volume until `at`, then dips it under the translation. */
+/** Dips `gain` so it's fully ducked just before the translation starts at `at`. */
 export function duck(gain: GainNode, at: number) {
-  gain.gain.setValueAtTime(1, at)
-  gain.gain.linearRampToValueAtTime(DUCKED_GAIN, at + DUCK_DURATION)
+  const end = Math.max(at - DUCK_LEAD, 0)
+  gain.gain.setValueAtTime(1, Math.max(end - DUCK_DURATION, 0))
+  gain.gain.linearRampToValueAtTime(DUCKED_GAIN, end)
 }
 
 /** Ramps `gain` to silence from wherever it is now, over `duration` (s). */

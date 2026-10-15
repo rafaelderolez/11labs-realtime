@@ -2,10 +2,8 @@ import { Pause, Play } from "lucide-react"
 import { m, useReducedMotion } from "motion/react"
 
 import { LetterGlobe } from "@/components/demos/letter-globe"
-import {
-  TRANSLATION_DELAY,
-  useLiveTranslation,
-} from "@/hooks/use-live-translation"
+import { useLiveTranslation } from "@/hooks/use-live-translation"
+import { TRANSLATION_DELAY } from "@/lib/audio"
 import { CLIPS, type Line } from "@/lib/emotion-clips"
 import { cn } from "@/lib/utils"
 
