@@ -5,10 +5,11 @@
  *
  * Each speaker's voice reads both their own line and its translation, so the
  * listener hears the same person in their own language. Writes the mp3s to
- * public/audio/call/ and the timings to src/lib/call-timings.json.
+ * public/audio/call/ and the timings to src/content/call-timings.json.
  */
-import { CALL, SPEAKERS, clipPath } from "../src/lib/call-script.ts"
-import { speak, writeTimings, type ClipTiming } from "./lib/speak.ts"
+import { CALL, SPEAKERS, clipPath } from "../src/content/call-script.ts"
+import type { ClipTiming } from "../src/lib/timings.ts"
+import { speak, writeTimings } from "./lib/speak.ts"
 
 const timings: Record<string, ClipTiming> = {}
 
@@ -20,4 +21,4 @@ for (const turn of CALL) {
   }
 }
 
-await writeTimings("src/lib/call-timings.json", timings)
+await writeTimings("src/content/call-timings.json", timings)

@@ -5,7 +5,7 @@ import grainSmallUrl from "@/assets/images/grain-400.webp"
 import grainUrl from "@/assets/images/grain.webp"
 import { LanguageFlag } from "@/components/ui/language-picker"
 import { VoiceSwatch } from "@/components/ui/voice-picker"
-import { EMOTION_CLIPS } from "@/lib/emotion-script"
+import { EMOTION_CLIPS } from "@/content/emotion-script"
 import {
   VOICES,
   languageName,

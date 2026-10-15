@@ -6,7 +6,7 @@
  *
  * The same voice and audio tag read the source line and its translation, so
  * the emotion carries across. Writes the mp3s to public/audio/emotions/ and
- * the timings to src/lib/emotion-timings.json.
+ * the timings to src/content/emotion-timings.json.
  */
 import { existsSync } from "node:fs"
 import { readFile } from "node:fs/promises"
@@ -15,10 +15,11 @@ import {
   EMOTION_CLIPS,
   EMOTION_VOICE_ID,
   emotionClipPath,
-} from "../src/lib/emotion-script.ts"
-import { speak, writeTimings, type ClipTiming } from "./lib/speak.ts"
+} from "../src/content/emotion-script.ts"
+import type { ClipTiming } from "../src/lib/timings.ts"
+import { speak, writeTimings } from "./lib/speak.ts"
 
-const TIMINGS_PATH = "src/lib/emotion-timings.json"
+const TIMINGS_PATH = "src/content/emotion-timings.json"
 const force = process.argv.includes("--force")
 
 const existing: Record<string, ClipTiming> = existsSync(TIMINGS_PATH)

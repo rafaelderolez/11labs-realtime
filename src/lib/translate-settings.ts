@@ -1,5 +1,5 @@
-import { EMOTION_CLIPS, EMOTION_VOICE_ID } from "@/lib/emotion-script"
-import OPTIONS from "@/lib/translate-options.json"
+import { EMOTION_CLIPS, EMOTION_VOICE_ID } from "@/content/emotion-script"
+import OPTIONS from "@/content/translate-options.json"
 
 export type Voice = (typeof OPTIONS.voices)[number]
 

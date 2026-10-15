@@ -1,5 +1,5 @@
 import { Logo } from "@/components/logo"
-import { PillButton } from "@/components/pill-button"
+import { PillButton } from "@/components/ui/pill-button"
 
 const NAV_ITEMS = [
   "Products",

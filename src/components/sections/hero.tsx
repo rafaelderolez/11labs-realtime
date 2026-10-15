@@ -1,4 +1,4 @@
-import { PillButton } from "@/components/pill-button"
+import { PillButton } from "@/components/ui/pill-button"
 
 export function Hero() {
   return (

@@ -7,7 +7,7 @@
  * account's voices plus a few popular library voices per language, each with
  * the languages ElevenLabs has verified it for, so the settings only offer a
  * voice for languages it's known to speak well. Writes
- * src/lib/translate-options.json.
+ * src/content/translate-options.json.
  */
 import { writeFile } from "node:fs/promises"
 
@@ -103,7 +103,7 @@ for (const { code, name } of languages) {
 }
 
 await writeFile(
-  "src/lib/translate-options.json",
+  "src/content/translate-options.json",
   JSON.stringify(
     { model: MODEL, languages, voices: [...voices.values()] },
     null,

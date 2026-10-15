@@ -5,6 +5,8 @@
 import { mkdir, writeFile } from "node:fs/promises"
 import { dirname } from "node:path"
 
+import type { ClipTiming, Word } from "../../src/lib/timings.ts"
+
 const MODEL = "eleven_v4"
 const SEED = 11
 
@@ -13,10 +15,6 @@ type Alignment = {
   character_start_times_seconds: number[]
   character_end_times_seconds: number[]
 }
-
-type Word = [text: string, start: number]
-
-export type ClipTiming = { duration: number; words: Word[] }
 
 const round = (n: number) => Math.round(n * 1000) / 1000
 

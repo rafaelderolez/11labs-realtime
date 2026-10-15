@@ -1,7 +1,7 @@
 import { useState } from "react"
 
-import { LiveTranslationDemo } from "@/components/live-translation-demo"
-import { TranslationSettings } from "@/components/translation-settings"
+import { LiveTranslationDemo } from "@/components/demos/live-translation-demo"
+import { TranslationSettings } from "@/components/demos/translation-settings"
 import { cn } from "@/lib/utils"
 
 export function Bentos() {

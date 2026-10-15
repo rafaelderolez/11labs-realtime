@@ -1,31 +1,21 @@
 import { Volume2, VolumeX } from "lucide-react"
 import { AnimatePresence, m, useInView, useReducedMotion } from "motion/react"
-import {
-  Suspense,
-  lazy,
-  memo,
-  useEffect,
-  useMemo,
-  useRef,
-  use,
-  useState,
-} from "react"
+import { Suspense, lazy, memo, useMemo, useRef, use, useState } from "react"
 
 import { LanguageFlag } from "@/components/ui/language-picker"
-import { CALL, SPEAKERS, clipPath, type Side } from "@/lib/call-script"
-import TIMINGS from "@/lib/call-timings.json"
-import { usePageIdle } from "@/lib/use-page-idle"
+import { CALL, SPEAKERS, type Side } from "@/content/call-script"
+import { loadCallBuffers, useCall, type CallBuffers } from "@/hooks/use-call"
+import { usePageIdle } from "@/hooks/use-page-idle"
+import {
+  LINES,
+  RESTART,
+  SCHEDULE,
+  other,
+  type ScheduledTurn,
+} from "@/lib/call-schedule"
+import { lineText, type Word } from "@/lib/timings"
 import { cn } from "@/lib/utils"
 
-/** How far the translation trails the speaker (s). */
-const LAG = 0.7
-/** Silence between turns, and before the call restarts (s). */
-const GAP = 1.1
-const RESTART = 3
-const DUCKED_GAIN = 0.25
-const DUCK_DURATION = 0.4
-/** Each voice sits on its speaker's side of the stereo field. */
-const PAN = 0.6
 /**
  * How early a turn's card mounts, so the thread has nearly finished moving
  * up to make room by the time the card pops in with the first word (s).
@@ -37,186 +27,7 @@ const ROOM = 0.3
  */
 const ORB_LEAD = 0.4
 
-type Word = [text: string, start: number]
-
-type Line = {
-  src: string
-  words: Word[]
-  start: number
-  duration: number
-  side: Side
-  /** Whether it's the speaker's own words, or the translation they caused. */
-  own: boolean
-}
-
-type ScheduledTurn = { said: Line; heard: Line }
-
-const other = (side: Side): Side => (side === "left" ? "right" : "left")
-
-// Lay the whole call out on one clock: the translation starts LAG behind the
-// speaker, and the reply waits until both have finished.
-const SCHEDULE = (() => {
-  let t = 0.6
-  const turns = CALL.map((turn): ScheduledTurn => {
-    const line = (part: "said" | "heard", start: number): Line => {
-      const src = clipPath(turn, part)
-      const timing = TIMINGS[src as keyof typeof TIMINGS]
-      return {
-        src,
-        words: timing.words as Word[],
-        start,
-        duration: timing.duration,
-        side: part === "said" ? turn.by : other(turn.by),
-        own: part === "said",
-      }
-    }
-    const said = line("said", t)
-    const heard = line("heard", t + LAG)
-    t = Math.max(said.start + said.duration, heard.start + heard.duration) + GAP
-    return { said, heard }
-  })
-  return { turns, duration: t + RESTART }
-})()
-
-const LINES = SCHEDULE.turns.flatMap((turn) => [turn.said, turn.heard])
-
-type Audio = {
-  ctx: AudioContext
-  buffers: Map<string, AudioBuffer>
-  output: GainNode
-  /** Context time at which the current loop of the call began. */
-  origin: number
-}
-
-/** Queues every line still to come in this loop, from call time `from`. */
-function schedule(audio: Audio, from: number) {
-  const { ctx, buffers, output, origin } = audio
-  for (const { said, heard } of SCHEDULE.turns) {
-    // Sound can come on mid-call, before this context's clock began, which
-    // puts the loop's origin in the negative. Automation rejects those times.
-    const heardAt = Math.max(origin + heard.start, 0)
-    for (const line of [said, heard]) {
-      const offset = Math.max(from - line.start, 0)
-      if (offset >= line.duration) continue
-
-      const gain = ctx.createGain()
-      if (line === said) {
-        gain.gain.setValueAtTime(1, heardAt)
-        gain.gain.linearRampToValueAtTime(DUCKED_GAIN, heardAt + DUCK_DURATION)
-      }
-      const panner = ctx.createStereoPanner()
-      panner.pan.value = line.side === "left" ? -PAN : PAN
-      gain.connect(panner).connect(output)
-
-      const node = ctx.createBufferSource()
-      node.buffer = buffers.get(line.src)!
-      node.connect(gain)
-      node.start(Math.max(origin + line.start, ctx.currentTime), offset)
-    }
-  }
-}
-
-/** Fetches and decodes every line up front, so Listen can start at once. */
-async function fetchBuffers() {
-  // Decoding needs no sound, so an offline context does it without tripping
-  // the autoplay policy. Its buffers play in any context.
-  const decoder = new OfflineAudioContext(1, 1, 44100)
-  return new Map(
-    await Promise.all(
-      LINES.map(async ({ src }) => {
-        const response = await fetch(src)
-        if (!response.ok) throw new Error(`Couldn't load ${src}`)
-        const data = await response.arrayBuffer()
-        return [src, await decoder.decodeAudioData(data)] as const
-      })
-    )
-  )
-}
-
-// Shared across renders, so the lines are only fetched once. If loading fails,
-// the call just plays on without sound.
-let buffersPromise: Promise<Audio["buffers"] | null> | null = null
-const loadBuffers = () => (buffersPromise ??= fetchBuffers().catch(() => null))
-
-/**
- * A looping clock for the call. Silent, it runs on frame time; with sound on,
- * it follows the audio context so the words stay locked to the voices.
- */
-function useCall(inView: boolean, reduceMotion: boolean | null) {
-  const [time, setTime] = useState(0)
-  const [sound, setSound] = useState(false)
-  // Reduced motion holds the visuals still, so the clock only runs to keep
-  // the audio looping.
-  const running = inView && (!reduceMotion || sound)
-  const timeRef = useRef(0)
-  const audioRef = useRef<Audio | null>(null)
-
-  useEffect(() => {
-    const audio = audioRef.current
-    if (!running) {
-      void audio?.ctx.suspend()
-      return
-    }
-    void audio?.ctx.resume()
-
-    let frame = 0
-    let last: number | null = null
-    const tick = (now: number) => {
-      const audio = audioRef.current
-      let t: number
-      if (audio) {
-        t = audio.ctx.currentTime - audio.origin
-        if (t >= SCHEDULE.duration) {
-          audio.origin += SCHEDULE.duration
-          t -= SCHEDULE.duration
-          schedule(audio, 0)
-        }
-      } else {
-        const delta = last === null ? 0 : (now - last) / 1000
-        t = (timeRef.current + delta) % SCHEDULE.duration
-      }
-      last = now
-      timeRef.current = t
-      setTime(t)
-      frame = requestAnimationFrame(tick)
-    }
-    frame = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(frame)
-  }, [running])
-
-  useEffect(() => () => void audioRef.current?.ctx.close(), [])
-
-  function toggleSound(buffers: Audio["buffers"]) {
-    const current = audioRef.current
-    if (current) {
-      audioRef.current = null
-      setSound(false)
-      const now = current.ctx.currentTime
-      current.output.gain.setValueAtTime(current.output.gain.value, now)
-      current.output.gain.linearRampToValueAtTime(0, now + 0.2)
-      setTimeout(() => void current.ctx.close(), 300)
-      return
-    }
-
-    const ctx = new AudioContext()
-    const output = ctx.createGain()
-    output.connect(ctx.destination)
-    // Pick up wherever the visuals are, mid-line if need be.
-    const audio = {
-      ctx,
-      buffers,
-      output,
-      origin: ctx.currentTime - timeRef.current,
-    }
-    schedule(audio, timeRef.current)
-    audioRef.current = audio
-    setSound(true)
-  }
-
-  return { time, sound, toggleSound }
-}
-
-export function TranslatedCallTurns({ className }: { className?: string }) {
+export function TranslatedCall({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { amount: 0.4 })
   const reduceMotion = useReducedMotion()
@@ -263,7 +74,20 @@ export function TranslatedCallTurns({ className }: { className?: string }) {
       {/* Only offered once every line has loaded, so Listen always plays. */}
       {idle && (
         <Suspense>
-          <ListenButton sound={call.sound} onToggle={call.toggleSound} />
+          <ListenButton
+            sound={call.sound}
+            onToggle={(buffers) => {
+              // Listen sits at the card's top edge, so bring the whole call
+              // into view rather than leaving it hanging off a phone screen.
+              if (!call.sound && window.matchMedia("(width < 48rem)").matches) {
+                ref.current?.scrollIntoView({
+                  behavior: reduceMotion ? "auto" : "smooth",
+                  block: "center",
+                })
+              }
+              call.toggleSound(buffers)
+            }}
+          />
         </Suspense>
       )}
 
@@ -285,9 +109,9 @@ function ListenButton({
   onToggle,
 }: {
   sound: boolean
-  onToggle: (buffers: Audio["buffers"]) => void
+  onToggle: (buffers: CallBuffers) => void
 }) {
-  const buffers = use(loadBuffers())
+  const buffers = use(loadCallBuffers())
   // Light sweeps round Listen until it's been pressed once.
   const [pressed, setPressed] = useState(false)
   if (!buffers) return null
@@ -357,8 +181,6 @@ const RESIZE = { type: "spring", duration: 0.45, bounce: 0 } as const
 const POP = { type: "spring", duration: 0.5, bounce: 0.2 } as const
 const EASE_OUT = [0.23, 1, 0.32, 1] as const
 
-const text = (words: Word[]) => words.map(([word]) => word).join(" ")
-
 /** The first `count` words, each fading in as it arrives. */
 function Words({ words, count }: { words: Word[]; count: number }) {
   if (count <= 0) return "​"
@@ -419,7 +241,7 @@ function TurnCard({
       >
         <LanguageFlag code={SPEAKERS[by].lang} className="size-3.5" />
         <div className="grid min-w-0">
-          <p className="invisible h-0 truncate">{text(saidLine.words)}</p>
+          <p className="invisible h-0 truncate">{lineText(saidLine.words)}</p>
           <p className="truncate text-label-xs text-tertiary-foreground">
             <Words words={saidLine.words} count={said} />
           </p>
@@ -432,7 +254,9 @@ function TurnCard({
         className="grid text-body text-foreground"
         lang={SPEAKERS[other(by)].lang}
       >
-        <p className="invisible h-0 overflow-hidden">{text(heardLine.words)}</p>
+        <p className="invisible h-0 overflow-hidden">
+          {lineText(heardLine.words)}
+        </p>
         {heard < 0 ? null : (
           <p>
             <Words words={heardLine.words} count={heard} />
@@ -448,7 +272,8 @@ const VoiceOrb = lazy(() =>
   import("@/components/ui/orb").then((module) => ({ default: module.Orb }))
 )
 
-/** The orb takes on the colours of the voice the translation is spoken in. */
+/** The orb takes on the colours of the voice the translation is spoken in.
+ *  Hex, not OKLCH: they feed THREE.Color, which cannot parse oklch(). */
 const ORB_COLORS: Record<Side, [string, string]> = {
   left: ["#F9C9DA", "#E59BB8"],
   right: ["#CADCFC", "#A0B9D1"],

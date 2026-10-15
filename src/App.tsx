@@ -1,10 +1,10 @@
-import { Bentos } from "@/components/bentos"
-import { Demo } from "@/components/demo"
-import { Features } from "@/components/features"
 import { GridOverlay } from "@/components/grid-overlay"
-import { Header } from "@/components/header"
-import { Hero } from "@/components/hero"
-import { TextBlock } from "@/components/text-block"
+import { Bentos } from "@/components/sections/bentos"
+import { CallDemo } from "@/components/sections/call-demo"
+import { Features } from "@/components/sections/features"
+import { Header } from "@/components/sections/header"
+import { Hero } from "@/components/sections/hero"
+import { TextBlock } from "@/components/sections/text-block"
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Demo />
+        <CallDemo />
         <Features />
         <TextBlock />
         <Bentos />
