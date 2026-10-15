@@ -10,6 +10,13 @@ import * as THREE from "three"
 
 import perlinNoiseUrl from "@/assets/images/perlin-noise.png"
 
+// R3F still builds its frame clock on THREE.Clock, which three now warns is
+// deprecated on every Canvas. Drop just that warning until R3F moves to Timer.
+THREE.setConsoleFunction((type, message, ...params) => {
+  if (message.startsWith("THREE.Clock: This module has been deprecated")) return
+  console[type](message, ...params)
+})
+
 type AgentState = null | "thinking" | "listening" | "talking"
 
 type OrbProps = {
