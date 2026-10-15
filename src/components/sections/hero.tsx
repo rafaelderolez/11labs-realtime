@@ -14,9 +14,9 @@ export function Hero() {
         </span>
       </h1>
       <p className="max-w-xl px-content text-body text-pretty text-trim xl:col-span-6 xl:col-from-7 xl:max-w-none xl:self-baseline-last">
-        Eleven Realtime Translate turns live speech into natural, expressive
-        translated audio as people talk. Each person speaks their own language
-        and hears the other in theirs.
+        Eleven Realtime Translate turns speech into translated audio while
+        people talk. Each person speaks their own language and hears the other
+        in theirs.
       </p>
       <div className="col-edge mt-3 flex flex-wrap gap-2 px-content sm:gap-3 xl:mt-0">
         <PillButton
@@ -24,7 +24,7 @@ export function Hero() {
           className={LARGE_FROM_SM}
           onClick={placeholderToast}
         >
-          Contact Sales
+          Contact sales
         </PillButton>
         <PillButton
           size="sm"

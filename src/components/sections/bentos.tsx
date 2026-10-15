@@ -16,11 +16,10 @@ export function Bentos() {
         />
         <Caption
           className="col-span-12 text-pretty max-lg:pb-16 lg:col-span-6 lg:col-start-1 lg:row-start-2"
-          title="Choose any Voice"
+          title="Choose any voice"
         >
-          Pick from our library of expressive, human-like voices, or use your
-          own Instant or Professional Voice Clone. The voice stays consistent
-          for the whole conversation.
+          Pick an emotion to hear it in action. Whichever voice you choose
+          speaks the translation with the feeling of the original.
         </Caption>
         <TranslationSettings
           clipIndex={clipIndex}
@@ -28,10 +27,10 @@ export function Bentos() {
         />
         <Caption
           className="col-span-12 lg:col-span-4 lg:col-start-9 lg:row-start-2"
-          title="Built for your use case"
+          title="Tuned to the conversation"
         >
-          Tune how quickly translation starts, from the highest quality output
-          to the lowest latency to fit every conversation.
+          Raise eagerness for quick back-and-forth like support calls. Lower it
+          where every word counts, like medical or legal consultations.
         </Caption>
       </div>
     </section>

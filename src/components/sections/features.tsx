@@ -8,11 +8,11 @@ import {
 const FEATURES = [
   {
     icon: TranslateIcon,
-    text: "Output in 90+ languages with Eleven v4 Turbo",
+    text: "90+ output languages with Eleven v4 Turbo",
   },
   {
     icon: VoiceMidIcon,
-    text: "Expressive delivery in a voice you create or choose from our library.",
+    text: "Library voices or your own Instant or Professional Voice Clone",
   },
   {
     icon: SpeedHighIcon,
@@ -20,7 +20,7 @@ const FEATURES = [
   },
   {
     icon: ShieldIcon,
-    text: "Enterprise-grade security: SOC 2, PCI DSS Level 1, ISO 27001",
+    text: "Enterprise-grade security with SOC 2, PCI DSS Level 1 and ISO 27001",
   },
 ]
 

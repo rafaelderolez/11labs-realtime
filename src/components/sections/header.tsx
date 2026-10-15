@@ -33,24 +33,14 @@ export function Header() {
             ))}
           </ul>
         </div>
-        <div className="flex items-center gap-2">
-          <PillButton
-            size="sm"
-            variant="secondary"
-            className="hidden sm:inline-flex"
-            onClick={placeholderToast}
-          >
-            Contact Sales
-          </PillButton>
-          {/* Below `lg`, pulled out by its padding so the label sits on the content edge. */}
-          <PillButton
-            size="sm"
-            className={LOGIN_GHOST_BELOW_LG}
-            onClick={placeholderToast}
-          >
-            Login
-          </PillButton>
-        </div>
+        {/* Below `lg`, pulled out by its padding so the label sits on the content edge. */}
+        <PillButton
+          size="sm"
+          className={LOGIN_GHOST_BELOW_LG}
+          onClick={placeholderToast}
+        >
+          Log in
+        </PillButton>
       </nav>
     </header>
   )
