@@ -11,7 +11,7 @@ function hash(id: string) {
 
 function orbColors(id: string): [string, string] {
   const hue = hash(id) % 360
-  return [`hsl(${hue}, 70%, 85%)`, `hsl(${(hue + 60) % 360}, 50%, 72%)`]
+  return [`oklch(0.88 0.06 ${hue})`, `oklch(0.78 0.08 ${(hue + 60) % 360})`]
 }
 
 function VoiceSwatch({ id, className }: { id: string; className?: string }) {

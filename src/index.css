@@ -37,8 +37,8 @@
     )
     border-box;
   mask:
-    linear-gradient(#000 0 0) padding-box,
-    linear-gradient(#000 0 0);
+    linear-gradient(oklch(0 0 0) 0 0) padding-box,
+    linear-gradient(oklch(0 0 0) 0 0);
   mask-composite: exclude;
   animation: border-sweep 3s linear infinite;
   pointer-events: none;
@@ -59,22 +59,23 @@
   --color-tertiary-foreground: var(--tertiary-foreground);
   /* A white pill raised off the surface: a hairline ring plus a short lift. */
   --shadow-pill:
-    0 0 0 0.5px rgb(0 0 0 / 0.12), 0 1px 1px rgb(0 0 0 / 0.04),
-    0 2px 4px rgb(0 0 0 / 0.04);
+    0 0 0 0.5px oklch(0 0 0 / 0.12), 0 1px 1px oklch(0 0 0 / 0.04),
+    0 2px 4px oklch(0 0 0 / 0.04);
   /* The pill lifted further, for pills that float over content. */
   --shadow-pill-float:
-    0 0 0 0.5px rgb(0 0 0 / 0.12), 0 1px 2px rgb(0 0 0 / 0.06),
-    0 4px 12px rgb(0 0 0 / 0.08);
+    0 0 0 0.5px oklch(0 0 0 / 0.12), 0 1px 2px oklch(0 0 0 / 0.06),
+    0 4px 12px oklch(0 0 0 / 0.08);
   /* A chat bubble: a lighter ring than the pill, so text reads first. */
   --shadow-bubble:
-    0 0 0 0.5px rgb(0 0 0 / 0.08), 0 1px 2px rgb(0 0 0 / 0.04),
-    0 4px 12px rgb(0 0 0 / 0.04);
+    0 0 0 0.5px oklch(0 0 0 / 0.08), 0 1px 2px oklch(0 0 0 / 0.04),
+    0 4px 12px oklch(0 0 0 / 0.04);
   /* A card resting on the page: barely off the surface. */
-  --shadow-card: 0 1px 0.5px rgb(0 0 0 / 0.04), 0 2px 2px rgb(0 0 0 / 0.04);
+  --shadow-card: 0 1px 0.5px oklch(0 0 0 / 0.04), 0 2px 2px oklch(0 0 0 / 0.04);
   /* A round control; its ring swaps to the hairline in dark mode. */
   --shadow-control: var(--control-shadow);
   /* A floating panel: a contact edge plus a soft lift. */
-  --shadow-panel: 0 1px 0.5px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.12);
+  --shadow-panel:
+    0 1px 0.5px oklch(0 0 0 / 0.04), 0 8px 24px oklch(0 0 0 / 0.12);
   --color-pill-hover: var(--pill-hover);
   --color-ring: var(--ring);
   --color-input: var(--input);
@@ -104,22 +105,22 @@
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
   --card: oklch(1 0 0);
-  --primary: #000;
+  --primary: oklch(0 0 0);
   --primary-foreground: var(--surface-faint);
   --secondary: oklch(0.97 0.001 106.424);
   --secondary-foreground: oklch(0.216 0.006 56.043);
   --muted: oklch(0.97 0.001 106.424);
-  --muted-foreground: #666;
+  --muted-foreground: oklch(0.51 0 0);
   --accent: oklch(0.97 0.001 106.424);
   --accent-foreground: oklch(0.216 0.006 56.043);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.923 0.003 48.717);
   --input: oklch(0.923 0.003 48.717);
-  --ring: #4b82f5;
+  --ring: oklch(0.628 0.182 263);
   --radius: 0.625rem;
-  --surface: #f5f3f1;
-  --surface-subtle: #faf8f8;
-  --surface-faint: #fdfcfc;
+  --surface: oklch(0.965 0.003 67.78);
+  --surface-subtle: oklch(0.981 0.002 17.19);
+  --surface-faint: oklch(0.992 0.001 17.18);
   --hairline: oklch(0 0 0 / 10%);
   --pill: oklch(1 0 0);
   --pill-hover: var(--surface-subtle);
@@ -131,15 +132,15 @@
     var(--foreground) 5%
   );
   /* Quieter than muted text: a speaker's original words. */
-  --faint-foreground: #77726d;
+  --faint-foreground: oklch(0.555 0.01 67.62);
   /* A neutral grey a step below muted: headline sublines, a speaker's words. */
-  --tertiary-foreground: #929292;
+  --tertiary-foreground: oklch(0.66 0 0);
   --control-shadow:
-    0 0 0 1px rgb(0 0 0 / 0.06), 0 1px 2px rgb(0 0 0 / 0.04),
-    0 2px 4px rgb(0 0 0 / 0.04);
+    0 0 0 1px oklch(0 0 0 / 0.06), 0 1px 2px oklch(0 0 0 / 0.04),
+    0 2px 4px oklch(0 0 0 / 0.04);
   /* The call's voice colours, lifted to read on the dark Listen button. */
-  --sweep-tail: #8fb0ff;
-  --sweep-head: #ff8dbb;
+  --sweep-tail: oklch(0.764 0.12 266.3);
+  --sweep-head: oklch(0.779 0.146 355.43);
 }
 
 .dark {
@@ -151,13 +152,14 @@
   --secondary: oklch(0.268 0.007 34.298);
   --secondary-foreground: oklch(0.985 0.001 106.423);
   --muted: oklch(0.268 0.007 34.298);
-  --muted-foreground: oklch(0.709 0.01 56.259);
+  /* Lifted so muted text still clears 4.5:1 on a pill. */
+  --muted-foreground: oklch(0.773 0.01 62.55);
   --accent: oklch(0.268 0.007 34.298);
   --accent-foreground: oklch(0.985 0.001 106.423);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: #5b8ff7;
+  --ring: oklch(0.663 0.165 262.72);
   --surface: var(--muted);
   --surface-subtle: var(--muted);
   --surface-faint: var(--muted);
@@ -167,10 +169,13 @@
   --pill-hover: color-mix(in oklch, var(--pill), var(--foreground) 5%);
   --surface-raised: var(--pill);
   --control: var(--pill-hover);
-  --control-shadow: 0 0 0 1px var(--hairline), 0 1px 2px rgb(0 0 0 / 0.2);
+  --control-shadow: 0 0 0 1px var(--hairline), 0 1px 2px oklch(0 0 0 / 0.2);
+  /* Inverted to sit just below muted text and still read on a pill. */
+  --faint-foreground: oklch(0.742 0.01 62.54);
+  --tertiary-foreground: oklch(0.748 0 0);
   /* Deepened to read on the light Listen button. */
-  --sweep-tail: #4f7be0;
-  --sweep-head: #e0558c;
+  --sweep-tail: oklch(0.602 0.161 264.39);
+  --sweep-head: oklch(0.647 0.18 358.87);
 }
 
 @layer base {
