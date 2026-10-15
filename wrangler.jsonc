@@ -8,4 +8,11 @@
     "not_found_handling": "single-page-application",
   },
   "routes": [{ "pattern": "elevenlabs.derolez.dev", "custom_domain": true }],
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+      "persist": true,
+    },
+  },
 }
