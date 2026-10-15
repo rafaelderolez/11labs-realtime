@@ -40,4 +40,7 @@ export default defineConfig({
       "@": resolve(import.meta.dirname, "./src"),
     },
   },
+  build: {
+    sourcemap: true,
+  },
 })
