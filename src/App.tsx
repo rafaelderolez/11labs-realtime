@@ -2,6 +2,7 @@ import { GridOverlay } from "@/components/grid-overlay"
 import { Bentos } from "@/components/sections/bentos"
 import { CallDemo } from "@/components/sections/call-demo"
 import { Features } from "@/components/sections/features"
+import { Footer } from "@/components/sections/footer"
 import { Header } from "@/components/sections/header"
 import { Hero } from "@/components/sections/hero"
 import { TextBlock } from "@/components/sections/text-block"
@@ -18,6 +19,7 @@ function App() {
         <TextBlock />
         <Bentos />
       </main>
+      <Footer />
       <GridOverlay />
       <Toaster />
     </div>
