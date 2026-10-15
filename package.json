@@ -6,6 +6,7 @@
   "scripts": {
     "audio:call": "node --env-file=.env.local scripts/generate-call-audio.ts",
     "audio:emotions": "node --env-file=.env.local scripts/generate-emotion-audio.ts",
+    "audio:hi-tom": "node --env-file=.env.local scripts/generate-hi-tom-audio.ts",
     "build": "tsc -b && vite build",
     "deadcode": "fallow dead-code",
     "deploy": "pnpm build && wrangler deploy",

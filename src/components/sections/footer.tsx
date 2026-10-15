@@ -1,9 +1,54 @@
-import { ArrowUpRight, Speech } from "lucide-react"
+import { ArrowUpRight, RefreshCw, Speech } from "lucide-react"
+import { useState } from "react"
 
 import { Logo } from "@/components/logo"
+import { GREETINGS, greetingPath } from "@/content/hi-tom"
 
 const REPO_URL = "https://github.com/rafaelderolez/11labs-realtime"
 const PORTFOLIO_URL = "https://derolez.dev"
+
+let hiTom: HTMLAudioElement | undefined
+let nextGreeting = 0
+
+// Each click stops the last greeting and plays the next one in turn.
+function sayHi() {
+  hiTom?.pause()
+  hiTom = new Audio(greetingPath(GREETINGS[nextGreeting]))
+  nextGreeting = (nextGreeting + 1) % GREETINGS.length
+  void hiTom.play()
+}
+
+function SayHiButton() {
+  // Half a turn per click; it only ever adds up, so the arrows never spin back.
+  const [turns, setTurns] = useState(0)
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        sayHi()
+        setTurns((t) => t + 1)
+      }}
+      className="group inline-flex cursor-pointer items-center gap-2 transition-colors hover:text-foreground"
+    >
+      {/* Nudged so its ink centers on the GitHub mark below; the glyph sits high and left in its box. */}
+      <Speech
+        className="size-4 translate-x-[1.5px] translate-y-[0.5px]"
+        strokeWidth={1.75}
+        aria-hidden
+      />
+      Say hi to Tom Parkes for me!
+      {/* The arrows hint there's more than one greeting: they lean on hover and turn with each click. */}
+      <span className="-ml-1 transition-transform duration-300 ease-out-strong group-hover:rotate-45 motion-reduce:transition-none">
+        <RefreshCw
+          className="size-3.5 transition-transform duration-500 ease-out-strong motion-reduce:transition-none"
+          style={{ rotate: `${turns * 180}deg` }}
+          strokeWidth={1.75}
+          aria-hidden
+        />
+      </span>
+    </button>
+  )
+}
 
 export function Footer() {
   return (
@@ -23,14 +68,8 @@ export function Footer() {
             I'd love to keep the conversation going.
           </p>
           <ul className="flex flex-col gap-2 text-label-sm text-muted-foreground">
-            <li className="flex items-center gap-2">
-              {/* Nudged so its ink centers on the GitHub mark below; the glyph sits high and left in its box. */}
-              <Speech
-                className="size-4 translate-x-[1.5px] translate-y-[0.5px]"
-                strokeWidth={1.75}
-                aria-hidden
-              />
-              Say hi to Tom Parkes for me!
+            <li className="flex">
+              <SayHiButton />
             </li>
             <li className="flex">
               <a

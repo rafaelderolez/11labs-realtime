@@ -19,8 +19,8 @@ type Alignment = {
 const round = (n: number) => Math.round(n * 1000) / 1000
 
 /**
- * Speaks `text` and writes it to `public${path}`. An optional audio tag such
- * as "excited" steers the delivery without being spoken or timed.
+ * Speaks `text` and writes it to `public${path}`. Optional audio tags such as
+ * "excited" steer the delivery without being spoken or timed.
  */
 export async function speak({
   voiceId,
@@ -30,13 +30,14 @@ export async function speak({
 }: {
   voiceId: string
   text: string
-  tag?: string
+  tag?: string | string[]
   path: string
 }): Promise<ClipTiming> {
   const apiKey = process.env.ELEVENLABS_API_KEY
   if (!apiKey) throw new Error("ELEVENLABS_API_KEY is not set")
 
-  const prefix = tag ? `[${tag}] ` : ""
+  const tags = [tag ?? []].flat()
+  const prefix = tags.length ? `${tags.map((t) => `[${t}]`).join(" ")} ` : ""
   const response = await fetch(
     `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/with-timestamps?output_format=mp3_44100_128`,
     {
