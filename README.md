@@ -21,6 +21,8 @@ The page has two interactive demos, both driven by real ElevenLabs audio:
 
 ## Getting started
 
+### In case you'd want to run this locally (although I doubt you will)
+
 Requires Node 24 and pnpm 10.
 
 ```bash
