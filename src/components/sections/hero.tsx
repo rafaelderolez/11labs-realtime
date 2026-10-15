@@ -13,10 +13,10 @@ export function Hero() {
           with Eleven Realtime
         </span>
       </h1>
-      <p className="max-w-xl px-content text-body text-pretty text-trim xl:col-span-6 xl:col-from-7 xl:max-w-none xl:self-baseline-last">
+      <p className="max-w-xl px-content text-body text-pretty text-trim xl:col-span-6 xl:col-from-7 xl:max-w-none xl:self-baseline-last xl:pl-0">
         Eleven Realtime Translate turns speech into translated audio while
         people talk. Each person speaks their own language and hears the other
-        in theirs.
+        in theirs, across more than 90 languages.
       </p>
       <div className="col-edge mt-3 flex flex-wrap gap-2 px-content sm:gap-3 xl:mt-0">
         <PillButton
